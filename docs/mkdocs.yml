@@ -1,0 +1,50 @@
+repo_name: 'DTI-Wiki'
+repo_url: https://github.com/anishcorratech/dti-wiki
+site_name: 'Devops Technical Institute Wiki'
+site_url: https://github.com/anishcorratech/dti-wiki/
+site_description: GNU/Linux Administration and Devops Automations
+site_author: 'anish.asokan'
+edit_uri: edit/main/docs/docs/
+
+theme:
+  name: material
+  language: en
+  features:
+    - navigation.tabs
+    - navigation.expand
+    - navigation.top
+    - toc.integrate
+    #- header.autohide
+  palette:
+    scheme: default
+  font:
+    text: Roboto
+    code: Roboto Mono
+  favicon: images/favicon.png
+  icon:
+    logo: fontawesome/solid/robot
+    repo: fontawesome/brands/github
+
+copyright: 'Copyright &copy; 2021-2022 DTI Wiki'
+
+
+markdown_extensions:
+  - mdx_math:
+      enable_dollar_delimiter: true
+  - fontawesome_markdown
+  - admonition
+  - footnotes
+  - attr_list
+  - codehilite
+  - toc:
+      permalink: ⚓︎
+      toc_depth: 3
+nav:
+  - 'Corratech OSS Wiki': 'index.md'
+  - 'Documents':
+      - 'Psychedelic Magento Cloud': 'psy-mcloud.md'
+      - 'Terraform Automation': 'terraform.md'
+  - 'Snippets':
+      - 'Cloud DB Authentication': 'snippets/cloud-db-auth.md'
+      - 'Cloud Cron Disable': 'snippets/cloud-cron-disable.md'
+  - About: 'about.md'
