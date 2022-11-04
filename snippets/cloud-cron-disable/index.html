@@ -12,19 +12,21 @@
         <meta name="author" content="anish.asokan">
       
       
-      <link rel="icon" href="/anishcorratech/dti-wiki/images/favicon.png">
+        <link rel="canonical" href="https://github.com/anishcorratech/dti-wiki/snippets/cloud-cron-disable/">
+      
+      <link rel="icon" href="../../images/favicon.png">
       <meta name="generator" content="mkdocs-1.3.1, mkdocs-material-8.2.11">
     
     
       
-        <title>Devops Technical Institute Wiki</title>
+        <title>Cloud Cron Disable - Devops Technical Institute Wiki</title>
       
     
     
-      <link rel="stylesheet" href="/anishcorratech/dti-wiki/assets/stylesheets/main.8c5ef100.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.8c5ef100.min.css">
       
         
-        <link rel="stylesheet" href="/anishcorratech/dti-wiki/assets/stylesheets/palette.9647289d.min.css">
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.9647289d.min.css">
         
       
     
@@ -39,7 +41,7 @@
       
     
     
-    <script>__md_scope=new URL("/anishcorratech/dti-wiki/",location),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("../..",location),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
 
@@ -62,6 +64,11 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
+        
+        <a href="#disable-cron-on-magento-enterprise-cloud" class="md-skip">
+          Skip to content
+        </a>
+      
     </div>
     <div data-md-component="announce">
       
@@ -72,7 +79,7 @@
 
 <header class="md-header" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href="/anishcorratech/dti-wiki/." title="Devops Technical Institute Wiki" class="md-header__button md-logo" aria-label="Devops Technical Institute Wiki" data-md-component="logo">
+    <a href="../.." title="Devops Technical Institute Wiki" class="md-header__button md-logo" aria-label="Devops Technical Institute Wiki" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><!--! Font Awesome Free 6.1.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M9.375 233.4C3.375 239.4 0 247.5 0 256v128c0 8.5 3.375 16.62 9.375 22.62S23.5 416 32 416h32V224H32c-8.5 0-16.62 3.4-22.625 9.4zM464 96H352V32c0-17.62-14.38-32-32-32s-32 14.38-32 32v64H176c-44.2 0-80 35.8-80 80v272c0 35.38 28.62 64 64 64h320c35.38 0 64-28.62 64-64V176c0-44.2-35.7-80-80-80zM256 416h-64v-32h64v32zm-32-120c-22.1 0-40-17.9-40-40s17.9-40 40-40 40 17.9 40 40-17.9 40-40 40zm128 120h-64v-32h64v32zm96 0h-64v-32h64v32zm-32-120c-22.12 0-40-17.88-40-40s17.9-40 40-40 40 17.9 40 40-17.9 40-40 40zm214.6-62.6c-6-6-14.1-9.4-22.6-9.4h-32v192h32c8.5 0 16.62-3.375 22.62-9.375S640 392.5 640 384V256c0-8.5-3.4-16.6-9.4-22.6z"/></svg>
@@ -91,7 +98,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              
+              Cloud Cron Disable
             
           </span>
         </div>
@@ -166,7 +173,7 @@
 
 
   <li class="md-tabs__item">
-    <a href="/anishcorratech/dti-wiki/." class="md-tabs__link">
+    <a href="../.." class="md-tabs__link">
       Corratech OSS Wiki
     </a>
   </li>
@@ -181,7 +188,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="/anishcorratech/dti-wiki/psy-mcloud.md" class="md-tabs__link">
+      <a href="../../psy-mcloud.md" class="md-tabs__link">
         Documents
       </a>
     </li>
@@ -191,13 +198,15 @@
         
   
   
+    
+  
 
 
   
   
   
     <li class="md-tabs__item">
-      <a href="/anishcorratech/dti-wiki/snippets/cloud-db-auth/" class="md-tabs__link">
+      <a href="../cloud-db-auth/" class="md-tabs__link md-tabs__link--active">
         Snippets
       </a>
     </li>
@@ -210,7 +219,7 @@
 
 
   <li class="md-tabs__item">
-    <a href="/anishcorratech/dti-wiki/about.md" class="md-tabs__link">
+    <a href="../../about.md" class="md-tabs__link">
       About
     </a>
   </li>
@@ -239,7 +248,7 @@
 
 <nav class="md-nav md-nav--primary md-nav--lifted md-nav--integrated" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="/anishcorratech/dti-wiki/." title="Devops Technical Institute Wiki" class="md-nav__button md-logo" aria-label="Devops Technical Institute Wiki" data-md-component="logo">
+    <a href="../.." title="Devops Technical Institute Wiki" class="md-nav__button md-logo" aria-label="Devops Technical Institute Wiki" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><!--! Font Awesome Free 6.1.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M9.375 233.4C3.375 239.4 0 247.5 0 256v128c0 8.5 3.375 16.62 9.375 22.62S23.5 416 32 416h32V224H32c-8.5 0-16.62 3.4-22.625 9.4zM464 96H352V32c0-17.62-14.38-32-32-32s-32 14.38-32 32v64H176c-44.2 0-80 35.8-80 80v272c0 35.38 28.62 64 64 64h320c35.38 0 64-28.62 64-64V176c0-44.2-35.7-80-80-80zM256 416h-64v-32h64v32zm-32-120c-22.1 0-40-17.9-40-40s17.9-40 40-40 40 17.9 40 40-17.9 40-40 40zm128 120h-64v-32h64v32zm96 0h-64v-32h64v32zm-32-120c-22.12 0-40-17.88-40-40s17.9-40 40-40 40 17.9 40 40-17.9 40-40 40zm214.6-62.6c-6-6-14.1-9.4-22.6-9.4h-32v192h32c8.5 0 16.62-3.375 22.62-9.375S640 392.5 640 384V256c0-8.5-3.4-16.6-9.4-22.6z"/></svg>
@@ -270,7 +279,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/anishcorratech/dti-wiki/." class="md-nav__link">
+      <a href="../.." class="md-nav__link">
         Corratech OSS Wiki
       </a>
     </li>
@@ -311,7 +320,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/anishcorratech/dti-wiki/psy-mcloud.md" class="md-nav__link">
+      <a href="../../psy-mcloud.md" class="md-nav__link">
         Psychedelic Magento Cloud
       </a>
     </li>
@@ -325,7 +334,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/anishcorratech/dti-wiki/terraform.md" class="md-nav__link">
+      <a href="../../terraform.md" class="md-nav__link">
         Terraform Automation
       </a>
     </li>
@@ -345,12 +354,14 @@
 
   
   
+    
+  
   
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" data-md-state="indeterminate" type="checkbox" id="__nav_3" checked>
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" type="checkbox" id="__nav_3" checked>
       
       
       
@@ -373,7 +384,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/anishcorratech/dti-wiki/snippets/cloud-db-auth/" class="md-nav__link">
+      <a href="../cloud-db-auth/" class="md-nav__link">
         Cloud DB Authentication
       </a>
     </li>
@@ -385,11 +396,21 @@
               
   
   
+    
   
-    <li class="md-nav__item">
-      <a href="/anishcorratech/dti-wiki/snippets/cloud-cron-disable/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         Cloud Cron Disable
       </a>
+      
     </li>
   
 
@@ -409,7 +430,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/anishcorratech/dti-wiki/about.md" class="md-nav__link">
+      <a href="../../about.md" class="md-nav__link">
         About
       </a>
     </li>
@@ -427,8 +448,27 @@
           <div class="md-content" data-md-component="content">
             <article class="md-content__inner md-typeset">
               
-  <h1>404 - Not found</h1>
+                
+  <a href="https://github.com/anishcorratech/dti-wiki/edit/main/docs/docs/snippets/cloud-cron-disable.md" title="Edit this page" class="md-content__button md-icon">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25Z"/></svg>
+  </a>
 
+
+
+<h1 id="disable-cron-on-magento-enterprise-cloud">Disable Cron on Magento Enterprise Cloud<a class="headerlink" href="#disable-cron-on-magento-enterprise-cloud" title="Permanent link">⚓︎</a></h1>
+<p>Usually crons are by default enabled in the magento configuration. If you have to disable the magento cloud crons.</p>
+<p>Please modify <code>app/etc/env.php</code> and add <code>'enabled' =&gt; 0,</code> under "cron" array as below.</p>
+<div class="codehilite"><pre><span></span><code>  &#39;cron&#39; =&gt;
+  array (
+    &#39;enabled&#39; =&gt; 0,
+  ),
+</code></pre></div>
+
+<p>Monitor the cron logs :</p>
+<div class="codehilite"><pre><span></span><code><span class="n">tail</span><span class="w"> </span><span class="o">-</span><span class="n">f</span><span class="w"> </span><span class="o">$</span><span class="n">HOME</span><span class="o">/</span><span class="k">var</span><span class="o">/</span><span class="nb">log</span><span class="o">/</span><span class="n">cron</span><span class="o">.</span><span class="n">log</span><span class="w"></span>
+</code></pre></div>
+
+              
             </article>
           </div>
         </div>
@@ -441,6 +481,26 @@
       </main>
       
         <footer class="md-footer">
+  
+    <nav class="md-footer__inner md-grid" aria-label="Footer">
+      
+        
+        <a href="../cloud-db-auth/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Cloud DB Authentication" rel="prev">
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+          </div>
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              Cloud DB Authentication
+            </div>
+          </div>
+        </a>
+      
+      
+    </nav>
   
   <div class="md-footer-meta md-typeset">
     <div class="md-footer-meta__inner md-grid">
@@ -466,10 +526,10 @@
     <div class="md-dialog" data-md-component="dialog">
       <div class="md-dialog__inner md-typeset"></div>
     </div>
-    <script id="__config" type="application/json">{"base": "/anishcorratech/dti-wiki/", "features": ["navigation.tabs", "navigation.expand", "navigation.top", "toc.integrate"], "search": "/anishcorratech/dti-wiki/assets/javascripts/workers/search.2a1c317c.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version.title": "Select version"}}</script>
+    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.tabs", "navigation.expand", "navigation.top", "toc.integrate"], "search": "../../assets/javascripts/workers/search.2a1c317c.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version.title": "Select version"}}</script>
     
     
-      <script src="/anishcorratech/dti-wiki/assets/javascripts/bundle.748e2769.min.js"></script>
+      <script src="../../assets/javascripts/bundle.748e2769.min.js"></script>
       
     
   </body>
