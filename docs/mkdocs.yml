@@ -48,3 +48,8 @@ nav:
       - 'Cloud DB Authentication': 'snippets/cloud-db-auth.md'
       - 'Cloud Cron Disable': 'snippets/cloud-cron-disable.md'
   - About: 'about.md'
+  - 'Test':
+      - 'Test1':
+          - 'test1-a': 'snippets/cloud-db-auth.md'
+      - 'Test2':
+          - 'test2-a': 'snippets/cloud-db-auth.md'
