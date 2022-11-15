@@ -6,6 +6,11 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
+         <loc>https://github.com/anishcorratech/dti-wiki/about/</loc>
+         <lastmod>2022-11-15</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
          <loc>https://github.com/anishcorratech/dti-wiki/psy-mcloud/</loc>
          <lastmod>2022-11-15</lastmod>
          <changefreq>daily</changefreq>
