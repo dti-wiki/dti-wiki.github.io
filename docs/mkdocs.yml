@@ -47,5 +47,6 @@ nav:
   - 'Snippets':
       - 'Cloud DB Authentication': 'snippets/cloud-db-auth.md'
       - 'Cloud Cron Disable': 'snippets/cloud-cron-disable.md'
+  - Containers: 'containers.md'
   - About: 'about.md'
 
