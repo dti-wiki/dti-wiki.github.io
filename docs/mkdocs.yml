@@ -44,11 +44,15 @@ nav:
   - 'Documents':
       - 'Psychedelic Magento Cloud': 'psy-mcloud.md'
       - 'Terraform Automation': 'terraform.md'
+      - 'Containers': 'containers.md'
   - 'Snippets':
       - 'Cloud DB Authentication': 'snippets/cloud-db-auth.md'
       - 'Cloud Cron Disable': 'snippets/cloud-cron-disable.md'
-  - 'Containers': 'containers.md'
-      - 'Docker': 'containers/docker/index.md'
-          - 'Container Init': 'containers/docker/container-init.md'  
+  - 'Containers':
+      - 'Index': 'containers.md'
+      - 'Docker':
+          - 'Index': 'containers/docker/index.md'
+          - 'Container Init':
+              - 'Index': 'containers/docker/container-init.md'
   - About: 'about.md'
 
