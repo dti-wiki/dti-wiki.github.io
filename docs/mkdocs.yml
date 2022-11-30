@@ -48,5 +48,7 @@ nav:
       - 'Cloud DB Authentication': 'snippets/cloud-db-auth.md'
       - 'Cloud Cron Disable': 'snippets/cloud-cron-disable.md'
   - Containers: 'containers.md'
+      - 'Docker': 'containers/docker/'
+          - 'Container Init': 'containers/docker/container-init/'  
   - About: 'about.md'
 
