@@ -2,7 +2,7 @@
 
 Container orchestration,
 
-- [Docker](https://dti-wiki.github.io/containers/docker/index.md)
+- [Docker](https://dti-wiki.github.io/containers/docker/)
 - Kubernetes
 - Kustomize
 - Ambassador Edge Stack
