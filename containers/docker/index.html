@@ -12,14 +12,14 @@
         <meta name="author" content="anish.asokan">
       
       
-        <link rel="canonical" href="https://github.com/anishcorratech/dti-wiki/snippets/cloud-db-auth/">
+        <link rel="canonical" href="https://github.com/anishcorratech/dti-wiki/containers/docker/">
       
       <link rel="icon" href="../../images/favicon.png">
       <meta name="generator" content="mkdocs-1.3.1, mkdocs-material-8.2.11">
     
     
       
-        <title>Cloud DB Authentication - Devops Technical Institute</title>
+        <title>Docker - Devops Technical Institute</title>
       
     
     
@@ -65,7 +65,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#magento-2x-cloud-db-authentication" class="md-skip">
+        <a href="#docker" class="md-skip">
           Skip to content
         </a>
       
@@ -98,7 +98,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Cloud DB Authentication
+              Docker
             
           </span>
         </div>
@@ -198,15 +198,13 @@
         
   
   
-    
-  
 
 
   
   
   
     <li class="md-tabs__item">
-      <a href="./" class="md-tabs__link md-tabs__link--active">
+      <a href="../../snippets/cloud-db-auth/" class="md-tabs__link">
         Snippets
       </a>
     </li>
@@ -219,7 +217,7 @@
 
 
   <li class="md-tabs__item">
-    <a href="../../containers/" class="md-tabs__link">
+    <a href="../" class="md-tabs__link">
       Containers
     </a>
   </li>
@@ -366,14 +364,12 @@
 
   
   
-    
-  
   
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" type="checkbox" id="__nav_3" checked>
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" data-md-state="indeterminate" type="checkbox" id="__nav_3" checked>
       
       
       
@@ -394,80 +390,11 @@
               
   
   
-    
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          Cloud DB Authentication
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../../snippets/cloud-db-auth/" class="md-nav__link">
         Cloud DB Authentication
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#set-time" class="md-nav__link">
-    Set Time
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#ticket-number" class="md-nav__link">
-    Ticket Number
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#set-authentication-variables" class="md-nav__link">
-    Set Authentication variables:
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#connect-to-mysql-with-above-set-authentication-variables" class="md-nav__link">
-    Connect to MySQL with above set authentication variables.
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#database-dump" class="md-nav__link">
-    Database Dump
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -479,7 +406,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../cloud-cron-disable/" class="md-nav__link">
+      <a href="../../snippets/cloud-cron-disable/" class="md-nav__link">
         Cloud Cron Disable
       </a>
     </li>
@@ -501,7 +428,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../containers/" class="md-nav__link">
+      <a href="../" class="md-nav__link">
         Containers
       </a>
     </li>
@@ -535,43 +462,18 @@
             <article class="md-content__inner md-typeset">
               
                 
-  <a href="https://github.com/anishcorratech/dti-wiki/edit/main/docs/docs/snippets/cloud-db-auth.md" title="Edit this page" class="md-content__button md-icon">
+  <a href="https://github.com/anishcorratech/dti-wiki/edit/main/docs/docs/containers/docker/index.md" title="Edit this page" class="md-content__button md-icon">
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25Z"/></svg>
   </a>
 
 
 
-<h1 id="magento-2x-cloud-db-authentication">Magento 2x Cloud DB Authentication<a class="headerlink" href="#magento-2x-cloud-db-authentication" title="Permanent link">⚓︎</a></h1>
-<h2 id="set-time">Set Time<a class="headerlink" href="#set-time" title="Permanent link">⚓︎</a></h2>
-<div class="codehilite"><pre><span></span><code>BKPTIM=$(date +&quot;%Y-%m-%d_%H-%M-%S&quot;)
-</code></pre></div>
-
-<h2 id="ticket-number">Ticket Number<a class="headerlink" href="#ticket-number" title="Permanent link">⚓︎</a></h2>
-<p>Optionally set ticket number if required.</p>
-<div class="codehilite"><pre><span></span><code>TKT=&quot;JIRA-123&quot;
-</code></pre></div>
-
-<h2 id="set-authentication-variables">Set Authentication variables:<a class="headerlink" href="#set-authentication-variables" title="Permanent link">⚓︎</a></h2>
-<div class="codehilite"><pre><span></span><code><span class="k">export</span><span class="w"> </span><span class="n">DB_NAME</span><span class="o">=$</span><span class="p">(</span><span class="n">grep</span><span class="w"> </span><span class="p">[</span>\<span class="s1">&#39;]db[</span><span class="se">\&#39;</span><span class="s1">] -A 20 app/etc/env.php | grep dbname | head -n1 | sed &quot;s/.*[=][&gt;][ ]*[&#39;</span><span class="p">]</span><span class="o">//</span><span class="s2">&quot; | sed &quot;</span><span class="n">s</span><span class="o">/</span><span class="p">[</span><span class="s1">&#39;][,]//&quot;);</span>
-
-<span class="k">export</span><span class="w"> </span><span class="n">MYSQL_HOST</span><span class="o">=$</span><span class="p">(</span><span class="n">grep</span><span class="w"> </span><span class="p">[</span>\<span class="s1">&#39;]db[</span><span class="se">\&#39;</span><span class="s1">] -A 20 app/etc/env.php | grep host | head -n1 | sed &quot;s/.*[=][&gt;][ ]*[&#39;</span><span class="p">]</span><span class="o">//</span><span class="s2">&quot; | sed &quot;</span><span class="n">s</span><span class="o">/</span><span class="p">[</span><span class="s1">&#39;][,]//&quot;);</span>
-
-<span class="k">export</span><span class="w"> </span><span class="n">DB_USER</span><span class="o">=$</span><span class="p">(</span><span class="n">grep</span><span class="w"> </span><span class="p">[</span>\<span class="s1">&#39;]db[</span><span class="se">\&#39;</span><span class="s1">] -A 20 app/etc/env.php | grep username | head -n1 | sed &quot;s/.*[=][&gt;][ ]*[&#39;</span><span class="p">]</span><span class="o">//</span><span class="s2">&quot; | sed &quot;</span><span class="n">s</span><span class="o">/</span><span class="p">[</span><span class="s1">&#39;][,]//&quot;);</span>
-
-<span class="k">export</span><span class="w"> </span><span class="n">MYSQL_PWD</span><span class="o">=$</span><span class="p">(</span><span class="n">grep</span><span class="w"> </span><span class="p">[</span>\<span class="s1">&#39;]db[</span><span class="se">\&#39;</span><span class="s1">] -A 20 app/etc/env.php | grep password | head -n1 | sed &quot;s/.*[=][&gt;][ ]*[&#39;</span><span class="p">]</span><span class="o">//</span><span class="s2">&quot; | sed &quot;</span><span class="n">s</span><span class="o">/</span><span class="p">[</span><span class="s1">&#39;]$//&quot; | sed &quot;s/[&#39;</span><span class="p">][,]</span><span class="o">//</span><span class="s2">&quot;);</span>
-</code></pre></div>
-
-<h2 id="connect-to-mysql-with-above-set-authentication-variables">Connect to MySQL with above set authentication variables.<a class="headerlink" href="#connect-to-mysql-with-above-set-authentication-variables" title="Permanent link">⚓︎</a></h2>
-<div class="codehilite"><pre><span></span><code>mysql -h $MYSQL_HOST -u $DB_USER --password=$MYSQL_PWD $DB_NAME -A
-</code></pre></div>
-
-<h2 id="database-dump">Database Dump<a class="headerlink" href="#database-dump" title="Permanent link">⚓︎</a></h2>
-<div class="codehilite"><pre><span></span><code><span class="n">mysqldump</span><span class="w"> </span><span class="o">-</span><span class="n">h</span><span class="w"> </span><span class="o">$</span><span class="n">MYSQL_HOST</span><span class="w"> </span><span class="o">-</span><span class="n">u</span><span class="w"> </span><span class="o">$</span><span class="n">DB_USER</span><span class="w"> </span><span class="o">--</span><span class="n">password</span><span class="o">=$</span><span class="n">MYSQL_PWD</span><span class="w"> </span><span class="o">$</span><span class="n">DB_NAME</span><span class="w"> </span><span class="o">--</span><span class="n">opt</span><span class="w"> </span><span class="o">--</span><span class="n">single</span><span class="o">-</span><span class="n">transaction</span><span class="w"> </span><span class="o">--</span><span class="n">skip</span><span class="o">-</span><span class="n">lock</span><span class="o">-</span><span class="n">tables</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="n">sed</span><span class="w"> </span><span class="o">-</span><span class="n">e</span><span class="w"> </span><span class="s1">&#39;s/DEFINER[ ]*=[ ]*[^*]*\*/\*/&#39;</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="n">gzip</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="k">var</span><span class="o">/</span><span class="n">backups</span><span class="o">/$</span><span class="n">DB_NAME</span><span class="o">.$</span><span class="p">{</span><span class="n">BKPTIM</span><span class="p">}</span><span class="o">.</span><span class="n">sql</span><span class="o">.</span><span class="n">gz</span><span class="w"></span>
-</code></pre></div>
-
-<p>If you want to add the ticket name to the dump as well.</p>
-<div class="codehilite"><pre><span></span><code><span class="n">mysqldump</span><span class="w"> </span><span class="o">-</span><span class="n">h</span><span class="w"> </span><span class="o">$</span><span class="n">MYSQL_HOST</span><span class="w"> </span><span class="o">-</span><span class="n">u</span><span class="w"> </span><span class="o">$</span><span class="n">DB_USER</span><span class="w"> </span><span class="o">--</span><span class="n">password</span><span class="o">=$</span><span class="n">MYSQL_PWD</span><span class="w"> </span><span class="o">$</span><span class="n">DB_NAME</span><span class="w"> </span><span class="o">--</span><span class="n">opt</span><span class="w"> </span><span class="o">--</span><span class="n">single</span><span class="o">-</span><span class="n">transaction</span><span class="w"> </span><span class="o">--</span><span class="n">skip</span><span class="o">-</span><span class="n">lock</span><span class="o">-</span><span class="n">tables</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="n">sed</span><span class="w"> </span><span class="o">-</span><span class="n">e</span><span class="w"> </span><span class="s1">&#39;s/DEFINER[ ]*=[ ]*[^*]*\*/\*/&#39;</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="n">gzip</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="k">var</span><span class="o">/</span><span class="n">backups</span><span class="o">/$</span><span class="n">TKT</span><span class="o">.$</span><span class="n">DB_NAME</span><span class="o">.$</span><span class="p">{</span><span class="n">BKPTIM</span><span class="p">}</span><span class="o">.</span><span class="n">sql</span><span class="o">.</span><span class="n">gz</span><span class="w"></span>
-</code></pre></div>
+<h1 id="docker">Docker<a class="headerlink" href="#docker" title="Permanent link">⚓︎</a></h1>
+<p>These are the wiki pages created under Docker</p>
+<h2 id="contents">Contents<a class="headerlink" href="#contents" title="Permanent link">⚓︎</a></h2>
+<ol>
+<li><a href="https://dti-wiki.github.io/containers/docker/container-init.md">Container Init Script</a></li>
+</ol>
 
               
             </article>
@@ -586,41 +488,6 @@
       </main>
       
         <footer class="md-footer">
-  
-    <nav class="md-footer__inner md-grid" aria-label="Footer">
-      
-        
-        <a href="../../psy-mcloud/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Psychedelic Magento Cloud" rel="prev">
-          <div class="md-footer__button md-icon">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
-          </div>
-          <div class="md-footer__title">
-            <div class="md-ellipsis">
-              <span class="md-footer__direction">
-                Previous
-              </span>
-              Psychedelic Magento Cloud
-            </div>
-          </div>
-        </a>
-      
-      
-        
-        <a href="../cloud-cron-disable/" class="md-footer__link md-footer__link--next" aria-label="Next: Cloud Cron Disable" rel="next">
-          <div class="md-footer__title">
-            <div class="md-ellipsis">
-              <span class="md-footer__direction">
-                Next
-              </span>
-              Cloud Cron Disable
-            </div>
-          </div>
-          <div class="md-footer__button md-icon">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"/></svg>
-          </div>
-        </a>
-      
-    </nav>
   
   <div class="md-footer-meta md-typeset">
     <div class="md-footer-meta__inner md-grid">

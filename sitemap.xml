@@ -11,7 +11,22 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
+         <loc>https://github.com/anishcorratech/dti-wiki/containers/</loc>
+         <lastmod>2022-11-30</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
          <loc>https://github.com/anishcorratech/dti-wiki/psy-mcloud/</loc>
+         <lastmod>2022-11-30</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://github.com/anishcorratech/dti-wiki/containers/docker/</loc>
+         <lastmod>2022-11-30</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://github.com/anishcorratech/dti-wiki/containers/docker/container-init/</loc>
          <lastmod>2022-11-30</lastmod>
          <changefreq>daily</changefreq>
     </url>
