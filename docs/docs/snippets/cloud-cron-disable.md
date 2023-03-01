@@ -11,6 +11,14 @@ Please modify `app/etc/env.php` and add `'enabled' => 0,` under "cron" array as 
   ),
 ```
 
+If the `env.php` is `square-brackets` then use below format:
+
+```
+    'cron' => [
+        'enabled' => 0
+    ]
+```
+
 Monitor the cron logs :
 
 ```
