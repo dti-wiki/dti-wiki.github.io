@@ -626,47 +626,49 @@
 
 <h2 id="docker-compose">Docker Compose<a class="headerlink" href="#docker-compose" title="Permanent link">⚓︎</a></h2>
 <p>Below is the <code>docker-compose.yml</code> file for Caddy Server.</p>
-<p>```
-version: "3.2"</p>
-<p>services:
-  sql1:
-    container_name: sql1
-    image: mcr.microsoft.com/mssql/server:2022-latest
-    tty: true
-    ports:
-      - "135:135"
-      - "1431:1431"
-      - "1433:1433"
-      - "1434:1434"
-    restart: always
-    environment:
-      MSSQL_SA_PASSWORD: fake1234567890xyz
-      SA_PASSWORD: fake1234567890xyz
-      ACCEPT_EULA: "Y"
-    volumes:
-      - /home/user/service/dumps:/dumps
-      - /home/user/service/db/data:/var/opt/mssql/data</p>
-<p>caddy:
-    image: caddy:2.6.2-alpine
-    container_name: caddy
-    restart: always
-    ports:
-      - "80:80"
-      - "443:443"
-      - "443:443/udp"
-    volumes:
-      - /home/user/service/caddy/Caddyfile:/etc/caddy/Caddyfile</p>
-<p>adminer:
-    container_name: adminer
-    image: adminer:latest
-    ports:
-      - "8080:8080"
-    links:
-      - sql1
-    depends_on:
-      - sql1
-    restart: always
-    ```</p>
+<div class="codehilite"><pre><span></span><code><span class="n">version</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;3.2&quot;</span><span class="w"></span>
+
+<span class="n">services</span><span class="p">:</span><span class="w"></span>
+<span class="w">  </span><span class="n">sql1</span><span class="p">:</span><span class="w"></span>
+<span class="w">    </span><span class="n">container_name</span><span class="p">:</span><span class="w"> </span><span class="n">sql1</span><span class="w"></span>
+<span class="w">    </span><span class="n">image</span><span class="p">:</span><span class="w"> </span><span class="n">mcr</span><span class="o">.</span><span class="n">microsoft</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">mssql</span><span class="o">/</span><span class="n">server</span><span class="p">:</span><span class="mi">2022</span><span class="o">-</span><span class="n">latest</span><span class="w"></span>
+<span class="w">    </span><span class="n">tty</span><span class="p">:</span><span class="w"> </span><span class="bp">true</span><span class="w"></span>
+<span class="w">    </span><span class="n">ports</span><span class="p">:</span><span class="w"></span>
+<span class="w">      </span><span class="o">-</span><span class="w"> </span><span class="s2">&quot;135:135&quot;</span><span class="w"></span>
+<span class="w">      </span><span class="o">-</span><span class="w"> </span><span class="s2">&quot;1431:1431&quot;</span><span class="w"></span>
+<span class="w">      </span><span class="o">-</span><span class="w"> </span><span class="s2">&quot;1433:1433&quot;</span><span class="w"></span>
+<span class="w">      </span><span class="o">-</span><span class="w"> </span><span class="s2">&quot;1434:1434&quot;</span><span class="w"></span>
+<span class="w">    </span><span class="n">restart</span><span class="p">:</span><span class="w"> </span><span class="n">always</span><span class="w"></span>
+<span class="w">    </span><span class="n">environment</span><span class="p">:</span><span class="w"></span>
+<span class="w">      </span><span class="n">MSSQL_SA_PASSWORD</span><span class="p">:</span><span class="w"> </span><span class="n">fake1234567890xyz</span><span class="w"></span>
+<span class="w">      </span><span class="n">SA_PASSWORD</span><span class="p">:</span><span class="w"> </span><span class="n">fake1234567890xyz</span><span class="w"></span>
+<span class="w">      </span><span class="n">ACCEPT_EULA</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Y&quot;</span><span class="w"></span>
+<span class="w">    </span><span class="n">volumes</span><span class="p">:</span><span class="w"></span>
+<span class="w">      </span><span class="o">-</span><span class="w"> </span><span class="o">/</span><span class="n">home</span><span class="o">/</span><span class="n">user</span><span class="o">/</span><span class="n">service</span><span class="o">/</span><span class="n">dumps</span><span class="p">:</span><span class="o">/</span><span class="n">dumps</span><span class="w"></span>
+<span class="w">      </span><span class="o">-</span><span class="w"> </span><span class="o">/</span><span class="n">home</span><span class="o">/</span><span class="n">user</span><span class="o">/</span><span class="n">service</span><span class="o">/</span><span class="n">db</span><span class="o">/</span><span class="n">data</span><span class="p">:</span><span class="o">/</span><span class="k">var</span><span class="o">/</span><span class="n">opt</span><span class="o">/</span><span class="n">mssql</span><span class="o">/</span><span class="n">data</span><span class="w"></span>
+
+<span class="w">  </span><span class="n">caddy</span><span class="p">:</span><span class="w"></span>
+<span class="w">    </span><span class="n">image</span><span class="p">:</span><span class="w"> </span><span class="n">caddy</span><span class="p">:</span><span class="mf">2.6</span><span class="o">.</span><span class="mi">2</span><span class="o">-</span><span class="n">alpine</span><span class="w"></span>
+<span class="w">    </span><span class="n">container_name</span><span class="p">:</span><span class="w"> </span><span class="n">caddy</span><span class="w"></span>
+<span class="w">    </span><span class="n">restart</span><span class="p">:</span><span class="w"> </span><span class="n">always</span><span class="w"></span>
+<span class="w">    </span><span class="n">ports</span><span class="p">:</span><span class="w"></span>
+<span class="w">      </span><span class="o">-</span><span class="w"> </span><span class="s2">&quot;80:80&quot;</span><span class="w"></span>
+<span class="w">      </span><span class="o">-</span><span class="w"> </span><span class="s2">&quot;443:443&quot;</span><span class="w"></span>
+<span class="w">      </span><span class="o">-</span><span class="w"> </span><span class="s2">&quot;443:443/udp&quot;</span><span class="w"></span>
+<span class="w">    </span><span class="n">volumes</span><span class="p">:</span><span class="w"></span>
+<span class="w">      </span><span class="o">-</span><span class="w"> </span><span class="o">/</span><span class="n">home</span><span class="o">/</span><span class="n">user</span><span class="o">/</span><span class="n">service</span><span class="o">/</span><span class="n">caddy</span><span class="o">/</span><span class="n">Caddyfile</span><span class="p">:</span><span class="o">/</span><span class="n">etc</span><span class="o">/</span><span class="n">caddy</span><span class="o">/</span><span class="n">Caddyfile</span><span class="w"></span>
+
+<span class="w">  </span><span class="n">adminer</span><span class="p">:</span><span class="w"></span>
+<span class="w">    </span><span class="n">container_name</span><span class="p">:</span><span class="w"> </span><span class="n">adminer</span><span class="w"></span>
+<span class="w">    </span><span class="n">image</span><span class="p">:</span><span class="w"> </span><span class="n">adminer</span><span class="p">:</span><span class="n">latest</span><span class="w"></span>
+<span class="w">    </span><span class="n">ports</span><span class="p">:</span><span class="w"></span>
+<span class="w">      </span><span class="o">-</span><span class="w"> </span><span class="s2">&quot;8080:8080&quot;</span><span class="w"></span>
+<span class="w">    </span><span class="n">links</span><span class="p">:</span><span class="w"></span>
+<span class="w">      </span><span class="o">-</span><span class="w"> </span><span class="n">sql1</span><span class="w"></span>
+<span class="w">    </span><span class="n">depends_on</span><span class="p">:</span><span class="w"></span>
+<span class="w">      </span><span class="o">-</span><span class="w"> </span><span class="n">sql1</span><span class="w"></span>
+<span class="w">    </span><span class="n">restart</span><span class="p">:</span><span class="w"> </span><span class="n">always</span><span class="w"></span>
+</code></pre></div>
 
               
             </article>
