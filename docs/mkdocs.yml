@@ -54,5 +54,7 @@ nav:
           - 'Index': 'containers/docker/index.md'
           - 'Container Init':
               - 'Index': 'containers/docker/container-init.md'
+          - 'Caddy Container':
+              - 'Index': 'containers/docker/caddy-container.md'
   - About: 'about.md'
 
