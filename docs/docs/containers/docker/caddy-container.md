@@ -62,4 +62,4 @@ services:
     depends_on:
       - sql1
     restart: always
-    ```
+```
