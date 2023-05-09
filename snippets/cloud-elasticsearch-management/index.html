@@ -508,18 +508,31 @@
     Procedure
   </a>
   
-</li>
-      
-        <li class="md-nav__item">
+    <nav class="md-nav" aria-label="Procedure">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
   <a href="#list-indices" class="md-nav__link">
     List Indices
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
+        
+          <li class="md-nav__item">
   <a href="#delete-indices" class="md-nav__link">
     Delete Indices
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#source" class="md-nav__link">
+    Source:
   </a>
   
 </li>
@@ -773,7 +786,7 @@
 <li>On production environments disble the magento cron jobs till this activity is completed.</li>
 </ol>
 <h2 id="procedure">Procedure<a class="headerlink" href="#procedure" title="Permanent link">⚓︎</a></h2>
-<h2 id="list-indices">List Indices<a class="headerlink" href="#list-indices" title="Permanent link">⚓︎</a></h2>
+<h3 id="list-indices">List Indices<a class="headerlink" href="#list-indices" title="Permanent link">⚓︎</a></h3>
 <p>List the indices on the elasticsearch instance</p>
 <div class="codehilite"><pre><span></span><code>curl -s -X GET localhost:9200/_cat/indices?v
 </code></pre></div>
@@ -793,11 +806,16 @@ green  open   magento2_stg_product_5_v1094 2QfuKR42Q8q73oIsCJmNow   3   2       
 green  open   magento2_product_1_v1        3irjvym7T5ycPgeQV0pOcg   3   2          0            0      2.2kb           783b
 </code></pre></div>
 
-<h2 id="delete-indices">Delete Indices<a class="headerlink" href="#delete-indices" title="Permanent link">⚓︎</a></h2>
+<h3 id="delete-indices">Delete Indices<a class="headerlink" href="#delete-indices" title="Permanent link">⚓︎</a></h3>
 <div class="codehilite"><pre><span></span><code><span class="n">curl</span><span class="w"> </span><span class="o">-</span><span class="n">XDELETE</span><span class="w"> </span><span class="nl">localhost</span><span class="p">:</span><span class="mi">9200</span><span class="o">/[</span><span class="n">your_index_name_here</span><span class="o">]</span><span class="w"></span>
 </code></pre></div>
 
 <p>Then do a full reindexing.</p>
+<h2 id="source">Source:<a class="headerlink" href="#source" title="Permanent link">⚓︎</a></h2>
+<ul>
+<li>https://support.magento.com/hc/en-us/articles/360039837952-Elasticsearch-Index-Status-is-yellow-or-red-</li>
+<li>https://experienceleague.adobe.com/docs/commerce-knowledge-base/kb/troubleshooting/elasticsearch/elasticsearch-index-status-is-yellow-or-red.html?lang=en</li>
+</ul>
 
               
             </article>
