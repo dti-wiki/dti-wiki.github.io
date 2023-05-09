@@ -46,6 +46,11 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
+         <loc>https://github.com/anishcorratech/dti-wiki/snippets/cloud-elasticsearch-management/</loc>
+         <lastmod>2023-05-09</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
          <loc>https://github.com/anishcorratech/dti-wiki/snippets/magento-indexing/</loc>
          <lastmod>2023-05-09</lastmod>
          <changefreq>daily</changefreq>
