@@ -15,7 +15,7 @@ There can be several potential causes. One cause is the Elasticsearch instance r
 
 ## Procedure
 
-## List Indices
+### List Indices
 
 List the indices on the elasticsearch instance
 
@@ -40,10 +40,15 @@ green  open   magento2_stg_product_5_v1094 2QfuKR42Q8q73oIsCJmNow   3   2       
 green  open   magento2_product_1_v1        3irjvym7T5ycPgeQV0pOcg   3   2          0            0      2.2kb           783b
 ```
 
-## Delete Indices
+### Delete Indices
 
 ```
 curl -XDELETE localhost:9200/[your_index_name_here]
 ```
 
 Then do a full reindexing.
+
+## Source:
+
+- https://support.magento.com/hc/en-us/articles/360039837952-Elasticsearch-Index-Status-is-yellow-or-red-
+- https://experienceleague.adobe.com/docs/commerce-knowledge-base/kb/troubleshooting/elasticsearch/elasticsearch-index-status-is-yellow-or-red.html?lang=en
