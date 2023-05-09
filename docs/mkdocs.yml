@@ -49,6 +49,7 @@ nav:
       - 'Cloud DB Authentication': 'snippets/cloud-db-auth.md'
       - 'Cloud Cron Disable': 'snippets/cloud-cron-disable.md'
       - 'Magento Indexing': 'snippets/magento-indexing.md'
+      - 'Magento Cloud Elasticsearch': 'snippets/cloud-elasticsearch-management.md'
   - 'Containers':
       - 'Index': 'containers.md'
       - 'Docker':
