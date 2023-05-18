@@ -51,6 +51,11 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
+         <loc>https://github.com/anishcorratech/dti-wiki/snippets/cloud-rabbitmq-management/</loc>
+         <lastmod>2023-05-18</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
          <loc>https://github.com/anishcorratech/dti-wiki/snippets/magento-indexing/</loc>
          <lastmod>2023-05-18</lastmod>
          <changefreq>daily</changefreq>
