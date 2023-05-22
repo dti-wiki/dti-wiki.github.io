@@ -504,6 +504,13 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#set-variables" class="md-nav__link">
+    Set Variables
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#connect-to-rabbitmq-in-mcloud" class="md-nav__link">
     Connect to RabbitMQ in MCloud
   </a>
@@ -541,6 +548,13 @@
         
       </ul>
     </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#additional-info" class="md-nav__link">
+    Additional Info.
+  </a>
   
 </li>
       
@@ -801,25 +815,48 @@
    ],
 </code></pre></div>
 
-<h2 id="connect-to-rabbitmq-in-mcloud">Connect to RabbitMQ in MCloud<a class="headerlink" href="#connect-to-rabbitmq-in-mcloud" title="Permanent link">⚓︎</a></h2>
-<p>Lets set the rabbitmq password as:</p>
-<div class="codehilite"><pre><span></span><code><span class="k">export</span><span class="w"> </span><span class="n">RABBITPASS</span><span class="o">=</span><span class="n">Password_of_your_RabbitMQ</span><span class="w"></span>
+<p>On non-magento-cloud instances use:</p>
+<div class="codehilite"><pre><span></span><code>grep amqp -A 7 app/etc/env.php
 </code></pre></div>
 
+<h2 id="set-variables">Set Variables<a class="headerlink" href="#set-variables" title="Permanent link">⚓︎</a></h2>
+<p>Set the path of your magrnto <code>env.php</code> file.</p>
+<div class="codehilite"><pre><span></span><code>ENVFILE=app/etc/env.php
+</code></pre></div>
+
+<p>Set the below variables for RabbitMQ conectivity.</p>
+<div class="codehilite"><pre><span></span><code><span class="k">export</span><span class="w"> </span><span class="n">RABBITHOST</span><span class="o">=$</span><span class="p">(</span><span class="n">grep</span><span class="w"> </span><span class="n">amqp</span><span class="w"> </span><span class="o">-</span><span class="n">A</span><span class="w"> </span><span class="mi">7</span><span class="w"> </span><span class="o">$</span><span class="p">{</span><span class="n">ENVFILE</span><span class="p">}</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="n">grep</span><span class="w"> </span><span class="n">host</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="n">head</span><span class="w"> </span><span class="o">-</span><span class="n">n1</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="n">sed</span><span class="w"> </span><span class="s2">&quot;s/.*[=][&gt;][ ]*[&#39;]//&quot;</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="n">sed</span><span class="w"> </span><span class="s2">&quot;s/[&#39;][,]//&quot;</span><span class="p">);</span><span class="w"></span>
+
+<span class="k">export</span><span class="w"> </span><span class="n">RABBITUSER</span><span class="o">=$</span><span class="p">(</span><span class="n">grep</span><span class="w"> </span><span class="n">amqp</span><span class="w"> </span><span class="o">-</span><span class="n">A</span><span class="w"> </span><span class="mi">7</span><span class="w"> </span><span class="o">$</span><span class="p">{</span><span class="n">ENVFILE</span><span class="p">}</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="n">grep</span><span class="w"> </span><span class="n">user</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="n">head</span><span class="w"> </span><span class="o">-</span><span class="n">n1</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="n">sed</span><span class="w"> </span><span class="s2">&quot;s/.*[=][&gt;][ ]*[&#39;]//&quot;</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="n">sed</span><span class="w"> </span><span class="s2">&quot;s/[&#39;][,]//&quot;</span><span class="p">);</span><span class="w"></span>
+
+<span class="k">export</span><span class="w"> </span><span class="n">RABBITPASS</span><span class="o">=$</span><span class="p">(</span><span class="n">grep</span><span class="w"> </span><span class="n">amqp</span><span class="w"> </span><span class="o">-</span><span class="n">A</span><span class="w"> </span><span class="mi">7</span><span class="w"> </span><span class="o">$</span><span class="p">{</span><span class="n">ENVFILE</span><span class="p">}</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="n">grep</span><span class="w"> </span><span class="n">password</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="n">head</span><span class="w"> </span><span class="o">-</span><span class="n">n1</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="n">sed</span><span class="w"> </span><span class="s2">&quot;s/.*[=][&gt;][ ]*[&#39;]//&quot;</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="n">sed</span><span class="w"> </span><span class="s2">&quot;s/[&#39;][,]//&quot;</span><span class="p">);</span><span class="w"></span>
+</code></pre></div>
+
+<h2 id="connect-to-rabbitmq-in-mcloud">Connect to RabbitMQ in MCloud<a class="headerlink" href="#connect-to-rabbitmq-in-mcloud" title="Permanent link">⚓︎</a></h2>
 <h3 id="list-exchnages">List Exchnages<a class="headerlink" href="#list-exchnages" title="Permanent link">⚓︎</a></h3>
-<div class="codehilite"><pre><span></span><code>rabbitmqadmin -u mcloudprojectID_stg2 -p <span class="cp">${</span><span class="n">RABBITPASS</span><span class="cp">}</span> -H localhost list exchanges
+<div class="codehilite"><pre><span></span><code>rabbitmqadmin -u <span class="cp">${</span><span class="n">RABBITUSER</span><span class="cp">}</span> -p <span class="cp">${</span><span class="n">RABBITPASS</span><span class="cp">}</span> -H <span class="cp">${</span><span class="n">RABBITHOST</span><span class="cp">}</span> list exchanges
 </code></pre></div>
 
 <h3 id="list-vhosts">List Vhosts<a class="headerlink" href="#list-vhosts" title="Permanent link">⚓︎</a></h3>
-<div class="codehilite"><pre><span></span><code>rabbitmqadmin -u mcloudprojectID_stg2 -p <span class="cp">${</span><span class="n">RABBITPASS</span><span class="cp">}</span> -H localhost list vhosts
+<div class="codehilite"><pre><span></span><code>rabbitmqadmin -u <span class="cp">${</span><span class="n">RABBITUSER</span><span class="cp">}</span> -p <span class="cp">${</span><span class="n">RABBITPASS</span><span class="cp">}</span> -H <span class="cp">${</span><span class="n">RABBITHOST</span><span class="cp">}</span> list vhosts
 </code></pre></div>
 
 <h3 id="list-queues">List Queues<a class="headerlink" href="#list-queues" title="Permanent link">⚓︎</a></h3>
-<div class="codehilite"><pre><span></span><code>rabbitmqadmin -u mcloudprojectID_stg2 -p <span class="cp">${</span><span class="n">RABBITPASS</span><span class="cp">}</span> -H localhost list queues
+<div class="codehilite"><pre><span></span><code>rabbitmqadmin -u <span class="cp">${</span><span class="n">RABBITUSER</span><span class="cp">}</span> -p <span class="cp">${</span><span class="n">RABBITPASS</span><span class="cp">}</span> -H <span class="cp">${</span><span class="n">RABBITHOST</span><span class="cp">}</span> list queues
 </code></pre></div>
 
 <h3 id="list-bindings">List Bindings<a class="headerlink" href="#list-bindings" title="Permanent link">⚓︎</a></h3>
-<div class="codehilite"><pre><span></span><code>rabbitmqadmin -u mcloudprojectID_stg2 -p <span class="cp">${</span><span class="n">RABBITPASS</span><span class="cp">}</span> -H localhost list bindings
+<div class="codehilite"><pre><span></span><code>rabbitmqadmin -u <span class="cp">${</span><span class="n">RABBITUSER</span><span class="cp">}</span> -p <span class="cp">${</span><span class="n">RABBITPASS</span><span class="cp">}</span> -H <span class="cp">${</span><span class="n">RABBITHOST</span><span class="cp">}</span> list bindings
+</code></pre></div>
+
+<h2 id="additional-info">Additional Info.<a class="headerlink" href="#additional-info" title="Permanent link">⚓︎</a></h2>
+<p>In the above senario, the admin port is running on TCP port 80/HTTP.
+But if in your case the rabbitMQ admin port is running on TCP port 443/HTTPS then add below option:</p>
+<div class="codehilite"><pre><span></span><code>--port 443 --ssl
+</code></pre></div>
+
+<p>for ex:</p>
+<div class="codehilite"><pre><span></span><code>rabbitmqadmin -u <span class="cp">${</span><span class="n">RABBITUSER</span><span class="cp">}</span> -p <span class="cp">${</span><span class="n">RABBITPASS</span><span class="cp">}</span> -H <span class="cp">${</span><span class="n">RABBITHOST</span><span class="cp">}</span> --port 443 --ssl list queues
 </code></pre></div>
 
               
