@@ -25,34 +25,68 @@ Which will provide you mething like:
    ],
 ```
 
+On non-magento-cloud instances use:
+
+```
+grep amqp -A 7 app/etc/env.php
+```
+
+## Set Variables
+
+Set the path of your magrnto `env.php` file.
+
+```
+ENVFILE=app/etc/env.php
+```
+
+Set the below variables for RabbitMQ conectivity.
+
+```
+export RABBITHOST=$(grep amqp -A 7 ${ENVFILE} | grep host | head -n1 | sed "s/.*[=][>][ ]*[']//" | sed "s/['][,]//");
+
+export RABBITUSER=$(grep amqp -A 7 ${ENVFILE} | grep user | head -n1 | sed "s/.*[=][>][ ]*[']//" | sed "s/['][,]//");
+
+export RABBITPASS=$(grep amqp -A 7 ${ENVFILE} | grep password | head -n1 | sed "s/.*[=][>][ ]*[']//" | sed "s/['][,]//");
+```
+
+
 ## Connect to RabbitMQ in MCloud
-
-Lets set the rabbitmq password as:
-
-```
-export RABBITPASS=Password_of_your_RabbitMQ
-```
 
 ### List Exchnages
 
 ```
-rabbitmqadmin -u mcloudprojectID_stg2 -p ${RABBITPASS} -H localhost list exchanges
+rabbitmqadmin -u ${RABBITUSER} -p ${RABBITPASS} -H ${RABBITHOST} list exchanges
 ```
 
 ### List Vhosts
 
 ```
-rabbitmqadmin -u mcloudprojectID_stg2 -p ${RABBITPASS} -H localhost list vhosts
+rabbitmqadmin -u ${RABBITUSER} -p ${RABBITPASS} -H ${RABBITHOST} list vhosts
 ```
 
 ### List Queues
 
 ```
-rabbitmqadmin -u mcloudprojectID_stg2 -p ${RABBITPASS} -H localhost list queues
+rabbitmqadmin -u ${RABBITUSER} -p ${RABBITPASS} -H ${RABBITHOST} list queues
 ```
 
 ### List Bindings
 
 ```
-rabbitmqadmin -u mcloudprojectID_stg2 -p ${RABBITPASS} -H localhost list bindings
+rabbitmqadmin -u ${RABBITUSER} -p ${RABBITPASS} -H ${RABBITHOST} list bindings
+```
+
+## Additional Info.
+
+In the above senario, the admin port is running on TCP port 80/HTTP.
+But if in your case the rabbitMQ admin port is running on TCP port 443/HTTPS then add below option:
+
+```
+--port 443 --ssl
+```
+
+for ex:
+
+```
+rabbitmqadmin -u ${RABBITUSER} -p ${RABBITPASS} -H ${RABBITHOST} --port 443 --ssl list queues
 ```
