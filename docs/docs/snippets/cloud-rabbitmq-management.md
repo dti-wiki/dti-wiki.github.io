@@ -36,7 +36,7 @@ grep amqp -A 7 app/etc/env.php
 Set the path of your magrnto `env.php` file.
 
 ```
-ENVFILE=app/etc/env.php
+export ENVFILE=app/etc/env.php
 ```
 
 Set the below variables for RabbitMQ conectivity.
