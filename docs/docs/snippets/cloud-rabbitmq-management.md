@@ -52,7 +52,7 @@ export RABBITPASS=$(grep amqp -A 7 ${ENVFILE} | grep password | head -n1 | sed "
 
 ## Connect to RabbitMQ in MCloud
 
-### List Exchnages
+### List Exchanges
 
 ```
 rabbitmqadmin -u ${RABBITUSER} -p ${RABBITPASS} -H ${RABBITHOST} list exchanges
