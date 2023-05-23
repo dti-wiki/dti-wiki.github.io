@@ -58,6 +58,7 @@ nav:
           - 'Container Init': 'containers/docker/container-init.md'
           - 'Caddy Container': 'containers/docker/caddy-container.md'
       - 'Kubernetes':
+          - 'Index': 'containers/kubernetes/index.md'
           - 'Kubectl Basic Cheatsheet Part1': 'containers/kubernetes/kubectl/cheatsheets/kubectl-basic-part-1.md'
           - 'Kubectl Basic Cheatsheet Part2': 'containers/kubernetes/kubectl/cheatsheets/kubectl-basic-part-2.md'
   - About: 'about.md'
