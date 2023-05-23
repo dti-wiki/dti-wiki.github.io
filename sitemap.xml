@@ -41,6 +41,11 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
+         <loc>https://github.com/anishcorratech/dti-wiki/containers/kubernetes/kubectl/cheatsheets/kubectl-basic-part-2/</loc>
+         <lastmod>2023-05-23</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
          <loc>https://github.com/anishcorratech/dti-wiki/snippets/cloud-cron-disable/</loc>
          <lastmod>2023-05-23</lastmod>
          <changefreq>daily</changefreq>
