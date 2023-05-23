@@ -51,6 +51,6 @@ nav:
       - 'Magento Indexing': 'snippets/magento-indexing.md'
       - 'Magento Cloud Elasticsearch': 'snippets/cloud-elasticsearch-management.md'
       - 'Magento Cloud RabbitMQ': 'snippets/cloud-rabbitmq-management.md'
-  - 'Containers':
+  - 'Containers'
   - About: 'about.md'
 
