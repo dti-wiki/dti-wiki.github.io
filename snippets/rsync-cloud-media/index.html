@@ -778,10 +778,10 @@
 
 
 <h1 id="rsync-media-files-in-magento-cloud">Rsync Media files in Magento Cloud<a class="headerlink" href="#rsync-media-files-in-magento-cloud" title="Permanent link">⚓︎</a></h1>
-<p>We may have to sync magnto media files from one server to another in magento cloud.</p>
+<p>We may have to sync magento media files from one server to another in magento cloud.</p>
 <p>Magento cloud does not give us full permissions on their servers, we are left with restricted access.</p>
 <h2 id="warning">Warning<a class="headerlink" href="#warning" title="Permanent link">⚓︎</a></h2>
-<p>Make necessary backups of the media files on the destination remote server.</p>
+<p>Make necessary backups of the media files on the destination magento cloud server.</p>
 <div class="codehilite"><pre><span></span><code>BKPTIM=$(date +&quot;%Y-%m-%d_%H-%M-%S&quot;)
 </code></pre></div>
 
@@ -793,7 +793,9 @@
 </code></pre></div>
 
 <h2 id="procedure">Procedure<a class="headerlink" href="#procedure" title="Permanent link">⚓︎</a></h2>
-<p>Create a temporary SSH key file and add the SSH Public key in magento cloud project prortal under SSH Keys.</p>
+<p>Create a temporary SSH key file on the source magento cloud server.</p>
+<p>Add the SSH Public key in magento cloud project portal under SSH Keys.</p>
+<p>Login to source magento cloud server and then run:</p>
 <div class="codehilite"><pre><span></span><code><span class="n">rsync</span><span class="w"> </span><span class="o">-</span><span class="n">Pavz</span><span class="w"> </span><span class="o">-</span><span class="n">e</span><span class="w"> </span><span class="s2">&quot;ssh -i var/path/to/private_key_rsa&quot;</span><span class="w"> </span><span class="n">pub</span><span class="o">/</span><span class="n">media</span><span class="o">/*</span><span class="w"> </span><span class="n">remote_ssh_user</span><span class="err">@</span><span class="k">remote</span><span class="o">.</span><span class="n">destination</span><span class="o">.</span><span class="n">server</span><span class="p">:</span><span class="o">/</span><span class="n">path</span><span class="o">/</span><span class="n">to</span><span class="o">/</span><span class="n">the</span><span class="o">/</span><span class="n">magento</span><span class="o">/</span><span class="n">pub</span><span class="o">/</span><span class="n">media</span><span class="o">/</span><span class="w"></span>
 </code></pre></div>
 
