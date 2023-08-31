@@ -1,4 +1,4 @@
-# Rsysnc Media files in Magento Cloud
+# Rsync Media files in Magento Cloud
 
 We may have to sync magnto media files from one server to another in magento cloud.
 
