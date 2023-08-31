@@ -51,6 +51,7 @@ nav:
       - 'Magento Indexing': 'snippets/magento-indexing.md'
       - 'Magento Cloud Elasticsearch': 'snippets/cloud-elasticsearch-management.md'
       - 'Magento Cloud RabbitMQ': 'snippets/cloud-rabbitmq-management.md'
+      - 'Magento Cloud Rsync Media Files': 'snippets/rsync-cloud-media.md'
   - 'Containers':
       - 'Index': 'containers.md'
       - 'Docker':
