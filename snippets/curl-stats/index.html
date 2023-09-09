@@ -12,14 +12,14 @@
         <meta name="author" content="anish.asokan">
       
       
-        <link rel="canonical" href="https://github.com/anishcorratech/dti-wiki/snippets/rsync-cloud-media/">
+        <link rel="canonical" href="https://github.com/anishcorratech/dti-wiki/snippets/curl-stats/">
       
       <link rel="icon" href="../../images/favicon.png">
       <meta name="generator" content="mkdocs-1.3.1, mkdocs-material-8.2.11">
     
     
       
-        <title>Magento Cloud Rsync Media Files - Devops Technical Institute</title>
+        <title>Collect HTTP Stats usng cURL - Devops Technical Institute</title>
       
     
     
@@ -65,7 +65,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#rsync-media-files-in-magento-cloud" class="md-skip">
+        <a href="#collect-http-stats-usng-curl" class="md-skip">
           Skip to content
         </a>
       
@@ -98,7 +98,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Magento Cloud Rsync Media Files
+              Collect HTTP Stats usng cURL
             
           </span>
         </div>
@@ -482,6 +482,20 @@
               
   
   
+  
+    <li class="md-nav__item">
+      <a href="../rsync-cloud-media/" class="md-nav__link">
+        Magento Cloud Rsync Media Files
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
     
   
   
@@ -494,12 +508,12 @@
       
       
         <label class="md-nav__link md-nav__link--active" for="__toc">
-          Magento Cloud Rsync Media Files
+          Collect HTTP Stats usng cURL
           <span class="md-nav__icon md-icon"></span>
         </label>
       
       <a href="./" class="md-nav__link md-nav__link--active">
-        Magento Cloud Rsync Media Files
+        Collect HTTP Stats usng cURL
       </a>
       
         
@@ -518,15 +532,15 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#warning" class="md-nav__link">
-    Warning
+  <a href="#prerequisite" class="md-nav__link">
+    Prerequisite
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#procedure" class="md-nav__link">
-    Procedure
+  <a href="#execution" class="md-nav__link">
+    Execution
   </a>
   
 </li>
@@ -535,20 +549,6 @@
   
 </nav>
       
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../curl-stats/" class="md-nav__link">
-        Collect HTTP Stats usng cURL
-      </a>
     </li>
   
 
@@ -785,32 +785,68 @@
             <article class="md-content__inner md-typeset">
               
                 
-  <a href="https://github.com/anishcorratech/dti-wiki/edit/main/docs/docs/snippets/rsync-cloud-media.md" title="Edit this page" class="md-content__button md-icon">
+  <a href="https://github.com/anishcorratech/dti-wiki/edit/main/docs/docs/snippets/curl-stats.md" title="Edit this page" class="md-content__button md-icon">
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25Z"/></svg>
   </a>
 
 
 
-<h1 id="rsync-media-files-in-magento-cloud">Rsync Media files in Magento Cloud<a class="headerlink" href="#rsync-media-files-in-magento-cloud" title="Permanent link">⚓︎</a></h1>
-<p>We may have to sync magento media files from one server to another in magento cloud.</p>
-<p>Magento cloud does not give us full permissions on their servers, we are left with restricted access.</p>
-<h2 id="warning">Warning<a class="headerlink" href="#warning" title="Permanent link">⚓︎</a></h2>
-<p>Make necessary backups of the media files on the destination magento cloud server.</p>
-<div class="codehilite"><pre><span></span><code>BKPTIM=$(date +&quot;%Y-%m-%d_%H-%M-%S&quot;)
+<h1 id="collect-http-stats-usng-curl">Collect HTTP Stats usng cURL<a class="headerlink" href="#collect-http-stats-usng-curl" title="Permanent link">⚓︎</a></h1>
+<p>cURL supports formatted output for the details of the request (see the <a href="https://curl.se/docs/manpage.html">cURL manpage</a> for details, under <code>-w, –write-out &lt;format&gt;</code> ).
+Lets try to collect the time statistics of HTTP connection. Times below are in seconds.</p>
+<h2 id="prerequisite">Prerequisite<a class="headerlink" href="#prerequisite" title="Permanent link">⚓︎</a></h2>
+<p>we need a http-delay statistics file.</p>
+<p>Lets create a directory and file for this requirement.</p>
+<div class="codehilite"><pre><span></span><code>mkdir -vp ~/projects/dti-wiki/http-delay
 </code></pre></div>
 
-<div class="codehilite"><pre><span></span><code>TKT=&quot;JIRA-123&quot;
+<div class="codehilite"><pre><span></span><code>touch ~/projects/dti-wiki/http-delay/curl-stats.txt
 </code></pre></div>
 
-<div class="codehilite"><pre><span></span><code><span class="n">cd</span><span class="w"> </span><span class="n">pub</span><span class="o">/</span><span class="w"></span>
-<span class="n">tar</span><span class="w"> </span><span class="o">-</span><span class="n">zcf</span><span class="w"> </span><span class="o">../</span><span class="k">var</span><span class="o">/$</span><span class="n">TKT</span><span class="o">.</span><span class="n">media</span><span class="o">.</span><span class="n">backup</span><span class="o">.$</span><span class="n">BKPTIM</span><span class="o">.</span><span class="n">tar</span><span class="o">.</span><span class="n">gz</span><span class="w"> </span><span class="n">media</span><span class="w"></span>
+<p>Lets create the contents for the statistics file.</p>
+<p>paste the below content to: <code>~/projects/dti-wiki/http-delay/curl-stats.txt</code></p>
+<div class="codehilite"><pre><span></span><code>     time_namelookup:  %{time_namelookup}s\n
+        time_connect:  %{time_connect}s\n
+     time_appconnect:  %{time_appconnect}s\n
+    time_pretransfer:  %{time_pretransfer}s\n
+       time_redirect:  %{time_redirect}s\n
+  time_starttransfer:  %{time_starttransfer}s\n
+                     ----------\n
+          time_total:  %{time_total}s\n
 </code></pre></div>
 
-<h2 id="procedure">Procedure<a class="headerlink" href="#procedure" title="Permanent link">⚓︎</a></h2>
-<p>Create a temporary SSH key file on the source magento cloud server.</p>
-<p>Add the SSH Public key in magento cloud project portal under SSH Keys.</p>
-<p>Login to source magento cloud server and then run:</p>
-<div class="codehilite"><pre><span></span><code><span class="n">rsync</span><span class="w"> </span><span class="o">-</span><span class="n">Pavz</span><span class="w"> </span><span class="o">-</span><span class="n">e</span><span class="w"> </span><span class="s2">&quot;ssh -i var/path/to/private_key_rsa&quot;</span><span class="w"> </span><span class="n">pub</span><span class="o">/</span><span class="n">media</span><span class="o">/*</span><span class="w"> </span><span class="n">remote_ssh_user</span><span class="err">@</span><span class="k">remote</span><span class="o">.</span><span class="n">destination</span><span class="o">.</span><span class="n">server</span><span class="p">:</span><span class="o">/</span><span class="n">path</span><span class="o">/</span><span class="n">to</span><span class="o">/</span><span class="n">the</span><span class="o">/</span><span class="n">magento</span><span class="o">/</span><span class="n">pub</span><span class="o">/</span><span class="n">media</span><span class="o">/</span><span class="w"></span>
+<h2 id="execution">Execution<a class="headerlink" href="#execution" title="Permanent link">⚓︎</a></h2>
+<p>curl -w "@${HOME}/projects/dti-wiki/http-delay/curl-stats.txt" -o /dev/null -s "http://wordpress.com/"</p>
+<p>We can create this cURL command as a bash script.</p>
+<p>create a file : <code>~/bin/httpstats</code> with below content.</p>
+<div class="codehilite"><pre><span></span><code><span class="ch">#!/bin/bash</span>
+
+curl -w @- -o /dev/null -s <span class="s2">&quot;</span><span class="nv">$@</span><span class="s2">&quot;</span> <span class="s">&lt;&lt;&#39;EOF&#39;</span>
+<span class="s">    time_namelookup:  %{time_namelookup}\n</span>
+<span class="s">       time_connect:  %{time_connect}\n</span>
+<span class="s">    time_appconnect:  %{time_appconnect}\n</span>
+<span class="s">   time_pretransfer:  %{time_pretransfer}\n</span>
+<span class="s">      time_redirect:  %{time_redirect}\n</span>
+<span class="s"> time_starttransfer:  %{time_starttransfer}\n</span>
+<span class="s">                    ----------\n</span>
+<span class="s">         time_total:  %{time_total}\n</span>
+<span class="s">EOF</span>
+</code></pre></div>
+
+<p>Now lets give execute permissions for <code>~/bin/httpstats</code> file:</p>
+<div class="codehilite"><pre><span></span><code>chmod +x ~/bin/httpstats
+</code></pre></div>
+
+<p>Then we can execute the command like</p>
+<div class="codehilite"><pre><span></span><code>httpstats http://wordpress.org
+</code></pre></div>
+
+<h1 id="other-useful-oneliners">Other useful oneliners<a class="headerlink" href="#other-useful-oneliners" title="Permanent link">⚓︎</a></h1>
+<p>Collect <code>total time</code> taken:</p>
+<div class="codehilite"><pre><span></span><code>curl -o /dev/null -s -w &#39;Total: %{time_total}s\n&#39;  https://www.google.com
+</code></pre></div>
+
+<div class="codehilite"><pre><span></span><code>curl -o /dev/null -s -w &#39;Establish Connection: %{time_connect}s\nTTFB: %{time_starttransfer}s\nTotal: %{time_total}s\n&#39;  https://www.google.com
 </code></pre></div>
 
               
@@ -830,7 +866,7 @@
     <nav class="md-footer__inner md-grid" aria-label="Footer">
       
         
-        <a href="../cloud-rabbitmq-management/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Magento Cloud RabbitMQ" rel="prev">
+        <a href="../rsync-cloud-media/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Magento Cloud Rsync Media Files" rel="prev">
           <div class="md-footer__button md-icon">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
           </div>
@@ -839,20 +875,20 @@
               <span class="md-footer__direction">
                 Previous
               </span>
-              Magento Cloud RabbitMQ
+              Magento Cloud Rsync Media Files
             </div>
           </div>
         </a>
       
       
         
-        <a href="../curl-stats/" class="md-footer__link md-footer__link--next" aria-label="Next: Collect HTTP Stats usng cURL" rel="next">
+        <a href="../../containers/" class="md-footer__link md-footer__link--next" aria-label="Next: Index" rel="next">
           <div class="md-footer__title">
             <div class="md-ellipsis">
               <span class="md-footer__direction">
                 Next
               </span>
-              Collect HTTP Stats usng cURL
+              Index
             </div>
           </div>
           <div class="md-footer__button md-icon">
