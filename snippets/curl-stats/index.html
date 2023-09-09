@@ -816,7 +816,10 @@ Lets try to collect the time statistics of HTTP connection. Times below are in s
 </code></pre></div>
 
 <h2 id="execution">Execution<a class="headerlink" href="#execution" title="Permanent link">⚓︎</a></h2>
-<p>curl -w "@${HOME}/projects/dti-wiki/http-delay/curl-stats.txt" -o /dev/null -s "http://wordpress.com/"</p>
+<p>We can execute the cURL as below to collect the HTTP statistics.</p>
+<div class="codehilite"><pre><span></span><code>curl -w &quot;@<span class="cp">${</span><span class="n">HOME</span><span class="cp">}</span>/projects/dti-wiki/http-delay/curl-stats.txt&quot; -o /dev/null -s &quot;http://wordpress.com/&quot;
+</code></pre></div>
+
 <p>We can create this cURL command as a bash script.</p>
 <p>create a file : <code>~/bin/httpstats</code> with below content.</p>
 <div class="codehilite"><pre><span></span><code><span class="ch">#!/bin/bash</span>
