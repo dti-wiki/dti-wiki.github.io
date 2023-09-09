@@ -34,8 +34,11 @@ paste the below content to: `~/projects/dti-wiki/http-delay/curl-stats.txt`
 
 ## Execution
 
-curl -w "@${HOME}/projects/dti-wiki/http-delay/curl-stats.txt" -o /dev/null -s "http://wordpress.com/"
+We can execute the cURL as below to collect the HTTP statistics.
 
+```
+curl -w "@${HOME}/projects/dti-wiki/http-delay/curl-stats.txt" -o /dev/null -s "http://wordpress.com/"
+```
 
 We can create this cURL command as a bash script.
 
