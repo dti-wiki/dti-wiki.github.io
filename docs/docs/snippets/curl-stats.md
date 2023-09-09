@@ -1,4 +1,4 @@
-# Collect HTTP Stats usng cURL
+# Collect HTTP Stats using cURL
 
 cURL supports formatted output for the details of the request (see the [cURL manpage](https://curl.se/docs/manpage.html) for details, under `-w, –write-out <format>` ).
 Lets try to collect the time statistics of HTTP connection. Times below are in seconds.
