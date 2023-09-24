@@ -31,7 +31,6 @@ copyright: 'Copyright &copy; 2021-2023 DTI Wiki'
 markdown_extensions:
   - mdx_math:
       enable_dollar_delimiter: true
-  - fontawesome_markdown
   - admonition
   - footnotes
   - attr_list
