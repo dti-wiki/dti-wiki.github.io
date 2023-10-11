@@ -14,7 +14,7 @@ Then you may need "con-init" or `coninit.sh` a.k.a "Container Init"
 
 This is a `coninit.sh` for alpine linux based containers.
 
-```
+``` bash
 #!/bin/bash
 
 UID=1000
@@ -39,7 +39,7 @@ tail -f /dev/null
 
 Now to use this `coninit.sh` we wil employ a `docker-compose.yml` file as below:
 
-```
+``` yaml
 version: '3.8'
 services:
   node-dev:
@@ -69,7 +69,7 @@ now a new container named `node-dev` with start using the `node:16.16.0-slim` im
 
 Now lets connect to the new container, assuming we created the user as `anish` in the `coninit.sh` file. If you used a different user replace `anish` with the username you used in the below command.
 
-```
+``` bash
 docker-compose exec -u anish -it node-dev /bin/bash
 ```
 
