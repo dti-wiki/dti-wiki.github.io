@@ -14,7 +14,8 @@ theme:
     - navigation.expand
     - navigation.top
     - toc.integrate
-    #- header.autohide
+    - content.code.copy
+    - content.tabs.link
   palette:
     scheme: default
   font:
@@ -35,6 +36,16 @@ markdown_extensions:
   - footnotes
   - attr_list
   - codehilite
+  - pymdownx.highlight:
+      anchor_linenums: true
+      line_spans: __span
+      pygments_lang_class: true
+  - pymdownx.inlinehilite
+  - pymdownx.snippets
+  - pymdownx.superfences
+  - pymdownx.tabbed:
+      alternate_style: true
+  - tables
   - toc:
       permalink: ⚓︎
       toc_depth: 3
