@@ -1013,58 +1013,57 @@
 <p>Using a Caddy Server as a reverse proxy to route traffic to adminer.</p>
 <h2 id="caddyfile">Caddyfile<a class="headerlink" href="#caddyfile" title="Permanent link">⚓︎</a></h2>
 <p>Below is the Caddyfile v2</p>
-<div class="codehilite"><pre><span></span><code><span class="n">your</span><span class="o">-</span><span class="n">name</span><span class="p">.</span><span class="k">domain</span><span class="p">.</span><span class="n">com</span>
-
-<span class="n">encode</span><span class="w"> </span><span class="n">gzip</span>
-<span class="n">reverse_proxy</span><span class="w"> </span><span class="o">/</span><span class="k">sql</span><span class="w"> </span><span class="nl">adminer</span><span class="p">:</span><span class="mi">8080</span>
-<span class="n">tls</span><span class="w"> </span><span class="n">your</span><span class="o">-</span><span class="n">email</span><span class="nv">@domain</span><span class="p">.</span><span class="n">com</span>
-</code></pre></div>
-
+<div class="language-text highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>your-name.domain.com
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>encode gzip
+</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>reverse_proxy /sql adminer:8080
+</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>tls your-email@domain.com
+</span></code></pre></div>
 <h2 id="docker-compose">Docker Compose<a class="headerlink" href="#docker-compose" title="Permanent link">⚓︎</a></h2>
 <p>Below is the <code>docker-compose.yml</code> file for Caddy Server.</p>
-<div class="codehilite"><pre><span></span><code><span class="n">version</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;3.2&quot;</span>
-
-<span class="n">services</span><span class="p">:</span>
-<span class="w">  </span><span class="n">sql1</span><span class="p">:</span>
-<span class="w">    </span><span class="n">container_name</span><span class="p">:</span><span class="w"> </span><span class="n">sql1</span>
-<span class="w">    </span><span class="n">image</span><span class="p">:</span><span class="w"> </span><span class="n">mcr</span><span class="o">.</span><span class="n">microsoft</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">mssql</span><span class="o">/</span><span class="n">server</span><span class="p">:</span><span class="mi">2022</span><span class="o">-</span><span class="n">latest</span>
-<span class="w">    </span><span class="n">tty</span><span class="p">:</span><span class="w"> </span><span class="bp">true</span>
-<span class="w">    </span><span class="n">ports</span><span class="p">:</span>
-<span class="w">      </span><span class="o">-</span><span class="w"> </span><span class="s2">&quot;135:135&quot;</span>
-<span class="w">      </span><span class="o">-</span><span class="w"> </span><span class="s2">&quot;1431:1431&quot;</span>
-<span class="w">      </span><span class="o">-</span><span class="w"> </span><span class="s2">&quot;1433:1433&quot;</span>
-<span class="w">      </span><span class="o">-</span><span class="w"> </span><span class="s2">&quot;1434:1434&quot;</span>
-<span class="w">    </span><span class="n">restart</span><span class="p">:</span><span class="w"> </span><span class="n">always</span>
-<span class="w">    </span><span class="n">environment</span><span class="p">:</span>
-<span class="w">      </span><span class="n">MSSQL_SA_PASSWORD</span><span class="p">:</span><span class="w"> </span><span class="n">fake1234567890xyz</span>
-<span class="w">      </span><span class="n">SA_PASSWORD</span><span class="p">:</span><span class="w"> </span><span class="n">fake1234567890xyz</span>
-<span class="w">      </span><span class="n">ACCEPT_EULA</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Y&quot;</span>
-<span class="w">    </span><span class="n">volumes</span><span class="p">:</span>
-<span class="w">      </span><span class="o">-</span><span class="w"> </span><span class="o">/</span><span class="n">home</span><span class="o">/</span><span class="n">user</span><span class="o">/</span><span class="n">service</span><span class="o">/</span><span class="n">dumps</span><span class="p">:</span><span class="o">/</span><span class="n">dumps</span>
-<span class="w">      </span><span class="o">-</span><span class="w"> </span><span class="o">/</span><span class="n">home</span><span class="o">/</span><span class="n">user</span><span class="o">/</span><span class="n">service</span><span class="o">/</span><span class="n">db</span><span class="o">/</span><span class="n">data</span><span class="p">:</span><span class="o">/</span><span class="k">var</span><span class="o">/</span><span class="n">opt</span><span class="o">/</span><span class="n">mssql</span><span class="o">/</span><span class="n">data</span>
-
-<span class="w">  </span><span class="n">caddy</span><span class="p">:</span>
-<span class="w">    </span><span class="n">image</span><span class="p">:</span><span class="w"> </span><span class="n">caddy</span><span class="p">:</span><span class="mf">2.6</span><span class="o">.</span><span class="mi">2</span><span class="o">-</span><span class="n">alpine</span>
-<span class="w">    </span><span class="n">container_name</span><span class="p">:</span><span class="w"> </span><span class="n">caddy</span>
-<span class="w">    </span><span class="n">restart</span><span class="p">:</span><span class="w"> </span><span class="n">always</span>
-<span class="w">    </span><span class="n">ports</span><span class="p">:</span>
-<span class="w">      </span><span class="o">-</span><span class="w"> </span><span class="s2">&quot;80:80&quot;</span>
-<span class="w">      </span><span class="o">-</span><span class="w"> </span><span class="s2">&quot;443:443&quot;</span>
-<span class="w">      </span><span class="o">-</span><span class="w"> </span><span class="s2">&quot;443:443/udp&quot;</span>
-<span class="w">    </span><span class="n">volumes</span><span class="p">:</span>
-<span class="w">      </span><span class="o">-</span><span class="w"> </span><span class="o">/</span><span class="n">home</span><span class="o">/</span><span class="n">user</span><span class="o">/</span><span class="n">service</span><span class="o">/</span><span class="n">caddy</span><span class="o">/</span><span class="n">Caddyfile</span><span class="p">:</span><span class="o">/</span><span class="n">etc</span><span class="o">/</span><span class="n">caddy</span><span class="o">/</span><span class="n">Caddyfile</span>
-
-<span class="w">  </span><span class="n">adminer</span><span class="p">:</span>
-<span class="w">    </span><span class="n">container_name</span><span class="p">:</span><span class="w"> </span><span class="n">adminer</span>
-<span class="w">    </span><span class="n">image</span><span class="p">:</span><span class="w"> </span><span class="n">adminer</span><span class="p">:</span><span class="n">latest</span>
-<span class="w">    </span><span class="n">ports</span><span class="p">:</span>
-<span class="w">      </span><span class="o">-</span><span class="w"> </span><span class="s2">&quot;8080:8080&quot;</span>
-<span class="w">    </span><span class="n">links</span><span class="p">:</span>
-<span class="w">      </span><span class="o">-</span><span class="w"> </span><span class="n">sql1</span>
-<span class="w">    </span><span class="n">depends_on</span><span class="p">:</span>
-<span class="w">      </span><span class="o">-</span><span class="w"> </span><span class="n">sql1</span>
-<span class="w">    </span><span class="n">restart</span><span class="p">:</span><span class="w"> </span><span class="n">always</span>
-</code></pre></div>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>version: &quot;3.2&quot;
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>
+</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>services:
+</span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a>  sql1:
+</span><span id="__span-1-5"><a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a>    container_name: sql1
+</span><span id="__span-1-6"><a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a>    image: mcr.microsoft.com/mssql/server:2022-latest
+</span><span id="__span-1-7"><a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a>    tty: true
+</span><span id="__span-1-8"><a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a>    ports:
+</span><span id="__span-1-9"><a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a>      - &quot;135:135&quot;
+</span><span id="__span-1-10"><a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a>      - &quot;1431:1431&quot;
+</span><span id="__span-1-11"><a id="__codelineno-1-11" name="__codelineno-1-11" href="#__codelineno-1-11"></a>      - &quot;1433:1433&quot;
+</span><span id="__span-1-12"><a id="__codelineno-1-12" name="__codelineno-1-12" href="#__codelineno-1-12"></a>      - &quot;1434:1434&quot;
+</span><span id="__span-1-13"><a id="__codelineno-1-13" name="__codelineno-1-13" href="#__codelineno-1-13"></a>    restart: always
+</span><span id="__span-1-14"><a id="__codelineno-1-14" name="__codelineno-1-14" href="#__codelineno-1-14"></a>    environment:
+</span><span id="__span-1-15"><a id="__codelineno-1-15" name="__codelineno-1-15" href="#__codelineno-1-15"></a>      MSSQL_SA_PASSWORD: fake1234567890xyz
+</span><span id="__span-1-16"><a id="__codelineno-1-16" name="__codelineno-1-16" href="#__codelineno-1-16"></a>      SA_PASSWORD: fake1234567890xyz
+</span><span id="__span-1-17"><a id="__codelineno-1-17" name="__codelineno-1-17" href="#__codelineno-1-17"></a>      ACCEPT_EULA: &quot;Y&quot;
+</span><span id="__span-1-18"><a id="__codelineno-1-18" name="__codelineno-1-18" href="#__codelineno-1-18"></a>    volumes:
+</span><span id="__span-1-19"><a id="__codelineno-1-19" name="__codelineno-1-19" href="#__codelineno-1-19"></a>      - /home/user/service/dumps:/dumps
+</span><span id="__span-1-20"><a id="__codelineno-1-20" name="__codelineno-1-20" href="#__codelineno-1-20"></a>      - /home/user/service/db/data:/var/opt/mssql/data
+</span><span id="__span-1-21"><a id="__codelineno-1-21" name="__codelineno-1-21" href="#__codelineno-1-21"></a>
+</span><span id="__span-1-22"><a id="__codelineno-1-22" name="__codelineno-1-22" href="#__codelineno-1-22"></a>  caddy:
+</span><span id="__span-1-23"><a id="__codelineno-1-23" name="__codelineno-1-23" href="#__codelineno-1-23"></a>    image: caddy:2.6.2-alpine
+</span><span id="__span-1-24"><a id="__codelineno-1-24" name="__codelineno-1-24" href="#__codelineno-1-24"></a>    container_name: caddy
+</span><span id="__span-1-25"><a id="__codelineno-1-25" name="__codelineno-1-25" href="#__codelineno-1-25"></a>    restart: always
+</span><span id="__span-1-26"><a id="__codelineno-1-26" name="__codelineno-1-26" href="#__codelineno-1-26"></a>    ports:
+</span><span id="__span-1-27"><a id="__codelineno-1-27" name="__codelineno-1-27" href="#__codelineno-1-27"></a>      - &quot;80:80&quot;
+</span><span id="__span-1-28"><a id="__codelineno-1-28" name="__codelineno-1-28" href="#__codelineno-1-28"></a>      - &quot;443:443&quot;
+</span><span id="__span-1-29"><a id="__codelineno-1-29" name="__codelineno-1-29" href="#__codelineno-1-29"></a>      - &quot;443:443/udp&quot;
+</span><span id="__span-1-30"><a id="__codelineno-1-30" name="__codelineno-1-30" href="#__codelineno-1-30"></a>    volumes:
+</span><span id="__span-1-31"><a id="__codelineno-1-31" name="__codelineno-1-31" href="#__codelineno-1-31"></a>      - /home/user/service/caddy/Caddyfile:/etc/caddy/Caddyfile
+</span><span id="__span-1-32"><a id="__codelineno-1-32" name="__codelineno-1-32" href="#__codelineno-1-32"></a>
+</span><span id="__span-1-33"><a id="__codelineno-1-33" name="__codelineno-1-33" href="#__codelineno-1-33"></a>  adminer:
+</span><span id="__span-1-34"><a id="__codelineno-1-34" name="__codelineno-1-34" href="#__codelineno-1-34"></a>    container_name: adminer
+</span><span id="__span-1-35"><a id="__codelineno-1-35" name="__codelineno-1-35" href="#__codelineno-1-35"></a>    image: adminer:latest
+</span><span id="__span-1-36"><a id="__codelineno-1-36" name="__codelineno-1-36" href="#__codelineno-1-36"></a>    ports:
+</span><span id="__span-1-37"><a id="__codelineno-1-37" name="__codelineno-1-37" href="#__codelineno-1-37"></a>      - &quot;8080:8080&quot;
+</span><span id="__span-1-38"><a id="__codelineno-1-38" name="__codelineno-1-38" href="#__codelineno-1-38"></a>    links:
+</span><span id="__span-1-39"><a id="__codelineno-1-39" name="__codelineno-1-39" href="#__codelineno-1-39"></a>      - sql1
+</span><span id="__span-1-40"><a id="__codelineno-1-40" name="__codelineno-1-40" href="#__codelineno-1-40"></a>    depends_on:
+</span><span id="__span-1-41"><a id="__codelineno-1-41" name="__codelineno-1-41" href="#__codelineno-1-41"></a>      - sql1
+</span><span id="__span-1-42"><a id="__codelineno-1-42" name="__codelineno-1-42" href="#__codelineno-1-42"></a>    restart: always
+</span></code></pre></div>
 
 
 
@@ -1075,6 +1074,8 @@
             </div>
           
           
+  <script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var tab,labels=set.querySelector(".tabbed-labels");for(tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
+
         </div>
         
           <button type="button" class="md-top md-icon" data-md-component="top" hidden>
@@ -1113,7 +1114,7 @@
     </div>
     
     
-    <script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.tabs", "navigation.expand", "navigation.top", "toc.integrate"], "search": "../../../assets/javascripts/workers/search.f886a092.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    <script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.tabs", "navigation.expand", "navigation.top", "toc.integrate", "content.code.copy", "content.tabs.link"], "search": "../../../assets/javascripts/workers/search.f886a092.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
     
     
       <script src="../../../assets/javascripts/bundle.aecac24b.min.js"></script>

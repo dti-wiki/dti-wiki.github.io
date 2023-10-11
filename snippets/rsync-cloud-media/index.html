@@ -1014,22 +1014,19 @@
 <p>Magento cloud does not give us full permissions on their servers, we are left with restricted access.</p>
 <h2 id="warning">Warning<a class="headerlink" href="#warning" title="Permanent link">⚓︎</a></h2>
 <p>Make necessary backups of the media files on the destination magento cloud server.</p>
-<div class="codehilite"><pre><span></span><code>BKPTIM=$(date +&quot;%Y-%m-%d_%H-%M-%S&quot;)
-</code></pre></div>
-
-<div class="codehilite"><pre><span></span><code>TKT=&quot;JIRA-123&quot;
-</code></pre></div>
-
-<div class="codehilite"><pre><span></span><code><span class="n">cd</span><span class="w"> </span><span class="n">pub</span><span class="o">/</span>
-<span class="n">tar</span><span class="w"> </span><span class="o">-</span><span class="n">zcf</span><span class="w"> </span><span class="o">../</span><span class="k">var</span><span class="o">/$</span><span class="n">TKT</span><span class="o">.</span><span class="n">media</span><span class="o">.</span><span class="n">backup</span><span class="o">.$</span><span class="n">BKPTIM</span><span class="o">.</span><span class="n">tar</span><span class="o">.</span><span class="n">gz</span><span class="w"> </span><span class="n">media</span>
-</code></pre></div>
-
+<div class="language-text highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>BKPTIM=$(date +&quot;%Y-%m-%d_%H-%M-%S&quot;)
+</span></code></pre></div>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>TKT=&quot;JIRA-123&quot;
+</span></code></pre></div>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>cd pub/
+</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>tar -zcf ../var/$TKT.media.backup.$BKPTIM.tar.gz media
+</span></code></pre></div>
 <h2 id="procedure">Procedure<a class="headerlink" href="#procedure" title="Permanent link">⚓︎</a></h2>
 <p>Create a temporary SSH key file on the source magento cloud server.</p>
 <p>Add the SSH Public key in magento cloud project portal under SSH Keys.</p>
 <p>Login to source magento cloud server and then run:</p>
-<div class="codehilite"><pre><span></span><code><span class="n">rsync</span><span class="w"> </span><span class="o">-</span><span class="n">Pavz</span><span class="w"> </span><span class="o">-</span><span class="n">e</span><span class="w"> </span><span class="s2">&quot;ssh -i var/path/to/private_key_rsa&quot;</span><span class="w"> </span><span class="n">pub</span><span class="o">/</span><span class="n">media</span><span class="o">/*</span><span class="w"> </span><span class="n">remote_ssh_user</span><span class="err">@</span><span class="k">remote</span><span class="o">.</span><span class="n">destination</span><span class="o">.</span><span class="n">server</span><span class="p">:</span><span class="o">/</span><span class="n">path</span><span class="o">/</span><span class="n">to</span><span class="o">/</span><span class="n">the</span><span class="o">/</span><span class="n">magento</span><span class="o">/</span><span class="n">pub</span><span class="o">/</span><span class="n">media</span><span class="o">/</span>
-</code></pre></div>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>rsync -Pavz -e &quot;ssh -i var/path/to/private_key_rsa&quot; pub/media/* remote_ssh_user@remote.destination.server:/path/to/the/magento/pub/media/
+</span></code></pre></div>
 
 
 
@@ -1040,6 +1037,8 @@
             </div>
           
           
+  <script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var tab,labels=set.querySelector(".tabbed-labels");for(tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
+
         </div>
         
           <button type="button" class="md-top md-icon" data-md-component="top" hidden>
@@ -1078,7 +1077,7 @@
     </div>
     
     
-    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.tabs", "navigation.expand", "navigation.top", "toc.integrate"], "search": "../../assets/javascripts/workers/search.f886a092.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.tabs", "navigation.expand", "navigation.top", "toc.integrate", "content.code.copy", "content.tabs.link"], "search": "../../assets/javascripts/workers/search.f886a092.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
     
     
       <script src="../../assets/javascripts/bundle.aecac24b.min.js"></script>

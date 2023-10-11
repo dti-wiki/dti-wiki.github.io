@@ -1042,73 +1042,68 @@
 <li>https://unofficial-kubernetes.readthedocs.io/en/latest/user-guide/jsonpath/</li>
 </ul>
 <h3 id="printing-the-names-of-kubernetes-deployments">Printing the names of kubernetes deployments<a class="headerlink" href="#printing-the-names-of-kubernetes-deployments" title="Permanent link">⚓︎</a></h3>
-<div class="codehilite"><pre><span></span><code>kubectl get -n kube-system deploy -o jsonpath=&#39;{range .items[*]}{.metadata.name}{&quot;\n&quot;}{end}&#39;
-</code></pre></div>
-
+<div class="language-text highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>kubectl get -n kube-system deploy -o jsonpath=&#39;{range .items[*]}{.metadata.name}{&quot;\n&quot;}{end}&#39;
+</span></code></pre></div>
 <p>See the sample output</p>
-<div class="codehilite"><pre><span></span><code>$<span class="w"> </span>kubectl<span class="w"> </span>get<span class="w"> </span>-n<span class="w"> </span>newrelic<span class="w"> </span>deploy<span class="w"> </span>-o<span class="w"> </span><span class="nv">jsonpath</span><span class="o">=</span><span class="s1">&#39;{range .items[*]}{.metadata.name}{&quot;\n&quot;}{end}&#39;</span>
-kelvin
-nri-bundle-kube-state-metrics
-nri-bundle-nri-kube-events
-nri-bundle-nri-metadata-injection
-nri-bundle-nrk8s-ksm
-vizier-cloud-connector
-vizier-query-broker
-</code></pre></div>
-
+<div class="language-text highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>$ kubectl get -n newrelic deploy -o jsonpath=&#39;{range .items[*]}{.metadata.name}{&quot;\n&quot;}{end}&#39;
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>kelvin
+</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>nri-bundle-kube-state-metrics
+</span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a>nri-bundle-nri-kube-events
+</span><span id="__span-1-5"><a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a>nri-bundle-nri-metadata-injection
+</span><span id="__span-1-6"><a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a>nri-bundle-nrk8s-ksm
+</span><span id="__span-1-7"><a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a>vizier-cloud-connector
+</span><span id="__span-1-8"><a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a>vizier-query-broker
+</span></code></pre></div>
 <h3 id="printing-the-ip-addresses-of-the-all-pods-in-newrelic-namespace">Printing the IP Addresses of the all pods in newrelic namespace<a class="headerlink" href="#printing-the-ip-addresses-of-the-all-pods-in-newrelic-namespace" title="Permanent link">⚓︎</a></h3>
-<div class="codehilite"><pre><span></span><code>kubectl get pods -n newrelic -o jsonpath=&#39;{range .items[*]}{.status.podIP}{&quot;\n&quot;}{end}&#39;
-</code></pre></div>
-
+<div class="language-text highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>kubectl get pods -n newrelic -o jsonpath=&#39;{range .items[*]}{.status.podIP}{&quot;\n&quot;}{end}&#39;
+</span></code></pre></div>
 <p>See the sample output</p>
-<div class="codehilite"><pre><span></span><code>$<span class="w"> </span>kubectl<span class="w"> </span>get<span class="w"> </span>pods<span class="w"> </span>-n<span class="w"> </span>newrelic<span class="w"> </span>-o<span class="w"> </span><span class="nv">jsonpath</span><span class="o">=</span><span class="s1">&#39;{range .items[*]}{.status.podIP}{&quot;\n&quot;}{end}&#39;</span>
-<span class="m">172</span>.16.0.179
-<span class="m">172</span>.16.1.17
-<span class="m">172</span>.16.1.198
-<span class="m">172</span>.16.1.61
-<span class="m">172</span>.16.0.183
-<span class="m">172</span>.16.0.187
-<span class="m">172</span>.16.1.132
-<span class="m">172</span>.16.1.178
-<span class="m">172</span>.16.1.11
-<span class="m">172</span>.16.0.178
-<span class="m">172</span>.16.1.167
-<span class="m">172</span>.16.1.214
-<span class="m">172</span>.16.1.161
-<span class="m">172</span>.16.0.81
-<span class="m">172</span>.16.1.209
-<span class="m">172</span>.16.1.61
-<span class="m">172</span>.16.0.183
-<span class="m">172</span>.16.1.198
-<span class="m">172</span>.16.1.102
-</code></pre></div>
-
+<div class="language-text highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>$ kubectl get pods -n newrelic -o jsonpath=&#39;{range .items[*]}{.status.podIP}{&quot;\n&quot;}{end}&#39;
+</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>172.16.0.179
+</span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a>172.16.1.17
+</span><span id="__span-3-4"><a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a>172.16.1.198
+</span><span id="__span-3-5"><a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a>172.16.1.61
+</span><span id="__span-3-6"><a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a>172.16.0.183
+</span><span id="__span-3-7"><a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a>172.16.0.187
+</span><span id="__span-3-8"><a id="__codelineno-3-8" name="__codelineno-3-8" href="#__codelineno-3-8"></a>172.16.1.132
+</span><span id="__span-3-9"><a id="__codelineno-3-9" name="__codelineno-3-9" href="#__codelineno-3-9"></a>172.16.1.178
+</span><span id="__span-3-10"><a id="__codelineno-3-10" name="__codelineno-3-10" href="#__codelineno-3-10"></a>172.16.1.11
+</span><span id="__span-3-11"><a id="__codelineno-3-11" name="__codelineno-3-11" href="#__codelineno-3-11"></a>172.16.0.178
+</span><span id="__span-3-12"><a id="__codelineno-3-12" name="__codelineno-3-12" href="#__codelineno-3-12"></a>172.16.1.167
+</span><span id="__span-3-13"><a id="__codelineno-3-13" name="__codelineno-3-13" href="#__codelineno-3-13"></a>172.16.1.214
+</span><span id="__span-3-14"><a id="__codelineno-3-14" name="__codelineno-3-14" href="#__codelineno-3-14"></a>172.16.1.161
+</span><span id="__span-3-15"><a id="__codelineno-3-15" name="__codelineno-3-15" href="#__codelineno-3-15"></a>172.16.0.81
+</span><span id="__span-3-16"><a id="__codelineno-3-16" name="__codelineno-3-16" href="#__codelineno-3-16"></a>172.16.1.209
+</span><span id="__span-3-17"><a id="__codelineno-3-17" name="__codelineno-3-17" href="#__codelineno-3-17"></a>172.16.1.61
+</span><span id="__span-3-18"><a id="__codelineno-3-18" name="__codelineno-3-18" href="#__codelineno-3-18"></a>172.16.0.183
+</span><span id="__span-3-19"><a id="__codelineno-3-19" name="__codelineno-3-19" href="#__codelineno-3-19"></a>172.16.1.198
+</span><span id="__span-3-20"><a id="__codelineno-3-20" name="__codelineno-3-20" href="#__codelineno-3-20"></a>172.16.1.102
+</span></code></pre></div>
 <p>You can use two fields and format it to your liking using whitespace as well.</p>
-<div class="codehilite"><pre><span></span><code>kubectl get pods -n newrelic -o jsonpath=&#39;{range .items[*]}{.metadata.namespace}{&quot;/&quot;}{.metadata.name}{&quot;,&quot;}{.status.podIP}{&quot;\n&quot;}{end}&#39;
-</code></pre></div>
-
+<div class="language-text highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>kubectl get pods -n newrelic -o jsonpath=&#39;{range .items[*]}{.metadata.namespace}{&quot;/&quot;}{.metadata.name}{&quot;,&quot;}{.status.podIP}{&quot;\n&quot;}{end}&#39;
+</span></code></pre></div>
 <p>See the sample output</p>
-<div class="codehilite"><pre><span></span><code>$<span class="w"> </span>kubectl<span class="w"> </span>get<span class="w"> </span>pods<span class="w"> </span>-n<span class="w"> </span>newrelic<span class="w"> </span>-o<span class="w"> </span><span class="nv">jsonpath</span><span class="o">=</span><span class="s1">&#39;{range .items[*]}{.metadata.namespace}{&quot;/&quot;}{.metadata.name}{&quot;,&quot;}{.status.podIP}{&quot;\n&quot;}{end}&#39;</span>
-newrelic/kelvin-54b954889c-4zsz5,172.16.0.179
-newrelic/nri-bundle-kube-state-metrics-778f8d7756-6tgzg,172.16.1.17
-newrelic/nri-bundle-newrelic-logging-9bctl,172.16.1.198
-newrelic/nri-bundle-newrelic-logging-splhw,172.16.1.61
-newrelic/nri-bundle-newrelic-logging-tfl7r,172.16.0.183
-newrelic/nri-bundle-newrelic-prometheus-agent-0,172.16.0.187
-newrelic/nri-bundle-nri-kube-events-695cc855d4-jtdtk,172.16.1.132
-newrelic/nri-bundle-nri-metadata-injection-7bfddbc55d-khxrt,172.16.1.178
-newrelic/nri-bundle-nrk8s-ksm-9bf8fbf54-fpp29,172.16.1.11
-newrelic/nri-bundle-nrk8s-kubelet-22plc,172.16.0.178
-newrelic/nri-bundle-nrk8s-kubelet-qzhhs,172.16.1.167
-newrelic/nri-bundle-nrk8s-kubelet-vpmbq,172.16.1.214
-newrelic/pl-nats-0,172.16.1.161
-newrelic/vizier-cloud-connector-5d454b78f6-wq2v8,172.16.0.81
-newrelic/vizier-metadata-0,172.16.1.209
-newrelic/vizier-pem-6ctzn,172.16.1.61
-newrelic/vizier-pem-vgbq5,172.16.0.183
-newrelic/vizier-pem-wfbwk,172.16.1.198
-newrelic/vizier-query-broker-7f57fbfc6d-5qckt,172.16.1.102
-</code></pre></div>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>$ kubectl get pods -n newrelic -o jsonpath=&#39;{range .items[*]}{.metadata.namespace}{&quot;/&quot;}{.metadata.name}{&quot;,&quot;}{.status.podIP}{&quot;\n&quot;}{end}&#39;
+</span><span id="__span-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>newrelic/kelvin-54b954889c-4zsz5,172.16.0.179
+</span><span id="__span-5-3"><a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a>newrelic/nri-bundle-kube-state-metrics-778f8d7756-6tgzg,172.16.1.17
+</span><span id="__span-5-4"><a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a>newrelic/nri-bundle-newrelic-logging-9bctl,172.16.1.198
+</span><span id="__span-5-5"><a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a>newrelic/nri-bundle-newrelic-logging-splhw,172.16.1.61
+</span><span id="__span-5-6"><a id="__codelineno-5-6" name="__codelineno-5-6" href="#__codelineno-5-6"></a>newrelic/nri-bundle-newrelic-logging-tfl7r,172.16.0.183
+</span><span id="__span-5-7"><a id="__codelineno-5-7" name="__codelineno-5-7" href="#__codelineno-5-7"></a>newrelic/nri-bundle-newrelic-prometheus-agent-0,172.16.0.187
+</span><span id="__span-5-8"><a id="__codelineno-5-8" name="__codelineno-5-8" href="#__codelineno-5-8"></a>newrelic/nri-bundle-nri-kube-events-695cc855d4-jtdtk,172.16.1.132
+</span><span id="__span-5-9"><a id="__codelineno-5-9" name="__codelineno-5-9" href="#__codelineno-5-9"></a>newrelic/nri-bundle-nri-metadata-injection-7bfddbc55d-khxrt,172.16.1.178
+</span><span id="__span-5-10"><a id="__codelineno-5-10" name="__codelineno-5-10" href="#__codelineno-5-10"></a>newrelic/nri-bundle-nrk8s-ksm-9bf8fbf54-fpp29,172.16.1.11
+</span><span id="__span-5-11"><a id="__codelineno-5-11" name="__codelineno-5-11" href="#__codelineno-5-11"></a>newrelic/nri-bundle-nrk8s-kubelet-22plc,172.16.0.178
+</span><span id="__span-5-12"><a id="__codelineno-5-12" name="__codelineno-5-12" href="#__codelineno-5-12"></a>newrelic/nri-bundle-nrk8s-kubelet-qzhhs,172.16.1.167
+</span><span id="__span-5-13"><a id="__codelineno-5-13" name="__codelineno-5-13" href="#__codelineno-5-13"></a>newrelic/nri-bundle-nrk8s-kubelet-vpmbq,172.16.1.214
+</span><span id="__span-5-14"><a id="__codelineno-5-14" name="__codelineno-5-14" href="#__codelineno-5-14"></a>newrelic/pl-nats-0,172.16.1.161
+</span><span id="__span-5-15"><a id="__codelineno-5-15" name="__codelineno-5-15" href="#__codelineno-5-15"></a>newrelic/vizier-cloud-connector-5d454b78f6-wq2v8,172.16.0.81
+</span><span id="__span-5-16"><a id="__codelineno-5-16" name="__codelineno-5-16" href="#__codelineno-5-16"></a>newrelic/vizier-metadata-0,172.16.1.209
+</span><span id="__span-5-17"><a id="__codelineno-5-17" name="__codelineno-5-17" href="#__codelineno-5-17"></a>newrelic/vizier-pem-6ctzn,172.16.1.61
+</span><span id="__span-5-18"><a id="__codelineno-5-18" name="__codelineno-5-18" href="#__codelineno-5-18"></a>newrelic/vizier-pem-vgbq5,172.16.0.183
+</span><span id="__span-5-19"><a id="__codelineno-5-19" name="__codelineno-5-19" href="#__codelineno-5-19"></a>newrelic/vizier-pem-wfbwk,172.16.1.198
+</span><span id="__span-5-20"><a id="__codelineno-5-20" name="__codelineno-5-20" href="#__codelineno-5-20"></a>newrelic/vizier-query-broker-7f57fbfc6d-5qckt,172.16.1.102
+</span></code></pre></div>
 
 
 
@@ -1119,6 +1114,8 @@ newrelic/vizier-query-broker-7f57fbfc6d-5qckt,172.16.1.102
             </div>
           
           
+  <script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var tab,labels=set.querySelector(".tabbed-labels");for(tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
+
         </div>
         
           <button type="button" class="md-top md-icon" data-md-component="top" hidden>
@@ -1157,7 +1154,7 @@ newrelic/vizier-query-broker-7f57fbfc6d-5qckt,172.16.1.102
     </div>
     
     
-    <script id="__config" type="application/json">{"base": "../../../../..", "features": ["navigation.tabs", "navigation.expand", "navigation.top", "toc.integrate"], "search": "../../../../../assets/javascripts/workers/search.f886a092.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    <script id="__config" type="application/json">{"base": "../../../../..", "features": ["navigation.tabs", "navigation.expand", "navigation.top", "toc.integrate", "content.code.copy", "content.tabs.link"], "search": "../../../../../assets/javascripts/workers/search.f886a092.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
     
     
       <script src="../../../../../assets/javascripts/bundle.aecac24b.min.js"></script>

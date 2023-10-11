@@ -1041,54 +1041,45 @@
 <p>For example, if you change the price of an item from <script type="math/tex">4.99 to </script>3.99. Magento must reindex the price change to display it on your storefront.</p>
 <h2 id="view-a-list-of-indexers">View a list of indexers<a class="headerlink" href="#view-a-list-of-indexers" title="Permanent link">⚓︎</a></h2>
 <p>To view a list of all indexers:</p>
-<div class="codehilite"><pre><span></span><code>bin/magento indexer:info
-</code></pre></div>
-
+<div class="language-text highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>bin/magento indexer:info
+</span></code></pre></div>
 <p>The list displays as follows:</p>
-<div class="codehilite"><pre><span></span><code>design_config_grid                       Design Config Grid
-customer_grid                            Customer Grid
-catalog_category_product                 Category Products
-catalog_product_category                 Product Categories
-catalogrule_rule                         Catalog Rule Product
-catalog_product_attribute                Product EAV
-inventory                                Inventory
-catalogrule_product                      Catalog Product Rule
-cataloginventory_stock                   Stock
-catalog_product_price                    Product Price
-catalogsearch_fulltext                   Catalog Search
-</code></pre></div>
-
+<div class="language-text highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>design_config_grid                       Design Config Grid
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>customer_grid                            Customer Grid
+</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>catalog_category_product                 Category Products
+</span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a>catalog_product_category                 Product Categories
+</span><span id="__span-1-5"><a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a>catalogrule_rule                         Catalog Rule Product
+</span><span id="__span-1-6"><a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a>catalog_product_attribute                Product EAV
+</span><span id="__span-1-7"><a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a>inventory                                Inventory
+</span><span id="__span-1-8"><a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a>catalogrule_product                      Catalog Product Rule
+</span><span id="__span-1-9"><a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a>cataloginventory_stock                   Stock
+</span><span id="__span-1-10"><a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a>catalog_product_price                    Product Price
+</span><span id="__span-1-11"><a id="__codelineno-1-11" name="__codelineno-1-11" href="#__codelineno-1-11"></a>catalogsearch_fulltext                   Catalog Search
+</span></code></pre></div>
 <h2 id="view-indexer-status">View indexer status<a class="headerlink" href="#view-indexer-status" title="Permanent link">⚓︎</a></h2>
 <p>Use this command to view the status of all indexers or specific indexers. For example, find out if an indexer needs to be reindexed.</p>
-<div class="codehilite"><pre><span></span><code><span class="n">bin</span><span class="o">/</span><span class="n">magento</span><span class="w"> </span><span class="nl">indexer</span><span class="p">:</span><span class="n">status</span><span class="w"> </span><span class="o">[</span><span class="n">indexer</span><span class="o">]</span>
-</code></pre></div>
-
+<div class="language-text highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>bin/magento indexer:status [indexer]
+</span></code></pre></div>
 <p>To list status of all indexers:</p>
-<div class="codehilite"><pre><span></span><code>bin/magento indexer:status
-</code></pre></div>
-
+<div class="language-text highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>bin/magento indexer:status
+</span></code></pre></div>
 <h2 id="to-reindex">To Reindex<a class="headerlink" href="#to-reindex" title="Permanent link">⚓︎</a></h2>
 <p>Use this command to reindex all or selected indexers one time only.</p>
-<div class="codehilite"><pre><span></span><code><span class="n">bin</span><span class="o">/</span><span class="n">magento</span><span class="w"> </span><span class="nl">indexer</span><span class="p">:</span><span class="n">reindex</span><span class="w"> </span><span class="o">[</span><span class="n">indexer</span><span class="o">]</span>
-</code></pre></div>
-
+<div class="language-text highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>bin/magento indexer:reindex [indexer]
+</span></code></pre></div>
 <p>To reindex all indexers:</p>
-<div class="codehilite"><pre><span></span><code>bin/magento indexer:reindex
-</code></pre></div>
-
+<div class="language-text highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>bin/magento indexer:reindex
+</span></code></pre></div>
 <p>To use multiple threads for indexing use:</p>
-<div class="codehilite"><pre><span></span><code>MAGE_INDEXER_THREADS_COUNT=16 php -dmemory_limit=8G bin/magento indexer:reindex
-</code></pre></div>
-
+<div class="language-text highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>MAGE_INDEXER_THREADS_COUNT=16 php -dmemory_limit=8G bin/magento indexer:reindex
+</span></code></pre></div>
 <h2 id="reset-indexer">Reset indexer<a class="headerlink" href="#reset-indexer" title="Permanent link">⚓︎</a></h2>
 <p>Use this command to invalidate the status of all indexers or specific indexers.</p>
-<div class="codehilite"><pre><span></span><code><span class="n">bin</span><span class="o">/</span><span class="n">magento</span><span class="w"> </span><span class="nl">indexer</span><span class="p">:</span><span class="n">reset</span><span class="w"> </span><span class="o">[</span><span class="n">indexer</span><span class="o">]</span>
-</code></pre></div>
-
+<div class="language-text highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>bin/magento indexer:reset [indexer]
+</span></code></pre></div>
 <p>To invalidate all indexers.</p>
-<div class="codehilite"><pre><span></span><code>bin/magento indexer:reset
-</code></pre></div>
-
+<div class="language-text highlight"><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>bin/magento indexer:reset
+</span></code></pre></div>
 <h3 id="references">References<a class="headerlink" href="#references" title="Permanent link">⚓︎</a></h3>
 <ul>
 <li>https://devdocs.magento.com/guides/v2.3/extension-dev-guide/indexing.html</li>
@@ -1104,6 +1095,8 @@ catalogsearch_fulltext                   Catalog Search
             </div>
           
           
+  <script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var tab,labels=set.querySelector(".tabbed-labels");for(tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
+
         </div>
         
           <button type="button" class="md-top md-icon" data-md-component="top" hidden>
@@ -1142,7 +1135,7 @@ catalogsearch_fulltext                   Catalog Search
     </div>
     
     
-    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.tabs", "navigation.expand", "navigation.top", "toc.integrate"], "search": "../../assets/javascripts/workers/search.f886a092.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.tabs", "navigation.expand", "navigation.top", "toc.integrate", "content.code.copy", "content.tabs.link"], "search": "../../assets/javascripts/workers/search.f886a092.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
     
     
       <script src="../../assets/javascripts/bundle.aecac24b.min.js"></script>

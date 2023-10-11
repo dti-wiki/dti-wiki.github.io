@@ -1015,60 +1015,52 @@ Lets try to collect the time statistics of HTTP connection. Times below are in s
 <h2 id="prerequisite">Prerequisite<a class="headerlink" href="#prerequisite" title="Permanent link">⚓︎</a></h2>
 <p>we need a http-delay statistics file.</p>
 <p>Lets create a directory and file for this requirement.</p>
-<div class="codehilite"><pre><span></span><code>mkdir -vp ~/projects/dti-wiki/http-delay
-</code></pre></div>
-
-<div class="codehilite"><pre><span></span><code>touch ~/projects/dti-wiki/http-delay/curl-stats.txt
-</code></pre></div>
-
-<p>Lets create the contents for the statistics file.</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>mkdir -vp ~/projects/dti-wiki/http-delay
+</span></code></pre></div>
+<p><div class="language-text highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>touch ~/projects/dti-wiki/http-delay/curl-stats.txt
+</span></code></pre></div>
+Lets create the contents for the statistics file.</p>
 <p>paste the below content to: <code>~/projects/dti-wiki/http-delay/curl-stats.txt</code></p>
-<div class="codehilite"><pre><span></span><code>     time_namelookup:  %{time_namelookup}s\n
-        time_connect:  %{time_connect}s\n
-     time_appconnect:  %{time_appconnect}s\n
-    time_pretransfer:  %{time_pretransfer}s\n
-       time_redirect:  %{time_redirect}s\n
-  time_starttransfer:  %{time_starttransfer}s\n
-                     ----------\n
-          time_total:  %{time_total}s\n
-</code></pre></div>
-
+<div class="language-text highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>     time_namelookup:  %{time_namelookup}s\n
+</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>        time_connect:  %{time_connect}s\n
+</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>     time_appconnect:  %{time_appconnect}s\n
+</span><span id="__span-2-4"><a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a>    time_pretransfer:  %{time_pretransfer}s\n
+</span><span id="__span-2-5"><a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a>       time_redirect:  %{time_redirect}s\n
+</span><span id="__span-2-6"><a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a>  time_starttransfer:  %{time_starttransfer}s\n
+</span><span id="__span-2-7"><a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a>                     ----------\n
+</span><span id="__span-2-8"><a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a>          time_total:  %{time_total}s\n
+</span></code></pre></div>
 <h2 id="execution">Execution<a class="headerlink" href="#execution" title="Permanent link">⚓︎</a></h2>
 <p>We can execute the cURL as below to collect the HTTP statistics.</p>
-<div class="codehilite"><pre><span></span><code>curl<span class="w"> </span>-w<span class="w"> </span>&quot;@<span class="cp">${</span><span class="n">HOME</span><span class="cp">}</span>/projects/dti-wiki/http-delay/curl-stats.txt&quot;<span class="w"> </span>-o<span class="w"> </span>/dev/null<span class="w"> </span>-s<span class="w"> </span>&quot;http://wordpress.com/&quot;
-</code></pre></div>
-
+<div class="language-text highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>curl -w &quot;@${HOME}/projects/dti-wiki/http-delay/curl-stats.txt&quot; -o /dev/null -s &quot;http://wordpress.com/&quot;
+</span></code></pre></div>
 <p>We can create this cURL command as a bash script.</p>
 <p>create a file : <code>~/bin/httpstats</code> with below content.</p>
-<div class="codehilite"><pre><span></span><code><span class="ch">#!/bin/bash</span>
-
-curl<span class="w"> </span>-w<span class="w"> </span>@-<span class="w"> </span>-o<span class="w"> </span>/dev/null<span class="w"> </span>-s<span class="w"> </span><span class="s2">&quot;</span><span class="nv">$@</span><span class="s2">&quot;</span><span class="w"> </span><span class="s">&lt;&lt;&#39;EOF&#39;</span>
-<span class="s">    time_namelookup:  %{time_namelookup}\n</span>
-<span class="s">       time_connect:  %{time_connect}\n</span>
-<span class="s">    time_appconnect:  %{time_appconnect}\n</span>
-<span class="s">   time_pretransfer:  %{time_pretransfer}\n</span>
-<span class="s">      time_redirect:  %{time_redirect}\n</span>
-<span class="s"> time_starttransfer:  %{time_starttransfer}\n</span>
-<span class="s">                    ----------\n</span>
-<span class="s">         time_total:  %{time_total}\n</span>
-<span class="s">EOF</span>
-</code></pre></div>
-
+<div class="language-text highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>#!/bin/bash
+</span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>
+</span><span id="__span-4-3"><a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a>curl -w @- -o /dev/null -s &quot;$@&quot; &lt;&lt;&#39;EOF&#39;
+</span><span id="__span-4-4"><a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a>    time_namelookup:  %{time_namelookup}\n
+</span><span id="__span-4-5"><a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a>       time_connect:  %{time_connect}\n
+</span><span id="__span-4-6"><a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a>    time_appconnect:  %{time_appconnect}\n
+</span><span id="__span-4-7"><a id="__codelineno-4-7" name="__codelineno-4-7" href="#__codelineno-4-7"></a>   time_pretransfer:  %{time_pretransfer}\n
+</span><span id="__span-4-8"><a id="__codelineno-4-8" name="__codelineno-4-8" href="#__codelineno-4-8"></a>      time_redirect:  %{time_redirect}\n
+</span><span id="__span-4-9"><a id="__codelineno-4-9" name="__codelineno-4-9" href="#__codelineno-4-9"></a> time_starttransfer:  %{time_starttransfer}\n
+</span><span id="__span-4-10"><a id="__codelineno-4-10" name="__codelineno-4-10" href="#__codelineno-4-10"></a>                    ----------\n
+</span><span id="__span-4-11"><a id="__codelineno-4-11" name="__codelineno-4-11" href="#__codelineno-4-11"></a>         time_total:  %{time_total}\n
+</span><span id="__span-4-12"><a id="__codelineno-4-12" name="__codelineno-4-12" href="#__codelineno-4-12"></a>EOF
+</span></code></pre></div>
 <p>Now lets give execute permissions for <code>~/bin/httpstats</code> file:</p>
-<div class="codehilite"><pre><span></span><code>chmod +x ~/bin/httpstats
-</code></pre></div>
-
+<div class="language-text highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>chmod +x ~/bin/httpstats
+</span></code></pre></div>
 <p>Then we can execute the command like</p>
-<div class="codehilite"><pre><span></span><code>httpstats http://wordpress.org
-</code></pre></div>
-
+<div class="language-text highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>httpstats http://wordpress.org
+</span></code></pre></div>
 <h1 id="other-useful-oneliners">Other useful oneliners<a class="headerlink" href="#other-useful-oneliners" title="Permanent link">⚓︎</a></h1>
 <p>Collect <code>total time</code> taken:</p>
-<div class="codehilite"><pre><span></span><code>curl -o /dev/null -s -w &#39;Total: %{time_total}s\n&#39;  https://www.google.com
-</code></pre></div>
-
-<div class="codehilite"><pre><span></span><code>curl -o /dev/null -s -w &#39;Establish Connection: %{time_connect}s\nTTFB: %{time_starttransfer}s\nTotal: %{time_total}s\n&#39;  https://www.google.com
-</code></pre></div>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>curl -o /dev/null -s -w &#39;Total: %{time_total}s\n&#39;  https://www.google.com
+</span></code></pre></div>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>curl -o /dev/null -s -w &#39;Establish Connection: %{time_connect}s\nTTFB: %{time_starttransfer}s\nTotal: %{time_total}s\n&#39;  https://www.google.com
+</span></code></pre></div>
 
 
 
@@ -1079,6 +1071,8 @@ curl<span class="w"> </span>-w<span class="w"> </span>@-<span class="w"> </span>
             </div>
           
           
+  <script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var tab,labels=set.querySelector(".tabbed-labels");for(tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
+
         </div>
         
           <button type="button" class="md-top md-icon" data-md-component="top" hidden>
@@ -1117,7 +1111,7 @@ curl<span class="w"> </span>-w<span class="w"> </span>@-<span class="w"> </span>
     </div>
     
     
-    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.tabs", "navigation.expand", "navigation.top", "toc.integrate"], "search": "../../assets/javascripts/workers/search.f886a092.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.tabs", "navigation.expand", "navigation.top", "toc.integrate", "content.code.copy", "content.tabs.link"], "search": "../../assets/javascripts/workers/search.f886a092.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
     
     
       <script src="../../assets/javascripts/bundle.aecac24b.min.js"></script>

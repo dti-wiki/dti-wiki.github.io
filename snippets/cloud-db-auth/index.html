@@ -1032,35 +1032,30 @@
 
 <h1 id="magento-2x-cloud-db-authentication">Magento 2x Cloud DB Authentication<a class="headerlink" href="#magento-2x-cloud-db-authentication" title="Permanent link">⚓︎</a></h1>
 <h2 id="set-time">Set Time<a class="headerlink" href="#set-time" title="Permanent link">⚓︎</a></h2>
-<div class="codehilite"><pre><span></span><code>BKPTIM=$(date +&quot;%Y-%m-%d_%H-%M-%S&quot;)
-</code></pre></div>
-
+<div class="language-text highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>BKPTIM=$(date +&quot;%Y-%m-%d_%H-%M-%S&quot;)
+</span></code></pre></div>
 <h2 id="ticket-number">Ticket Number<a class="headerlink" href="#ticket-number" title="Permanent link">⚓︎</a></h2>
 <p>Optionally set ticket number if required.</p>
-<div class="codehilite"><pre><span></span><code>TKT=&quot;JIRA-123&quot;
-</code></pre></div>
-
+<div class="language-text highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>TKT=&quot;JIRA-123&quot;
+</span></code></pre></div>
 <h2 id="set-authentication-variables">Set Authentication variables:<a class="headerlink" href="#set-authentication-variables" title="Permanent link">⚓︎</a></h2>
-<div class="codehilite"><pre><span></span><code><span class="k">export</span><span class="w"> </span><span class="n">DB_NAME</span><span class="o">=$</span><span class="p">(</span><span class="n">grep</span><span class="w"> </span><span class="p">[</span>\<span class="s1">&#39;]db[</span><span class="se">\&#39;</span><span class="s1">] -A 20 app/etc/env.php | grep dbname | head -n1 | sed &quot;s/.*[=][&gt;][ ]*[&#39;</span><span class="p">]</span><span class="o">//</span><span class="s2">&quot; | sed &quot;</span><span class="n">s</span><span class="o">/</span><span class="p">[</span><span class="s1">&#39;][,]//&quot;);</span>
-
-<span class="k">export</span><span class="w"> </span><span class="n">MYSQL_HOST</span><span class="o">=$</span><span class="p">(</span><span class="n">grep</span><span class="w"> </span><span class="p">[</span>\<span class="s1">&#39;]db[</span><span class="se">\&#39;</span><span class="s1">] -A 20 app/etc/env.php | grep host | head -n1 | sed &quot;s/.*[=][&gt;][ ]*[&#39;</span><span class="p">]</span><span class="o">//</span><span class="s2">&quot; | sed &quot;</span><span class="n">s</span><span class="o">/</span><span class="p">[</span><span class="s1">&#39;][,]//&quot;);</span>
-
-<span class="k">export</span><span class="w"> </span><span class="n">DB_USER</span><span class="o">=$</span><span class="p">(</span><span class="n">grep</span><span class="w"> </span><span class="p">[</span>\<span class="s1">&#39;]db[</span><span class="se">\&#39;</span><span class="s1">] -A 20 app/etc/env.php | grep username | head -n1 | sed &quot;s/.*[=][&gt;][ ]*[&#39;</span><span class="p">]</span><span class="o">//</span><span class="s2">&quot; | sed &quot;</span><span class="n">s</span><span class="o">/</span><span class="p">[</span><span class="s1">&#39;][,]//&quot;);</span>
-
-<span class="k">export</span><span class="w"> </span><span class="n">MYSQL_PWD</span><span class="o">=$</span><span class="p">(</span><span class="n">grep</span><span class="w"> </span><span class="p">[</span>\<span class="s1">&#39;]db[</span><span class="se">\&#39;</span><span class="s1">] -A 20 app/etc/env.php | grep password | head -n1 | sed &quot;s/.*[=][&gt;][ ]*[&#39;</span><span class="p">]</span><span class="o">//</span><span class="s2">&quot; | sed &quot;</span><span class="n">s</span><span class="o">/</span><span class="p">[</span><span class="s1">&#39;]$//&quot; | sed &quot;s/[&#39;</span><span class="p">][,]</span><span class="o">//</span><span class="s2">&quot;);</span>
-</code></pre></div>
-
+<div class="language-text highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>export DB_NAME=$(grep [\&#39;]db[\&#39;] -A 20 app/etc/env.php | grep dbname | head -n1 | sed &quot;s/.*[=][&gt;][ ]*[&#39;]//&quot; | sed &quot;s/[&#39;][,]//&quot;);
+</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>
+</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>export MYSQL_HOST=$(grep [\&#39;]db[\&#39;] -A 20 app/etc/env.php | grep host | head -n1 | sed &quot;s/.*[=][&gt;][ ]*[&#39;]//&quot; | sed &quot;s/[&#39;][,]//&quot;);
+</span><span id="__span-2-4"><a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a>
+</span><span id="__span-2-5"><a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a>export DB_USER=$(grep [\&#39;]db[\&#39;] -A 20 app/etc/env.php | grep username | head -n1 | sed &quot;s/.*[=][&gt;][ ]*[&#39;]//&quot; | sed &quot;s/[&#39;][,]//&quot;);
+</span><span id="__span-2-6"><a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a>
+</span><span id="__span-2-7"><a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a>export MYSQL_PWD=$(grep [\&#39;]db[\&#39;] -A 20 app/etc/env.php | grep password | head -n1 | sed &quot;s/.*[=][&gt;][ ]*[&#39;]//&quot; | sed &quot;s/[&#39;]$//&quot; | sed &quot;s/[&#39;][,]//&quot;);
+</span></code></pre></div>
 <h2 id="connect-to-mysql-with-above-set-authentication-variables">Connect to MySQL with above set authentication variables.<a class="headerlink" href="#connect-to-mysql-with-above-set-authentication-variables" title="Permanent link">⚓︎</a></h2>
-<div class="codehilite"><pre><span></span><code>mysql -h $MYSQL_HOST -u $DB_USER --password=$MYSQL_PWD $DB_NAME -A
-</code></pre></div>
-
+<div class="language-text highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>mysql -h $MYSQL_HOST -u $DB_USER --password=$MYSQL_PWD $DB_NAME -A
+</span></code></pre></div>
 <h2 id="database-dump">Database Dump<a class="headerlink" href="#database-dump" title="Permanent link">⚓︎</a></h2>
-<div class="codehilite"><pre><span></span><code><span class="n">mysqldump</span><span class="w"> </span><span class="o">-</span><span class="n">h</span><span class="w"> </span><span class="o">$</span><span class="n">MYSQL_HOST</span><span class="w"> </span><span class="o">-</span><span class="n">u</span><span class="w"> </span><span class="o">$</span><span class="n">DB_USER</span><span class="w"> </span><span class="o">--</span><span class="n">password</span><span class="o">=$</span><span class="n">MYSQL_PWD</span><span class="w"> </span><span class="o">$</span><span class="n">DB_NAME</span><span class="w"> </span><span class="o">--</span><span class="n">opt</span><span class="w"> </span><span class="o">--</span><span class="n">single</span><span class="o">-</span><span class="n">transaction</span><span class="w"> </span><span class="o">--</span><span class="n">skip</span><span class="o">-</span><span class="n">lock</span><span class="o">-</span><span class="n">tables</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="n">sed</span><span class="w"> </span><span class="o">-</span><span class="n">e</span><span class="w"> </span><span class="s1">&#39;s/DEFINER[ ]*=[ ]*[^*]*\*/\*/&#39;</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="n">gzip</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="k">var</span><span class="o">/</span><span class="n">backups</span><span class="o">/$</span><span class="n">DB_NAME</span><span class="o">.$</span><span class="p">{</span><span class="n">BKPTIM</span><span class="p">}</span><span class="o">.</span><span class="n">sql</span><span class="o">.</span><span class="n">gz</span>
-</code></pre></div>
-
+<div class="language-text highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>mysqldump -h $MYSQL_HOST -u $DB_USER --password=$MYSQL_PWD $DB_NAME --opt --single-transaction --skip-lock-tables | sed -e &#39;s/DEFINER[ ]*=[ ]*[^*]*\*/\*/&#39; | gzip &gt; var/backups/$DB_NAME.${BKPTIM}.sql.gz
+</span></code></pre></div>
 <p>If you want to add the ticket name to the dump as well.</p>
-<div class="codehilite"><pre><span></span><code><span class="n">mysqldump</span><span class="w"> </span><span class="o">-</span><span class="n">h</span><span class="w"> </span><span class="o">$</span><span class="n">MYSQL_HOST</span><span class="w"> </span><span class="o">-</span><span class="n">u</span><span class="w"> </span><span class="o">$</span><span class="n">DB_USER</span><span class="w"> </span><span class="o">--</span><span class="n">password</span><span class="o">=$</span><span class="n">MYSQL_PWD</span><span class="w"> </span><span class="o">$</span><span class="n">DB_NAME</span><span class="w"> </span><span class="o">--</span><span class="n">opt</span><span class="w"> </span><span class="o">--</span><span class="n">single</span><span class="o">-</span><span class="n">transaction</span><span class="w"> </span><span class="o">--</span><span class="n">skip</span><span class="o">-</span><span class="n">lock</span><span class="o">-</span><span class="n">tables</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="n">sed</span><span class="w"> </span><span class="o">-</span><span class="n">e</span><span class="w"> </span><span class="s1">&#39;s/DEFINER[ ]*=[ ]*[^*]*\*/\*/&#39;</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="n">gzip</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="k">var</span><span class="o">/</span><span class="n">backups</span><span class="o">/$</span><span class="n">TKT</span><span class="o">.$</span><span class="n">DB_NAME</span><span class="o">.$</span><span class="p">{</span><span class="n">BKPTIM</span><span class="p">}</span><span class="o">.</span><span class="n">sql</span><span class="o">.</span><span class="n">gz</span>
-</code></pre></div>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>mysqldump -h $MYSQL_HOST -u $DB_USER --password=$MYSQL_PWD $DB_NAME --opt --single-transaction --skip-lock-tables | sed -e &#39;s/DEFINER[ ]*=[ ]*[^*]*\*/\*/&#39; | gzip &gt; var/backups/$TKT.$DB_NAME.${BKPTIM}.sql.gz
+</span></code></pre></div>
 
 
 
@@ -1071,6 +1066,8 @@
             </div>
           
           
+  <script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var tab,labels=set.querySelector(".tabbed-labels");for(tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
+
         </div>
         
           <button type="button" class="md-top md-icon" data-md-component="top" hidden>
@@ -1109,7 +1106,7 @@
     </div>
     
     
-    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.tabs", "navigation.expand", "navigation.top", "toc.integrate"], "search": "../../assets/javascripts/workers/search.f886a092.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.tabs", "navigation.expand", "navigation.top", "toc.integrate", "content.code.copy", "content.tabs.link"], "search": "../../assets/javascripts/workers/search.f886a092.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
     
     
       <script src="../../assets/javascripts/bundle.aecac24b.min.js"></script>
