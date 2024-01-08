@@ -594,6 +594,15 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#other-useful-flags" class="md-nav__link">
+    <span class="md-ellipsis">
+      Other Useful Flags
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -1089,6 +1098,11 @@
 </span></code></pre></div>
 <p>If you want to add the ticket name to the dump as well.</p>
 <div class="language-text highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>mysqldump -h $MYSQL_HOST -u $DB_USER --password=$MYSQL_PWD $DB_NAME --opt --single-transaction --skip-lock-tables | sed -e &#39;s/DEFINER[ ]*=[ ]*[^*]*\*/\*/&#39; | gzip &gt; var/backups/$TKT.$DB_NAME.${BKPTIM}.sql.gz
+</span></code></pre></div>
+<h2 id="other-useful-flags">Other Useful Flags<a class="headerlink" href="#other-useful-flags" title="Permanent link">⚓︎</a></h2>
+<p>In certian MySQL servers from verion 5.7 and above, we may get permission denied for some nonsensical privileges.</p>
+<p>you can use the below mysql CLI flags to spuress those errors.</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>--set-gtid-purged=OFF --no-tablespaces
 </span></code></pre></div>
 
 
