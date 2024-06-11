@@ -2,87 +2,87 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
          <loc>https://github.com/anishcorratech/dti-wiki/</loc>
-         <lastmod>2024-06-10</lastmod>
+         <lastmod>2024-06-11</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://github.com/anishcorratech/dti-wiki/about/</loc>
-         <lastmod>2024-06-10</lastmod>
+         <lastmod>2024-06-11</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://github.com/anishcorratech/dti-wiki/containers/</loc>
-         <lastmod>2024-06-10</lastmod>
+         <lastmod>2024-06-11</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://github.com/anishcorratech/dti-wiki/psy-mcloud/</loc>
-         <lastmod>2024-06-10</lastmod>
+         <lastmod>2024-06-11</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://github.com/anishcorratech/dti-wiki/containers/docker/</loc>
-         <lastmod>2024-06-10</lastmod>
+         <lastmod>2024-06-11</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://github.com/anishcorratech/dti-wiki/containers/docker/caddy-container/</loc>
-         <lastmod>2024-06-10</lastmod>
+         <lastmod>2024-06-11</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://github.com/anishcorratech/dti-wiki/containers/docker/container-init/</loc>
-         <lastmod>2024-06-10</lastmod>
+         <lastmod>2024-06-11</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://github.com/anishcorratech/dti-wiki/containers/kubernetes/</loc>
-         <lastmod>2024-06-10</lastmod>
+         <lastmod>2024-06-11</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://github.com/anishcorratech/dti-wiki/containers/kubernetes/kubectl/cheatsheets/kubectl-basic-part-1/</loc>
-         <lastmod>2024-06-10</lastmod>
+         <lastmod>2024-06-11</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://github.com/anishcorratech/dti-wiki/containers/kubernetes/kubectl/cheatsheets/kubectl-basic-part-2/</loc>
-         <lastmod>2024-06-10</lastmod>
+         <lastmod>2024-06-11</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://github.com/anishcorratech/dti-wiki/snippets/cloud-cron-disable/</loc>
-         <lastmod>2024-06-10</lastmod>
+         <lastmod>2024-06-11</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://github.com/anishcorratech/dti-wiki/snippets/cloud-db-auth/</loc>
-         <lastmod>2024-06-10</lastmod>
+         <lastmod>2024-06-11</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://github.com/anishcorratech/dti-wiki/snippets/cloud-elasticsearch-management/</loc>
-         <lastmod>2024-06-10</lastmod>
+         <lastmod>2024-06-11</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://github.com/anishcorratech/dti-wiki/snippets/cloud-rabbitmq-management/</loc>
-         <lastmod>2024-06-10</lastmod>
+         <lastmod>2024-06-11</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://github.com/anishcorratech/dti-wiki/snippets/curl-stats/</loc>
-         <lastmod>2024-06-10</lastmod>
+         <lastmod>2024-06-11</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://github.com/anishcorratech/dti-wiki/snippets/magento-indexing/</loc>
-         <lastmod>2024-06-10</lastmod>
+         <lastmod>2024-06-11</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://github.com/anishcorratech/dti-wiki/snippets/rsync-cloud-media/</loc>
-         <lastmod>2024-06-10</lastmod>
+         <lastmod>2024-06-11</lastmod>
          <changefreq>daily</changefreq>
     </url>
 </urlset>
