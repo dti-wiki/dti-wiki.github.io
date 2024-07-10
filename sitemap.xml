@@ -1,87 +1,92 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
-         <loc>https://github.com/anishcorratech/dti-wiki/</loc>
+         <loc>https://dti-wiki.github.io/</loc>
          <lastmod>2024-07-10</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://github.com/anishcorratech/dti-wiki/about/</loc>
+         <loc>https://dti-wiki.github.io/about/</loc>
          <lastmod>2024-07-10</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://github.com/anishcorratech/dti-wiki/containers/</loc>
+         <loc>https://dti-wiki.github.io/containers/</loc>
          <lastmod>2024-07-10</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://github.com/anishcorratech/dti-wiki/psy-mcloud/</loc>
+         <loc>https://dti-wiki.github.io/psy-mcloud/</loc>
          <lastmod>2024-07-10</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://github.com/anishcorratech/dti-wiki/containers/docker/</loc>
+         <loc>https://dti-wiki.github.io/ssh-tunnels/</loc>
          <lastmod>2024-07-10</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://github.com/anishcorratech/dti-wiki/containers/docker/caddy-container/</loc>
+         <loc>https://dti-wiki.github.io/containers/docker/</loc>
          <lastmod>2024-07-10</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://github.com/anishcorratech/dti-wiki/containers/docker/container-init/</loc>
+         <loc>https://dti-wiki.github.io/containers/docker/caddy-container/</loc>
          <lastmod>2024-07-10</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://github.com/anishcorratech/dti-wiki/containers/kubernetes/</loc>
+         <loc>https://dti-wiki.github.io/containers/docker/container-init/</loc>
          <lastmod>2024-07-10</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://github.com/anishcorratech/dti-wiki/containers/kubernetes/kubectl/cheatsheets/kubectl-basic-part-1/</loc>
+         <loc>https://dti-wiki.github.io/containers/kubernetes/</loc>
          <lastmod>2024-07-10</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://github.com/anishcorratech/dti-wiki/containers/kubernetes/kubectl/cheatsheets/kubectl-basic-part-2/</loc>
+         <loc>https://dti-wiki.github.io/containers/kubernetes/kubectl/cheatsheets/kubectl-basic-part-1/</loc>
          <lastmod>2024-07-10</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://github.com/anishcorratech/dti-wiki/snippets/cloud-cron-disable/</loc>
+         <loc>https://dti-wiki.github.io/containers/kubernetes/kubectl/cheatsheets/kubectl-basic-part-2/</loc>
          <lastmod>2024-07-10</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://github.com/anishcorratech/dti-wiki/snippets/cloud-db-auth/</loc>
+         <loc>https://dti-wiki.github.io/snippets/cloud-cron-disable/</loc>
          <lastmod>2024-07-10</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://github.com/anishcorratech/dti-wiki/snippets/cloud-elasticsearch-management/</loc>
+         <loc>https://dti-wiki.github.io/snippets/cloud-db-auth/</loc>
          <lastmod>2024-07-10</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://github.com/anishcorratech/dti-wiki/snippets/cloud-rabbitmq-management/</loc>
+         <loc>https://dti-wiki.github.io/snippets/cloud-elasticsearch-management/</loc>
          <lastmod>2024-07-10</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://github.com/anishcorratech/dti-wiki/snippets/curl-stats/</loc>
+         <loc>https://dti-wiki.github.io/snippets/cloud-rabbitmq-management/</loc>
          <lastmod>2024-07-10</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://github.com/anishcorratech/dti-wiki/snippets/magento-indexing/</loc>
+         <loc>https://dti-wiki.github.io/snippets/curl-stats/</loc>
          <lastmod>2024-07-10</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://github.com/anishcorratech/dti-wiki/snippets/rsync-cloud-media/</loc>
+         <loc>https://dti-wiki.github.io/snippets/magento-indexing/</loc>
+         <lastmod>2024-07-10</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://dti-wiki.github.io/snippets/rsync-cloud-media/</loc>
          <lastmod>2024-07-10</lastmod>
          <changefreq>daily</changefreq>
     </url>

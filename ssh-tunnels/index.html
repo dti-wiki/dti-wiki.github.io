@@ -12,28 +12,28 @@
         <meta name="author" content="anishcorratech">
       
       
-        <link rel="canonical" href="https://dti-wiki.github.io/snippets/cloud-db-auth/">
+        <link rel="canonical" href="https://dti-wiki.github.io/ssh-tunnels/">
       
       
-        <link rel="prev" href="../../containers/">
+        <link rel="prev" href="../psy-mcloud/">
       
       
-        <link rel="next" href="../cloud-cron-disable/">
+        <link rel="next" href="../containers/">
       
       
-      <link rel="icon" href="../../images/favicon.png">
+      <link rel="icon" href="../images/favicon.png">
       <meta name="generator" content="mkdocs-1.6.0, mkdocs-material-9.5.28">
     
     
       
-        <title>Cloud DB Authentication - Devops Technical Institute</title>
+        <title>SSH Tunnels - Devops Technical Institute</title>
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/main.6543a935.min.css">
+      <link rel="stylesheet" href="../assets/stylesheets/main.6543a935.min.css">
       
         
-        <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
+        <link rel="stylesheet" href="../assets/stylesheets/palette.06af60db.min.css">
       
       
 
@@ -52,7 +52,7 @@
       
     
     
-    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
 
@@ -76,7 +76,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#magento-2x-cloud-db-authentication" class="md-skip">
+        <a href="#ssh-tunneling" class="md-skip">
           Skip to content
         </a>
       
@@ -90,7 +90,7 @@
 
 <header class="md-header" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href="../.." title="Devops Technical Institute" class="md-header__button md-logo" aria-label="Devops Technical Institute" data-md-component="logo">
+    <a href=".." title="Devops Technical Institute" class="md-header__button md-logo" aria-label="Devops Technical Institute" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><!--! Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M320 0c17.7 0 32 14.3 32 32v64h120c39.8 0 72 32.2 72 72v272c0 39.8-32.2 72-72 72H168c-39.8 0-72-32.2-72-72V168c0-39.8 32.2-72 72-72h120V32c0-17.7 14.3-32 32-32zM208 384c-8.8 0-16 7.2-16 16s7.2 16 16 16h32c8.8 0 16-7.2 16-16s-7.2-16-16-16h-32zm96 0c-8.8 0-16 7.2-16 16s7.2 16 16 16h32c8.8 0 16-7.2 16-16s-7.2-16-16-16h-32zm96 0c-8.8 0-16 7.2-16 16s7.2 16 16 16h32c8.8 0 16-7.2 16-16s-7.2-16-16-16h-32zM264 256a40 40 0 1 0-80 0 40 40 0 1 0 80 0zm152 40a40 40 0 1 0 0-80 40 40 0 1 0 0 80zM48 224h16v192H48c-26.5 0-48-21.5-48-48v-96c0-26.5 21.5-48 48-48zm544 0c26.5 0 48 21.5 48 48v96c0 26.5-21.5 48-48 48h-16V224h16z"/></svg>
@@ -110,7 +110,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Cloud DB Authentication
+              SSH Tunnels
             
           </span>
         </div>
@@ -191,7 +191,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="../.." class="md-tabs__link">
+      <a href=".." class="md-tabs__link">
         
   
     
@@ -206,11 +206,13 @@
         
   
   
+    
+  
   
     
     
-      <li class="md-tabs__item">
-        <a href="../../psy-mcloud/" class="md-tabs__link">
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../psy-mcloud/" class="md-tabs__link">
           
   
   Documents
@@ -224,13 +226,11 @@
         
   
   
-    
-  
   
     
     
-      <li class="md-tabs__item md-tabs__item--active">
-        <a href="./" class="md-tabs__link">
+      <li class="md-tabs__item">
+        <a href="../snippets/cloud-db-auth/" class="md-tabs__link">
           
   
   Snippets
@@ -248,7 +248,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="../../containers/" class="md-tabs__link">
+        <a href="../containers/" class="md-tabs__link">
           
   
   Containers
@@ -264,7 +264,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="../../about/" class="md-tabs__link">
+      <a href="../about/" class="md-tabs__link">
         
   
     
@@ -300,7 +300,7 @@
 
 <nav class="md-nav md-nav--primary md-nav--lifted md-nav--integrated" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="../.." title="Devops Technical Institute" class="md-nav__button md-logo" aria-label="Devops Technical Institute" data-md-component="logo">
+    <a href=".." title="Devops Technical Institute" class="md-nav__button md-logo" aria-label="Devops Technical Institute" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><!--! Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M320 0c17.7 0 32 14.3 32 32v64h120c39.8 0 72 32.2 72 72v272c0 39.8-32.2 72-72 72H168c-39.8 0-72-32.2-72-72V168c0-39.8 32.2-72 72-72h120V32c0-17.7 14.3-32 32-32zM208 384c-8.8 0-16 7.2-16 16s7.2 16 16 16h32c8.8 0 16-7.2 16-16s-7.2-16-16-16h-32zm96 0c-8.8 0-16 7.2-16 16s7.2 16 16 16h32c8.8 0 16-7.2 16-16s-7.2-16-16-16h-32zm96 0c-8.8 0-16 7.2-16 16s7.2 16 16 16h32c8.8 0 16-7.2 16-16s-7.2-16-16-16h-32zM264 256a40 40 0 1 0-80 0 40 40 0 1 0 80 0zm152 40a40 40 0 1 0 0-80 40 40 0 1 0 0 80zM48 224h16v192H48c-26.5 0-48-21.5-48-48v-96c0-26.5 21.5-48 48-48zm544 0c26.5 0 48 21.5 48 48v96c0 26.5-21.5 48-48 48h-16V224h16z"/></svg>
@@ -330,7 +330,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../.." class="md-nav__link">
+      <a href=".." class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -339,137 +339,6 @@
   
 
       </a>
-    </li>
-  
-
-    
-      
-      
-  
-  
-  
-  
-    
-    
-    
-      
-      
-    
-    
-    <li class="md-nav__item md-nav__item--nested">
-      
-        
-        
-          
-        
-        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2" >
-        
-          
-          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
-            
-  
-  <span class="md-ellipsis">
-    Documents
-  </span>
-  
-
-            <span class="md-nav__icon md-icon"></span>
-          </label>
-        
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_2">
-            <span class="md-nav__icon md-icon"></span>
-            Documents
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../psy-mcloud/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Psychedelic Magento Cloud
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../ssh-tunnels/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    SSH Tunnels
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../terraform.md" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Terraform Automation
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../containers/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Containers
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-          </ul>
-        </nav>
-      
     </li>
   
 
@@ -496,26 +365,47 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
         
           
-          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="">
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="">
             
   
   <span class="md-ellipsis">
-    Snippets
+    Documents
   </span>
   
 
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
-          <label class="md-nav__title" for="__nav_3">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2">
             <span class="md-nav__icon md-icon"></span>
-            Snippets
+            Documents
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../psy-mcloud/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Psychedelic Magento Cloud
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
             
               
                 
@@ -537,7 +427,7 @@
           
   
   <span class="md-ellipsis">
-    Cloud DB Authentication
+    SSH Tunnels
   </span>
   
 
@@ -548,7 +438,7 @@
         
   
   <span class="md-ellipsis">
-    Cloud DB Authentication
+    SSH Tunnels
   </span>
   
 
@@ -570,56 +460,44 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#set-time" class="md-nav__link">
+  <a href="#what-is-ssh-tunneling" class="md-nav__link">
     <span class="md-ellipsis">
-      Set Time
+      What is SSH tunneling?
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#ticket-number" class="md-nav__link">
+  <a href="#access-a-remote-service-securely-over-ssh-tunnel" class="md-nav__link">
     <span class="md-ellipsis">
-      Ticket Number
+      Access a remote service securely over SSH Tunnel
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Access a remote service securely over SSH Tunnel">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#scenario" class="md-nav__link">
+    <span class="md-ellipsis">
+      Scenario
     </span>
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
-  <a href="#set-authentication-variables" class="md-nav__link">
+        
+          <li class="md-nav__item">
+  <a href="#procedure" class="md-nav__link">
     <span class="md-ellipsis">
-      Set Authentication variables:
+      Procedure
     </span>
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
-  <a href="#connect-to-mysql-with-above-set-authentication-variables" class="md-nav__link">
-    <span class="md-ellipsis">
-      Connect to MySQL with above set authentication variables.
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#database-dump" class="md-nav__link">
-    <span class="md-ellipsis">
-      Database Dump
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#other-useful-flags" class="md-nav__link">
-    <span class="md-ellipsis">
-      Other Useful Flags
-    </span>
-  </a>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -639,7 +517,117 @@
   
   
     <li class="md-nav__item">
-      <a href="../cloud-cron-disable/" class="md-nav__link">
+      <a href="../terraform.md" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Terraform Automation
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../containers/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Containers
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Snippets
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            Snippets
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../snippets/cloud-db-auth/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Cloud DB Authentication
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../snippets/cloud-cron-disable/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -660,7 +648,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../magento-indexing/" class="md-nav__link">
+      <a href="../snippets/magento-indexing/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -681,7 +669,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../cloud-elasticsearch-management/" class="md-nav__link">
+      <a href="../snippets/cloud-elasticsearch-management/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -702,7 +690,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../cloud-rabbitmq-management/" class="md-nav__link">
+      <a href="../snippets/cloud-rabbitmq-management/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -723,7 +711,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../rsync-cloud-media/" class="md-nav__link">
+      <a href="../snippets/rsync-cloud-media/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -744,7 +732,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../curl-stats/" class="md-nav__link">
+      <a href="../snippets/curl-stats/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -812,7 +800,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../containers/" class="md-nav__link">
+      <a href="../containers/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -873,7 +861,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../containers/docker/" class="md-nav__link">
+      <a href="../containers/docker/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -894,7 +882,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../containers/docker/container-init/" class="md-nav__link">
+      <a href="../containers/docker/container-init/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -915,7 +903,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../containers/docker/caddy-container/" class="md-nav__link">
+      <a href="../containers/docker/caddy-container/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -984,7 +972,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../containers/kubernetes/" class="md-nav__link">
+      <a href="../containers/kubernetes/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1005,7 +993,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../containers/kubernetes/kubectl/cheatsheets/kubectl-basic-part-1/" class="md-nav__link">
+      <a href="../containers/kubernetes/kubectl/cheatsheets/kubectl-basic-part-1/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1026,7 +1014,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../containers/kubernetes/kubectl/cheatsheets/kubectl-basic-part-2/" class="md-nav__link">
+      <a href="../containers/kubernetes/kubectl/cheatsheets/kubectl-basic-part-2/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1062,7 +1050,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../about/" class="md-nav__link">
+      <a href="../about/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1093,36 +1081,30 @@
   
 
 
-<h1 id="magento-2x-cloud-db-authentication">Magento 2x Cloud DB Authentication<a class="headerlink" href="#magento-2x-cloud-db-authentication" title="Permanent link">⚓︎</a></h1>
-<h2 id="set-time">Set Time<a class="headerlink" href="#set-time" title="Permanent link">⚓︎</a></h2>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>BKPTIM=$(date +&quot;%Y-%m-%d_%H-%M-%S&quot;)
+<h1 id="ssh-tunneling">SSH Tunneling<a class="headerlink" href="#ssh-tunneling" title="Permanent link">⚓︎</a></h1>
+<p>OpenSSH support some tunneling features, which helps achieve security use cases such as remote web service access without exposing ports on the internet, accessing servers behind NAT, exposing local ports to the internet.</p>
+<h2 id="what-is-ssh-tunneling">What is SSH tunneling?<a class="headerlink" href="#what-is-ssh-tunneling" title="Permanent link">⚓︎</a></h2>
+<p>SSH tunneling is a method to transport additional data streams within an existing SSH session. SSH tunneling helps achieve security use cases such as remote web service access without exposing port on the internet, accessing server behind NAT, exposing local port to the internet.</p>
+<h2 id="access-a-remote-service-securely-over-ssh-tunnel">Access a remote service securely over SSH Tunnel<a class="headerlink" href="#access-a-remote-service-securely-over-ssh-tunnel" title="Permanent link">⚓︎</a></h2>
+<p>There is a service running on remote server and it is not exposed to internet. Now you need to access this service without exposing the service to internet. SSH Tunnel can help in this situation. For security reasons we should only bind services to local interfaces. Or if really required bind it to interface connected to private network. Binding the services on internet interfaces is not recommended.</p>
+<h3 id="scenario">Scenario<a class="headerlink" href="#scenario" title="Permanent link">⚓︎</a></h3>
+<p>We have a production cloud server in AWS and it runs a web-server on port 9191 and the port 9191 is not accessible from internet.</p>
+<p>We also have a dev cloud server in Rackspace and we need to download a file named "/dynamically_generate_pdf_files.tar.bz2" from the AWS production web-server (on port 9191) to the Rackspace dev server.</p>
+<p>But the problem is that the port 9191 of the AWS production web-server is not accessible from internet, so Rackspace dev server cannot directly download the file.</p>
+<p>Now, the only connection option between AWS production web-server and Rackspace dev server is an SSH connection.</p>
+<h3 id="procedure">Procedure<a class="headerlink" href="#procedure" title="Permanent link">⚓︎</a></h3>
+<p>Connect to the AWS production web-server over SSH</p>
+<p>start the web-server service on the AWS production web-server</p>
+<p>Lets use python one-liner web-server:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>python3 -m http.server 9191
 </span></code></pre></div>
-<h2 id="ticket-number">Ticket Number<a class="headerlink" href="#ticket-number" title="Permanent link">⚓︎</a></h2>
-<p>Optionally set ticket number if required.</p>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>TKT=&quot;JIRA-123&quot;
+<p>Now, let the python one-liner web-server run for the entire duration of the procedure.</p>
+<p>Connect to the Rackspace dev server over SSH</p>
+<p>then open a SSH connection to AWS production web-server tunneling to the port 9191 on AWS production web-server from the Rackspace dev server.</p>
+<p><div class="language-text highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>ssh -i /path/to/rsa_private_key -N -L 9191:127.0.0.1:9191 user@AWS_production_web-server
 </span></code></pre></div>
-<h2 id="set-authentication-variables">Set Authentication variables:<a class="headerlink" href="#set-authentication-variables" title="Permanent link">⚓︎</a></h2>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>export DB_NAME=$(grep [\&#39;]db[\&#39;] -A 20 app/etc/env.php | grep dbname | head -n1 | sed &quot;s/.*[=][&gt;][ ]*[&#39;]//&quot; | sed &quot;s/[&#39;][,]//&quot;);
-</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>
-</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>export MYSQL_HOST=$(grep [\&#39;]db[\&#39;] -A 20 app/etc/env.php | grep host | head -n1 | sed &quot;s/.*[=][&gt;][ ]*[&#39;]//&quot; | sed &quot;s/[&#39;][,]//&quot;);
-</span><span id="__span-2-4"><a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a>
-</span><span id="__span-2-5"><a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a>export DB_USER=$(grep [\&#39;]db[\&#39;] -A 20 app/etc/env.php | grep username | head -n1 | sed &quot;s/.*[=][&gt;][ ]*[&#39;]//&quot; | sed &quot;s/[&#39;][,]//&quot;);
-</span><span id="__span-2-6"><a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a>
-</span><span id="__span-2-7"><a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a>export MYSQL_PWD=$(grep [\&#39;]db[\&#39;] -A 20 app/etc/env.php | grep password | head -n1 | sed &quot;s/.*[=][&gt;][ ]*[&#39;]//&quot; | sed &quot;s/[&#39;]$//&quot; | sed &quot;s/[&#39;][,]//&quot;);
-</span></code></pre></div>
-<h2 id="connect-to-mysql-with-above-set-authentication-variables">Connect to MySQL with above set authentication variables.<a class="headerlink" href="#connect-to-mysql-with-above-set-authentication-variables" title="Permanent link">⚓︎</a></h2>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>mysql -h $MYSQL_HOST -u $DB_USER --password=$MYSQL_PWD $DB_NAME -A
-</span></code></pre></div>
-<h2 id="database-dump">Database Dump<a class="headerlink" href="#database-dump" title="Permanent link">⚓︎</a></h2>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>mysqldump -h $MYSQL_HOST -u $DB_USER --password=$MYSQL_PWD $DB_NAME --opt --single-transaction --skip-lock-tables | sed -e &#39;s/DEFINER[ ]*=[ ]*[^*]*\*/\*/&#39; | gzip &gt; var/backups/$DB_NAME.${BKPTIM}.sql.gz
-</span></code></pre></div>
-<p>If you want to add the ticket name to the dump as well.</p>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>mysqldump -h $MYSQL_HOST -u $DB_USER --password=$MYSQL_PWD $DB_NAME --opt --single-transaction --skip-lock-tables | sed -e &#39;s/DEFINER[ ]*=[ ]*[^*]*\*/\*/&#39; | gzip &gt; var/backups/$TKT.$DB_NAME.${BKPTIM}.sql.gz
-</span></code></pre></div>
-<h2 id="other-useful-flags">Other Useful Flags<a class="headerlink" href="#other-useful-flags" title="Permanent link">⚓︎</a></h2>
-<p>In certian MySQL servers from verion 5.7 and above, we may get permission denied for some nonsensical privileges.</p>
-<p>you can use the below mysql CLI flags to spuress those errors.</p>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>--set-gtid-purged=OFF --no-tablespaces
+Then do:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>curl http://127.0.0.1:9191/
 </span></code></pre></div>
 
 
@@ -1182,10 +1164,10 @@
     </div>
     
     
-    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.tabs", "navigation.expand", "navigation.top", "toc.integrate", "content.code.copy", "content.tabs.link"], "search": "../../assets/javascripts/workers/search.b8dbb3d2.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    <script id="__config" type="application/json">{"base": "..", "features": ["navigation.tabs", "navigation.expand", "navigation.top", "toc.integrate", "content.code.copy", "content.tabs.link"], "search": "../assets/javascripts/workers/search.b8dbb3d2.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
     
     
-      <script src="../../assets/javascripts/bundle.fe8b6f2b.min.js"></script>
+      <script src="../assets/javascripts/bundle.fe8b6f2b.min.js"></script>
       
     
   </body>
