@@ -1,9 +1,9 @@
 repo_name: 'DTI-Wiki'
-repo_url: https://github.com/anishcorratech/dti-wiki
+repo_url: https://github.com/dti-wiki/dti-wiki.github.io
 site_name: 'Devops Technical Institute'
-site_url: https://github.com/anishcorratech/dti-wiki/
+site_url: https://dti-wiki.github.io
 site_description: GNU/Linux Administration and Devops Automations
-site_author: 'anish.asokan'
+site_author: 'anishcorratech'
 edit_uri: edit/main/docs/docs/
 
 theme:
@@ -53,6 +53,7 @@ nav:
   - 'DTI Wiki': 'index.md'
   - 'Documents':
       - 'Psychedelic Magento Cloud': 'psy-mcloud.md'
+      - 'SSH Tunnels': 'ssh-tunnels.md'
       - 'Terraform Automation': 'terraform.md'
       - 'Containers': 'containers.md'
   - 'Snippets':
