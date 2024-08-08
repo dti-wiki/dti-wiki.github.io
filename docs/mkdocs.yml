@@ -64,6 +64,7 @@ nav:
       - 'Magento Cloud RabbitMQ': 'snippets/cloud-rabbitmq-management.md'
       - 'Magento Cloud Rsync Media Files': 'snippets/rsync-cloud-media.md'
       - 'Collect HTTP Stats usng cURL': 'snippets/curl-stats.md'
+      - 'Firefox user data directory error': 'snippets/custom-home-dir-ubuntu-firefox-err.md'
   - 'Containers':
       - 'Index': 'containers.md'
       - 'Docker':
