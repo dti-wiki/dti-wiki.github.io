@@ -26,7 +26,7 @@ theme:
     logo: fontawesome/solid/robot
     repo: fontawesome/brands/github
 
-copyright: 'Copyright &copy; 2021-2024 DTI Wiki'
+copyright: 'Copyright &copy; 2024 DTI Wiki'
 
 
 markdown_extensions:
