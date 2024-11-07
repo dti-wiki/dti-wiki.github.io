@@ -1171,16 +1171,22 @@
 <h3 id="list-queues">List Queues<a class="headerlink" href="#list-queues" title="Permanent link">⚓︎</a></h3>
 <div class="language-text highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>rabbitmqadmin -u ${RABBITUSER} -p ${RABBITPASS} -H ${RABBITHOST} list queues
 </span></code></pre></div>
+<p>Specify Columns</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>rabbitmqadmin -u ${RABBITUSER} -p ${RABBITPASS} -H ${RABBITHOST} list queues vhost name node messages message_stats.publish_details.rate
+</span></code></pre></div>
+<p>Long Listing</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a>rabbitmqadmin -u ${RABBITUSER} -p ${RABBITPASS} -H ${RABBITHOST} list queues -f long -d 3 list queues
+</span></code></pre></div>
 <h3 id="list-bindings">List Bindings<a class="headerlink" href="#list-bindings" title="Permanent link">⚓︎</a></h3>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>rabbitmqadmin -u ${RABBITUSER} -p ${RABBITPASS} -H ${RABBITHOST} list bindings
+<div class="language-text highlight"><pre><span></span><code><span id="__span-10-1"><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a>rabbitmqadmin -u ${RABBITUSER} -p ${RABBITPASS} -H ${RABBITHOST} list bindings
 </span></code></pre></div>
 <h2 id="additional-info">Additional Info.<a class="headerlink" href="#additional-info" title="Permanent link">⚓︎</a></h2>
 <p>In the above senario, the admin port is running on TCP port 80/HTTP.
 But if in your case the rabbitMQ admin port is running on TCP port 443/HTTPS then add below option:</p>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a>--port 443 --ssl
+<div class="language-text highlight"><pre><span></span><code><span id="__span-11-1"><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a>--port 443 --ssl
 </span></code></pre></div>
 <p>for ex:</p>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-10-1"><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a>rabbitmqadmin -u ${RABBITUSER} -p ${RABBITPASS} -H ${RABBITHOST} --port 443 --ssl list queues
+<div class="language-text highlight"><pre><span></span><code><span id="__span-12-1"><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a>rabbitmqadmin -u ${RABBITUSER} -p ${RABBITPASS} -H ${RABBITHOST} --port 443 --ssl list queues
 </span></code></pre></div>
 
 
