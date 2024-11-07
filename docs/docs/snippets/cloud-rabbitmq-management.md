@@ -70,6 +70,19 @@ rabbitmqadmin -u ${RABBITUSER} -p ${RABBITPASS} -H ${RABBITHOST} list vhosts
 rabbitmqadmin -u ${RABBITUSER} -p ${RABBITPASS} -H ${RABBITHOST} list queues
 ```
 
+Specify Columns
+
+```
+rabbitmqadmin -u ${RABBITUSER} -p ${RABBITPASS} -H ${RABBITHOST} list queues vhost name node messages message_stats.publish_details.rate
+```
+
+Long Listing
+
+```
+rabbitmqadmin -u ${RABBITUSER} -p ${RABBITPASS} -H ${RABBITHOST} list queues -f long -d 3 list queues
+```
+
+
 ### List Bindings
 
 ```
