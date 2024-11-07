@@ -103,3 +103,9 @@ for ex:
 ```
 rabbitmqadmin -u ${RABBITUSER} -p ${RABBITPASS} -H ${RABBITHOST} --port 443 --ssl list queues
 ```
+
+## References
+
+URL's used:
+
+ - https://www.rabbitmq.com/docs/management-cli
