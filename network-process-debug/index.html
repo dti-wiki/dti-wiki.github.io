@@ -12,28 +12,28 @@
         <meta name="author" content="anishcorratech">
       
       
-        <link rel="canonical" href="https://dti-wiki.github.io/snippets/curl-stats/">
+        <link rel="canonical" href="https://dti-wiki.github.io/network-process-debug/">
       
       
-        <link rel="prev" href="../rsync-cloud-media/">
+        <link rel="prev" href="../ssh-tunnels/">
       
       
-        <link rel="next" href="../custom-home-dir-ubuntu-firefox-err/">
+        <link rel="next" href="../containers/">
       
       
-      <link rel="icon" href="../../images/favicon.png">
+      <link rel="icon" href="../images/favicon.png">
       <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.44">
     
     
       
-        <title>Collect HTTP Stats usng cURL - Devops Technical Institute</title>
+        <title>Network Process Debugging - Devops Technical Institute</title>
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/main.0253249f.min.css">
+      <link rel="stylesheet" href="../assets/stylesheets/main.0253249f.min.css">
       
         
-        <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
+        <link rel="stylesheet" href="../assets/stylesheets/palette.06af60db.min.css">
       
       
 
@@ -52,7 +52,7 @@
       
     
     
-    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
 
@@ -76,7 +76,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#collect-http-stats-using-curl" class="md-skip">
+        <a href="#network-process-debugging" class="md-skip">
           Skip to content
         </a>
       
@@ -90,7 +90,7 @@
 
 <header class="md-header" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href="../.." title="Devops Technical Institute" class="md-header__button md-logo" aria-label="Devops Technical Institute" data-md-component="logo">
+    <a href=".." title="Devops Technical Institute" class="md-header__button md-logo" aria-label="Devops Technical Institute" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><!--! Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M320 0c17.7 0 32 14.3 32 32v64h120c39.8 0 72 32.2 72 72v272c0 39.8-32.2 72-72 72H168c-39.8 0-72-32.2-72-72V168c0-39.8 32.2-72 72-72h120V32c0-17.7 14.3-32 32-32M208 384c-8.8 0-16 7.2-16 16s7.2 16 16 16h32c8.8 0 16-7.2 16-16s-7.2-16-16-16zm96 0c-8.8 0-16 7.2-16 16s7.2 16 16 16h32c8.8 0 16-7.2 16-16s-7.2-16-16-16zm96 0c-8.8 0-16 7.2-16 16s7.2 16 16 16h32c8.8 0 16-7.2 16-16s-7.2-16-16-16zM264 256a40 40 0 1 0-80 0 40 40 0 1 0 80 0m152 40a40 40 0 1 0 0-80 40 40 0 1 0 0 80M48 224h16v192H48c-26.5 0-48-21.5-48-48v-96c0-26.5 21.5-48 48-48m544 0c26.5 0 48 21.5 48 48v96c0 26.5-21.5 48-48 48h-16V224z"/></svg>
@@ -110,7 +110,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Collect HTTP Stats usng cURL
+              Network Process Debugging
             
           </span>
         </div>
@@ -191,7 +191,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="../.." class="md-tabs__link">
+      <a href=".." class="md-tabs__link">
         
   
     
@@ -206,11 +206,13 @@
         
   
   
+    
+  
   
     
     
-      <li class="md-tabs__item">
-        <a href="../../psy-mcloud/" class="md-tabs__link">
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../psy-mcloud/" class="md-tabs__link">
           
   
   Documents
@@ -224,13 +226,11 @@
         
   
   
-    
-  
   
     
     
-      <li class="md-tabs__item md-tabs__item--active">
-        <a href="../cloud-db-auth/" class="md-tabs__link">
+      <li class="md-tabs__item">
+        <a href="../snippets/cloud-db-auth/" class="md-tabs__link">
           
   
   Snippets
@@ -248,7 +248,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="../../containers/" class="md-tabs__link">
+        <a href="../containers/" class="md-tabs__link">
           
   
   Containers
@@ -264,7 +264,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="../../about/" class="md-tabs__link">
+      <a href="../about/" class="md-tabs__link">
         
   
     
@@ -300,7 +300,7 @@
 
 <nav class="md-nav md-nav--primary md-nav--lifted md-nav--integrated" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="../.." title="Devops Technical Institute" class="md-nav__button md-logo" aria-label="Devops Technical Institute" data-md-component="logo">
+    <a href=".." title="Devops Technical Institute" class="md-nav__button md-logo" aria-label="Devops Technical Institute" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><!--! Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M320 0c17.7 0 32 14.3 32 32v64h120c39.8 0 72 32.2 72 72v272c0 39.8-32.2 72-72 72H168c-39.8 0-72-32.2-72-72V168c0-39.8 32.2-72 72-72h120V32c0-17.7 14.3-32 32-32M208 384c-8.8 0-16 7.2-16 16s7.2 16 16 16h32c8.8 0 16-7.2 16-16s-7.2-16-16-16zm96 0c-8.8 0-16 7.2-16 16s7.2 16 16 16h32c8.8 0 16-7.2 16-16s-7.2-16-16-16zm96 0c-8.8 0-16 7.2-16 16s7.2 16 16 16h32c8.8 0 16-7.2 16-16s-7.2-16-16-16zM264 256a40 40 0 1 0-80 0 40 40 0 1 0 80 0m152 40a40 40 0 1 0 0-80 40 40 0 1 0 0 80M48 224h16v192H48c-26.5 0-48-21.5-48-48v-96c0-26.5 21.5-48 48-48m544 0c26.5 0 48 21.5 48 48v96c0 26.5-21.5 48-48 48h-16V224z"/></svg>
@@ -330,7 +330,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../.." class="md-nav__link">
+      <a href=".." class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -339,206 +339,6 @@
   
 
       </a>
-    </li>
-  
-
-    
-      
-      
-  
-  
-  
-  
-    
-    
-    
-      
-      
-    
-    
-    <li class="md-nav__item md-nav__item--nested">
-      
-        
-        
-          
-        
-        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2" >
-        
-          
-          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
-            
-  
-  <span class="md-ellipsis">
-    Documents
-  </span>
-  
-
-            <span class="md-nav__icon md-icon"></span>
-          </label>
-        
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_2">
-            <span class="md-nav__icon md-icon"></span>
-            Documents
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../psy-mcloud/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Psychedelic Magento Cloud
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../ssh-tunnels/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    SSH Tunnels
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    
-    
-    
-      
-      
-    
-    
-    <li class="md-nav__item md-nav__item--nested">
-      
-        
-        
-          
-        
-        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2_3" >
-        
-          
-          <label class="md-nav__link" for="__nav_2_3" id="__nav_2_3_label" tabindex="0">
-            
-  
-  <span class="md-ellipsis">
-    Linux
-  </span>
-  
-
-            <span class="md-nav__icon md-icon"></span>
-          </label>
-        
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_3_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_2_3">
-            <span class="md-nav__icon md-icon"></span>
-            Linux
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../network-process-debug/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Network Process Debugging
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-          </ul>
-        </nav>
-      
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../terraform.md" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Terraform Automation
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../containers/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Containers
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-          </ul>
-        </nav>
-      
     </li>
   
 
@@ -565,24 +365,24 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
         
           
-          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="">
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="">
             
   
   <span class="md-ellipsis">
-    Snippets
+    Documents
   </span>
   
 
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
-          <label class="md-nav__title" for="__nav_3">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2">
             <span class="md-nav__icon md-icon"></span>
-            Snippets
+            Documents
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
             
@@ -593,11 +393,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../cloud-db-auth/" class="md-nav__link">
+      <a href="../psy-mcloud/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    Cloud DB Authentication
+    Psychedelic Magento Cloud
   </span>
   
 
@@ -614,11 +414,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../cloud-cron-disable/" class="md-nav__link">
+      <a href="../ssh-tunnels/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    Cloud Cron Disable
+    SSH Tunnels
   </span>
   
 
@@ -632,85 +432,41 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../magento-indexing/" class="md-nav__link">
+  
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
         
-  
-  <span class="md-ellipsis">
-    Magento Indexing
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_3" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_2_3" id="__nav_2_3_label" tabindex="0">
             
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../cloud-elasticsearch-management/" class="md-nav__link">
-        
   
   <span class="md-ellipsis">
-    Magento Cloud Elasticsearch
+    Linux
   </span>
   
 
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../cloud-rabbitmq-management/" class="md-nav__link">
+            <span class="md-nav__icon md-icon"></span>
+          </label>
         
-  
-  <span class="md-ellipsis">
-    Magento Cloud RabbitMQ
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../rsync-cloud-media/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Magento Cloud Rsync Media Files
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_3_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2_3">
+            <span class="md-nav__icon md-icon"></span>
+            Linux
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
             
               
                 
@@ -732,7 +488,7 @@
           
   
   <span class="md-ellipsis">
-    Collect HTTP Stats usng cURL
+    Network Process Debugging
   </span>
   
 
@@ -743,7 +499,7 @@
         
   
   <span class="md-ellipsis">
-    Collect HTTP Stats usng cURL
+    Network Process Debugging
   </span>
   
 
@@ -765,18 +521,120 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#prerequisite" class="md-nav__link">
+  <a href="#overview" class="md-nav__link">
     <span class="md-ellipsis">
-      Prerequisite
+      Overview
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#execution" class="md-nav__link">
+  <a href="#structure-of-procpidnet-directory" class="md-nav__link">
     <span class="md-ellipsis">
-      Execution
+      Structure of /PROC/[PID]/NET/ Directory
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-to-use-procpidnet-directory" class="md-nav__link">
+    <span class="md-ellipsis">
+      How to Use /proc/[pid]/net/ Directory
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="How to Use /proc/[pid]/net/ Directory">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#accessing-network-connections-eg-tcpudp" class="md-nav__link">
+    <span class="md-ellipsis">
+      Accessing Network Connections (e.g., TCP/UDP)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#using-ss-command-with-a-specific-pid" class="md-nav__link">
+    <span class="md-ellipsis">
+      Using ss Command with a Specific PID
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#understanding-the-file-format" class="md-nav__link">
+    <span class="md-ellipsis">
+      Understanding the File format
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#monitoring-process-specific-network-traffic" class="md-nav__link">
+    <span class="md-ellipsis">
+      Monitoring Process-Specific Network Traffic
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#useful-notes" class="md-nav__link">
+    <span class="md-ellipsis">
+      Useful Notes
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#finding-ports" class="md-nav__link">
+    <span class="md-ellipsis">
+      Finding ports
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Finding ports">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#list-tcpudp-connections" class="md-nav__link">
+    <span class="md-ellipsis">
+      List TCP/UDP connections
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#interpreting-the-tcp-and-udp-files" class="md-nav__link">
+    <span class="md-ellipsis">
+      Interpreting the tcp and udp Files
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#other-useful-references" class="md-nav__link">
+    <span class="md-ellipsis">
+      Other Useful References
     </span>
   </a>
   
@@ -791,6 +649,14 @@
 
               
             
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
               
                 
   
@@ -798,7 +664,243 @@
   
   
     <li class="md-nav__item">
-      <a href="../custom-home-dir-ubuntu-firefox-err/" class="md-nav__link">
+      <a href="../terraform.md" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Terraform Automation
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../containers/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Containers
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Snippets
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            Snippets
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../snippets/cloud-db-auth/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Cloud DB Authentication
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../snippets/cloud-cron-disable/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Cloud Cron Disable
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../snippets/magento-indexing/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Magento Indexing
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../snippets/cloud-elasticsearch-management/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Magento Cloud Elasticsearch
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../snippets/cloud-rabbitmq-management/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Magento Cloud RabbitMQ
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../snippets/rsync-cloud-media/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Magento Cloud Rsync Media Files
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../snippets/curl-stats/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Collect HTTP Stats usng cURL
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../snippets/custom-home-dir-ubuntu-firefox-err/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -866,7 +968,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../containers/" class="md-nav__link">
+      <a href="../containers/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -927,7 +1029,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../containers/docker/" class="md-nav__link">
+      <a href="../containers/docker/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -948,7 +1050,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../containers/docker/container-init/" class="md-nav__link">
+      <a href="../containers/docker/container-init/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -969,7 +1071,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../containers/docker/caddy-container/" class="md-nav__link">
+      <a href="../containers/docker/caddy-container/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1038,7 +1140,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../containers/kubernetes/" class="md-nav__link">
+      <a href="../containers/kubernetes/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1059,7 +1161,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../containers/kubernetes/kubectl/cheatsheets/kubectl-basic-part-1/" class="md-nav__link">
+      <a href="../containers/kubernetes/kubectl/cheatsheets/kubectl-basic-part-1/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1080,7 +1182,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../containers/kubernetes/kubectl/cheatsheets/kubectl-basic-part-2/" class="md-nav__link">
+      <a href="../containers/kubernetes/kubectl/cheatsheets/kubectl-basic-part-2/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1116,7 +1218,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../about/" class="md-nav__link">
+      <a href="../about/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1147,57 +1249,112 @@
   
 
 
-<h1 id="collect-http-stats-using-curl">Collect HTTP Stats using cURL<a class="headerlink" href="#collect-http-stats-using-curl" title="Permanent link">⚓︎</a></h1>
-<p>cURL supports formatted output for the details of the request (see the <a href="https://curl.se/docs/manpage.html">cURL manpage</a> for details, under <code>-w, –write-out &lt;format&gt;</code> ).
-Lets try to collect the time statistics of HTTP connection. Times below are in seconds.</p>
-<h2 id="prerequisite">Prerequisite<a class="headerlink" href="#prerequisite" title="Permanent link">⚓︎</a></h2>
-<p>we need a http-delay statistics file.</p>
-<p>Lets create a directory and file for this requirement.</p>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>mkdir -vp ~/projects/dti-wiki/http-delay
+<h1 id="network-process-debugging">Network Process Debugging<a class="headerlink" href="#network-process-debugging" title="Permanent link">⚓︎</a></h1>
+<h2 id="overview">Overview<a class="headerlink" href="#overview" title="Permanent link">⚓︎</a></h2>
+<p>The <code>/proc/[pid]/net/</code> directory in Linux provides various network-related information about a specific process with the given Process ID (PID). The files in this directory are helpful for debugging, monitoring, and analyzing the network behavior of a process.</p>
+<h2 id="structure-of-procpidnet-directory">Structure of <code>/PROC/[PID]/NET/</code> Directory<a class="headerlink" href="#structure-of-procpidnet-directory" title="Permanent link">⚓︎</a></h2>
+<p>The <code>/proc/[pid]/net/</code> directory contains several files that provide different types of network-related information for the process with PID <code>[pid]</code>. Some of the common files you may encounter in this directory include:</p>
+<ol>
+<li><code>tcp</code>: Displays TCP socket connections related to the process.</li>
+<li><code>udp</code>: Displays UDP socket connections related to the process.</li>
+<li><code>tcp6</code>: Displays IPv6 TCP socket connections related to the process.</li>
+<li><code>udp6</code>: Displays IPv6 UDP socket connections related to the process.</li>
+<li><code>unix</code>: Displays Unix domain socket connections related to the process.</li>
+<li><code>raw</code>: Displays raw socket information.</li>
+<li><code>sctp</code>: Displays SCTP (Stream Control Transmission Protocol) socket connections related to the process.</li>
+</ol>
+<h2 id="how-to-use-procpidnet-directory">How to Use <code>/proc/[pid]/net/</code> Directory<a class="headerlink" href="#how-to-use-procpidnet-directory" title="Permanent link">⚓︎</a></h2>
+<p>Here’s how you can work with the files in <code>/proc/[pid]/net/</code> directory:</p>
+<h3 id="accessing-network-connections-eg-tcpudp">Accessing Network Connections (e.g., TCP/UDP)<a class="headerlink" href="#accessing-network-connections-eg-tcpudp" title="Permanent link">⚓︎</a></h3>
+<p>To inspect the TCP and UDP connections associated with a specific process, use the <code>cat</code> command to read the corresponding files.</p>
+<p>Example:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>cat /proc/[pid]/net/tcp
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>cat /proc/[pid]/net/udp
 </span></code></pre></div>
-<p><div class="language-text highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>touch ~/projects/dti-wiki/http-delay/curl-stats.txt
+<p>Replace <code>[pid]</code> with the actual process ID. The output will display the network connections in a format that includes local and remote IP addresses, ports, connection states, and other information.</p>
+<h3 id="using-ss-command-with-a-specific-pid">Using <code>ss</code> Command with a Specific PID<a class="headerlink" href="#using-ss-command-with-a-specific-pid" title="Permanent link">⚓︎</a></h3>
+<p>The <code>ss</code> (socket stat) command can be used to gather socket-related information, including network connections, for a specific PID.</p>
+<p>For example:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>ss -p -n -a | grep [pid]
 </span></code></pre></div>
-Lets create the contents for the statistics file.</p>
-<p>paste the below content to: <code>~/projects/dti-wiki/http-delay/curl-stats.txt</code></p>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>     time_namelookup:  %{time_namelookup}s\n
-</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>        time_connect:  %{time_connect}s\n
-</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>     time_appconnect:  %{time_appconnect}s\n
-</span><span id="__span-2-4"><a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a>    time_pretransfer:  %{time_pretransfer}s\n
-</span><span id="__span-2-5"><a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a>       time_redirect:  %{time_redirect}s\n
-</span><span id="__span-2-6"><a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a>  time_starttransfer:  %{time_starttransfer}s\n
-</span><span id="__span-2-7"><a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a>                     ----------\n
-</span><span id="__span-2-8"><a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a>          time_total:  %{time_total}s\n
+<p>This will list Unix domain socket connections, which are used for inter-process communication (IPC) on the same machine.</p>
+<h3 id="understanding-the-file-format">Understanding the File format<a class="headerlink" href="#understanding-the-file-format" title="Permanent link">⚓︎</a></h3>
+<p>The files in <code>/proc/[pid]/net/</code> are often in a human-readable format but may require some interpretation. For example, the <code>/proc/[pid]/net/tcp</code> file typically displays the following columns:</p>
+<ul>
+<li><em>sl</em>: Socket reference (sequence number).</li>
+<li><em>local_address</em>: Local IP address and port.</li>
+<li><em>rem_address</em>: Remote IP address and port.</li>
+<li><em>st</em>: Connection state (e.g., <code>ESTABLISHED</code>, <code>LISTEN</code>, <code>TIME_WAIT</code>).</li>
+<li><em>tx_queue</em>: Transmission queue.</li>
+<li><em>rx_queue</em>: Receive queue.</li>
+<li><em>tr</em>: Transition state.</li>
+<li><em>uid</em>: User ID of the process owning the socket.</li>
+</ul>
+<h3 id="monitoring-process-specific-network-traffic">Monitoring Process-Specific Network Traffic<a class="headerlink" href="#monitoring-process-specific-network-traffic" title="Permanent link">⚓︎</a></h3>
+<p>If you want to monitor network traffic by a specific process in real-time, tools like <code>netstat</code>, <code>ss</code>, or <code>lsof</code> can help. For example:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>netstat -tulnp | grep [pid]
+</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>lsof -i -p [pid]
 </span></code></pre></div>
-<h2 id="execution">Execution<a class="headerlink" href="#execution" title="Permanent link">⚓︎</a></h2>
-<p>We can execute the cURL as below to collect the HTTP statistics.</p>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>curl -w &quot;@${HOME}/projects/dti-wiki/http-delay/curl-stats.txt&quot; -o /dev/null -s &quot;http://wordpress.com/&quot;
+<p>This will output the list of all TCP connections associated with process <code>12345</code>. You may need to interpret the values based on the format of the data in the <code>tcp</code> file.</p>
+<h2 id="useful-notes">Useful Notes<a class="headerlink" href="#useful-notes" title="Permanent link">⚓︎</a></h2>
+<ul>
+<li>You need appropriate permissions to access the <code>/proc/[pid]/net/</code> directory, especially for processes you do not own.</li>
+<li>The files in this directory are snapshots of the state of network sockets, so they represent real-time information but can change frequently.</li>
+</ul>
+<p>By using these files and commands, you can get detailed insights into the networking activities of a particular process.</p>
+<h2 id="finding-ports">Finding ports<a class="headerlink" href="#finding-ports" title="Permanent link">⚓︎</a></h2>
+<p>To find the ports being used by a specific process through the <code>/proc/[pid]</code> directory, you'll need to look at the network-related files inside <code>/proc/[pid]/net/</code>. Specifically, files like <code>tcp</code>, <code>udp</code>, <code>tcp6</code>, and <code>udp6</code> will provide information on the ports in use by the process, both for TCP/UDP IPv4 and IPv6 connections.</p>
+<p>Here are the steps to identify the ports used by a process from the <code>/proc/[pid]</code> directory:</p>
+<h3 id="list-tcpudp-connections">List TCP/UDP connections<a class="headerlink" href="#list-tcpudp-connections" title="Permanent link">⚓︎</a></h3>
+<p>The most direct method to find the ports used by a process is to check the <code>/proc/[pid]/net/tcp</code> and <code>/proc/[pid]/net/udp</code> files, which list the TCP and UDP connections, respectively.</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>cat /proc/[pid]/net/tcp
+</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>cat /proc/[pid]/net/udp
 </span></code></pre></div>
-<p>We can create this cURL command as a bash script.</p>
-<p>create a file : <code>~/bin/httpstats</code> with below content.</p>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>#!/bin/bash
-</span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>
-</span><span id="__span-4-3"><a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a>curl -w @- -o /dev/null -s &quot;$@&quot; &lt;&lt;&#39;EOF&#39;
-</span><span id="__span-4-4"><a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a>    time_namelookup:  %{time_namelookup}\n
-</span><span id="__span-4-5"><a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a>       time_connect:  %{time_connect}\n
-</span><span id="__span-4-6"><a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a>    time_appconnect:  %{time_appconnect}\n
-</span><span id="__span-4-7"><a id="__codelineno-4-7" name="__codelineno-4-7" href="#__codelineno-4-7"></a>   time_pretransfer:  %{time_pretransfer}\n
-</span><span id="__span-4-8"><a id="__codelineno-4-8" name="__codelineno-4-8" href="#__codelineno-4-8"></a>      time_redirect:  %{time_redirect}\n
-</span><span id="__span-4-9"><a id="__codelineno-4-9" name="__codelineno-4-9" href="#__codelineno-4-9"></a> time_starttransfer:  %{time_starttransfer}\n
-</span><span id="__span-4-10"><a id="__codelineno-4-10" name="__codelineno-4-10" href="#__codelineno-4-10"></a>                    ----------\n
-</span><span id="__span-4-11"><a id="__codelineno-4-11" name="__codelineno-4-11" href="#__codelineno-4-11"></a>         time_total:  %{time_total}\n
-</span><span id="__span-4-12"><a id="__codelineno-4-12" name="__codelineno-4-12" href="#__codelineno-4-12"></a>EOF
+<p>Replace <code>[pid]</code> with the process ID of interest.</p>
+<h4 id="output-format">Output format<a class="headerlink" href="#output-format" title="Permanent link">⚓︎</a></h4>
+<ul>
+<li><em>local_address</em>: Local address (IP address and port) of the connection.</li>
+<li><em>rem_address</em>: Remote address (IP address and port) of the connection.</li>
+<li><em>st</em>: The state of the connection (for TCP: <code>ESTABLISHED</code>, <code>LISTEN</code>, <code>TIME_WAIT</code>, etc.).</li>
+<li><em>uid</em>: The user ID of the process associated with the connection.</li>
+</ul>
+<p><em>Important</em>: The addresses in the <code>local_address</code> and <code>rem_address</code> columns are typically displayed in hexadecimal. You will need to convert the hex values to human-readable IP addresses and ports.</p>
+<h3 id="interpreting-the-tcp-and-udp-files">Interpreting the <code>tcp</code> and <code>udp</code> Files<a class="headerlink" href="#interpreting-the-tcp-and-udp-files" title="Permanent link">⚓︎</a></h3>
+<p>Here’s an example of how the lines in <code>/proc/[pid]/net/tcp</code> or <code>/proc/[pid]/net/udp</code> might look:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>sl  local_address           rem_address           st tx_queue rx_queue tr tm-&gt;when retrnsmt   uid
+</span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>1:  0100007F:0050           00000000:0000          01 00000000 00000000 00 00000000 00000000  1000
+</span><span id="__span-4-3"><a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a>2:  0100007F:0051           0100007F:0052          01 00000000 00000000 00 00000000 00000000  1000
 </span></code></pre></div>
-<p>Now lets give execute permissions for <code>~/bin/httpstats</code> file:</p>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>chmod +x ~/bin/httpstats
+<p>In this example:</p>
+<ul>
+<li><em>local_address</em> (e.g., <code>0100007F:0050</code>) refers to the local address (in hex), and <code>:0050</code> represents port <code>80</code> (<code>0x50</code> in hexadecimal).</li>
+<li><em>rem_address</em> (e.g., <code>00000000:0000</code>) is typically the remote address, and <code>:0000</code> often means no established connection for UDP.</li>
+<li>The st column shows the socket state (<code>01</code> for <code>ESTABLISHED</code> for TCP).</li>
+</ul>
+<h4 id="converting-the-local-address">Converting the Local Address:<a class="headerlink" href="#converting-the-local-address" title="Permanent link">⚓︎</a></h4>
+<p>For the <code>local_address</code> field, the first part is the IP address in hexadecimal, and the second part is the port in hexadecimal. For example:</p>
+<ul>
+<li><code>0100007F:0050</code> → <code>0100007F</code> = <code>127.0.0.1</code> (local IP address), and <code>0050</code> = <code>80</code> (port number).</li>
+</ul>
+<p>You can use the following to convert the hex IP to standard dotted decimal notation:</p>
+<ol>
+<li>Reverse the byte order (for little-endian representation).</li>
+<li>Convert each byte to decimal.</li>
+</ol>
+<p>For example:</p>
+<ul>
+<li><code>0100007F</code> → <code>7F 00 00 01</code> → <code>127.0.0.1</code></li>
+</ul>
+<p>The port is hexadecimal, so you can convert it similarly:</p>
+<ul>
+<li><code>0050</code> → <code>80</code> (decimal).</li>
+</ul>
+<h2 id="other-useful-references">Other Useful References<a class="headerlink" href="#other-useful-references" title="Permanent link">⚓︎</a></h2>
+<p>Using lsof</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>lsof -i -p [pid]
 </span></code></pre></div>
-<p>Then we can execute the command like</p>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>httpstats http://wordpress.org
-</span></code></pre></div>
-<h1 id="other-useful-oneliners">Other useful oneliners<a class="headerlink" href="#other-useful-oneliners" title="Permanent link">⚓︎</a></h1>
-<p>Collect <code>total time</code> taken:</p>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>curl -o /dev/null -s -w &#39;Total: %{time_total}s\n&#39;  https://www.google.com
-</span></code></pre></div>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>curl -o /dev/null -s -w &#39;Establish Connection: %{time_connect}s\nTTFB: %{time_starttransfer}s\nTotal: %{time_total}s\n&#39;  https://www.google.com
+<p>Using SS</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>ss -tulnp | grep [pid]
 </span></code></pre></div>
 
 
@@ -1257,10 +1414,10 @@ Lets create the contents for the statistics file.</p>
     </div>
     
     
-    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.tabs", "navigation.expand", "navigation.top", "toc.integrate", "content.code.copy", "content.tabs.link"], "search": "../../assets/javascripts/workers/search.6ce7567c.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    <script id="__config" type="application/json">{"base": "..", "features": ["navigation.tabs", "navigation.expand", "navigation.top", "toc.integrate", "content.code.copy", "content.tabs.link"], "search": "../assets/javascripts/workers/search.6ce7567c.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
     
     
-      <script src="../../assets/javascripts/bundle.83f73b43.min.js"></script>
+      <script src="../assets/javascripts/bundle.83f73b43.min.js"></script>
       
     
   </body>
