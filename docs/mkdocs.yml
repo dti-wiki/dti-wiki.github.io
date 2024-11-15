@@ -54,6 +54,8 @@ nav:
   - 'Documents':
       - 'Psychedelic Magento Cloud': 'psy-mcloud.md'
       - 'SSH Tunnels': 'ssh-tunnels.md'
+      - 'Linux':
+         - 'Network Process Debugging': 'network-process-debug.md'
       - 'Terraform Automation': 'terraform.md'
       - 'Containers': 'containers.md'
   - 'Snippets':
