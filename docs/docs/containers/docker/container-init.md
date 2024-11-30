@@ -35,6 +35,29 @@ echo "${USERNAME} ALL=(ALL) NOPASSWD:ALL" >> /etc/sudoers.d/${USERNAME}
 tail -f /dev/null
 ```
 
+If we are using a debian/ubuntu container then the above (for alpine) won't work as expected. So in case of Debian based containers use below.
+
+```
+#!/bin/bash
+
+CUID=1000
+CGID=1000
+USERNAME=anish
+
+#install dependencies
+apt update
+apt install -y passwd sudo bash curl jq vim-tiny git
+
+#Create User and Groups and Sudo Access
+groupadd -g ${CGID} ${USERNAME}
+useradd ${USERNAME} -u ${CUID} -g ${CGID} -m -s /bin/bash
+UID_MAX=500000000 usermod -a -G adm,sudo ${USERNAME}
+echo "${USERNAME} ALL=(ALL) NOPASSWD:ALL" >>/etc/sudoers.d/${USERNAME}
+
+#Run infinitely
+tail -f /dev/null
+```
+
 ## The Compose file
 
 Now to use this `coninit.sh` we wil employ a `docker-compose.yml` file as below:
