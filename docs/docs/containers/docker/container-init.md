@@ -37,7 +37,7 @@ tail -f /dev/null
 
 If we are using a debian/ubuntu container then the above (for alpine) won't work as expected. So in case of Debian based containers use below.
 
-```
+```bash
 #!/bin/bash
 
 CUID=1000
