@@ -17,8 +17,8 @@ This is a `coninit.sh` for alpine linux based containers.
 ``` bash
 #!/bin/bash
 
-UID=1000
-GID=1000
+CUID=1000
+CGID=1000
 USERNAME=anish
 
 #install dependencies
@@ -26,8 +26,8 @@ apk update
 apk add shadow sudo bash curl yarn jq
 
 #Create User and Groups and Sudo Access
-groupadd -g ${GID} ${USERNAME}
-useradd ${USERNAME} -u ${UID} -g ${GID} -m -s /bin/bash
+groupadd -g ${CGID} ${USERNAME}
+useradd ${USERNAME} -u ${CUID} -g ${CGID} -m -s /bin/bash
 usermod -a -G wheel ${USERNAME}
 echo "${USERNAME} ALL=(ALL) NOPASSWD:ALL" >> /etc/sudoers.d/${USERNAME}
 
