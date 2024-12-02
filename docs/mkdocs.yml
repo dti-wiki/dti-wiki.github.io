@@ -31,53 +31,53 @@ copyright: 'Copyright &copy; 2024 DTI Wiki'
 
 markdown_extensions:
   - mdx_math:
-    enable_dollar_delimiter: true
+      enable_dollar_delimiter: true
   - admonition
   - footnotes
   - attr_list
   - codehilite
   - pymdownx.highlight:
-    anchor_linenums: true
-    line_spans: __span
-    pygments_lang_class: true
+      anchor_linenums: true
+      line_spans: __span
+      pygments_lang_class: true
   - pymdownx.inlinehilite
   - pymdownx.snippets
   - pymdownx.superfences
   - pymdownx.tabbed:
-    alternate_style: true
+      alternate_style: true
   - tables
   - toc:
-    permalink: ⚓︎
-    toc_depth: 3
+      permalink: ⚓︎
+      toc_depth: 3
 nav:
   - 'DTI Wiki': 'index.md'
   - 'Documents':
-    - 'Psychedelic Magento Cloud': 'psy-mcloud.md'
-    - 'SSH Tunnels': 'ssh-tunnels.md'
-    - 'Network':
-      - 'Basic Port Forwarding': 'linux-network-portforwarding.md'
-    - 'Linux':
-      - 'Network Process Debugging': 'network-process-debug.md'
-    - 'Terraform Automation': 'terraform.md'
-    - 'Containers': 'containers.md'
+      - 'Psychedelic Magento Cloud': 'psy-mcloud.md'
+      - 'SSH Tunnels': 'ssh-tunnels.md'
+      - 'Network':
+         - 'Basic Port Forwarding': 'linux-network-portforwarding.md'
+      - 'Linux':
+         - 'Network Process Debugging': 'network-process-debug.md'
+      - 'Terraform Automation': 'terraform.md'
+      - 'Containers': 'containers.md'
   - 'Snippets':
-    - 'Cloud DB Authentication': 'snippets/cloud-db-auth.md'
-    - 'Cloud Cron Disable': 'snippets/cloud-cron-disable.md'
-    - 'Magento Indexing': 'snippets/magento-indexing.md'
-    - 'Magento Cloud Elasticsearch': 'snippets/cloud-elasticsearch-management.md'
-    - 'Magento Cloud RabbitMQ': 'snippets/cloud-rabbitmq-management.md'
-    - 'Magento Cloud Rsync Media Files': 'snippets/rsync-cloud-media.md'
-    - 'Collect HTTP Stats usng cURL': 'snippets/curl-stats.md'
-    - 'Firefox user data directory error': 'snippets/custom-home-dir-ubuntu-firefox-err.md'
+      - 'Cloud DB Authentication': 'snippets/cloud-db-auth.md'
+      - 'Cloud Cron Disable': 'snippets/cloud-cron-disable.md'
+      - 'Magento Indexing': 'snippets/magento-indexing.md'
+      - 'Magento Cloud Elasticsearch': 'snippets/cloud-elasticsearch-management.md'
+      - 'Magento Cloud RabbitMQ': 'snippets/cloud-rabbitmq-management.md'
+      - 'Magento Cloud Rsync Media Files': 'snippets/rsync-cloud-media.md'
+      - 'Collect HTTP Stats usng cURL': 'snippets/curl-stats.md'
+      - 'Firefox user data directory error': 'snippets/custom-home-dir-ubuntu-firefox-err.md'
   - 'Containers':
-    - 'Index': 'containers.md'
-    - 'Docker':
-      - 'Index': 'containers/docker/index.md'
-      - 'Container Init': 'containers/docker/container-init.md'
-      - 'Caddy Container': 'containers/docker/caddy-container.md'
-    - 'Kubernetes':
-      - 'Index': 'containers/kubernetes/index.md'
-      - 'Kubectl Basic Cheatsheet Part1': 'containers/kubernetes/kubectl/cheatsheets/kubectl-basic-part-1.md'
-      - 'Kubectl Basic Cheatsheet Part2': 'containers/kubernetes/kubectl/cheatsheets/kubectl-basic-part-2.md'
+      - 'Index': 'containers.md'
+      - 'Docker':
+          - 'Index': 'containers/docker/index.md'
+          - 'Container Init': 'containers/docker/container-init.md'
+          - 'Caddy Container': 'containers/docker/caddy-container.md'
+      - 'Kubernetes':
+          - 'Index': 'containers/kubernetes/index.md'
+          - 'Kubectl Basic Cheatsheet Part1': 'containers/kubernetes/kubectl/cheatsheets/kubectl-basic-part-1.md'
+          - 'Kubectl Basic Cheatsheet Part2': 'containers/kubernetes/kubectl/cheatsheets/kubectl-basic-part-2.md'
   - About: 'about.md'
 
