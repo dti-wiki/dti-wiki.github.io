@@ -55,4 +55,6 @@ If this command does not work for you, simply reboot.
 
     Note: Moving the appimage to a different location later or changing it's name makes it neccessary to update your apparmor profile with the correct path and reload the apparmor profiles.
 
-References : https://ubuntu.com/blog/ubuntu-23-10-restricted-unprivileged-user-namespaces
+References : 
+- https://ubuntu.com/blog/ubuntu-23-10-restricted-unprivileged-user-namespaces
+- https://askubuntu.com/questions/1512287/obsidian-appimage-the-suid-sandbox-helper-binary-was-found-but-is-not-configu
