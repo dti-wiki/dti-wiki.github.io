@@ -69,6 +69,7 @@ nav:
       - 'Magento Cloud Rsync Media Files': 'snippets/rsync-cloud-media.md'
       - 'Collect HTTP Stats usng cURL': 'snippets/curl-stats.md'
       - 'Firefox user data directory error': 'snippets/custom-home-dir-ubuntu-firefox-err.md'
+      - 'Ubuntu AppImage SUID sandbox helper binary error': 'snippets/suid-sandbox-helper-error-ubuntu.md'
   - 'Containers':
       - 'Index': 'containers.md'
       - 'Docker':
