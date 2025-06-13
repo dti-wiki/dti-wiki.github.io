@@ -2,90 +2,90 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
          <loc>https://dti-wiki.github.io/</loc>
-         <lastmod>2025-06-12</lastmod>
+         <lastmod>2025-06-13</lastmod>
     </url>
     <url>
          <loc>https://dti-wiki.github.io/about/</loc>
-         <lastmod>2025-06-12</lastmod>
+         <lastmod>2025-06-13</lastmod>
     </url>
     <url>
          <loc>https://dti-wiki.github.io/containers/</loc>
-         <lastmod>2025-06-12</lastmod>
+         <lastmod>2025-06-13</lastmod>
     </url>
     <url>
          <loc>https://dti-wiki.github.io/linux-network-portforwarding/</loc>
-         <lastmod>2025-06-12</lastmod>
+         <lastmod>2025-06-13</lastmod>
     </url>
     <url>
          <loc>https://dti-wiki.github.io/network-process-debug/</loc>
-         <lastmod>2025-06-12</lastmod>
+         <lastmod>2025-06-13</lastmod>
     </url>
     <url>
          <loc>https://dti-wiki.github.io/psy-mcloud/</loc>
-         <lastmod>2025-06-12</lastmod>
+         <lastmod>2025-06-13</lastmod>
     </url>
     <url>
          <loc>https://dti-wiki.github.io/ssh-tunnels/</loc>
-         <lastmod>2025-06-12</lastmod>
+         <lastmod>2025-06-13</lastmod>
     </url>
     <url>
          <loc>https://dti-wiki.github.io/containers/docker/</loc>
-         <lastmod>2025-06-12</lastmod>
+         <lastmod>2025-06-13</lastmod>
     </url>
     <url>
          <loc>https://dti-wiki.github.io/containers/docker/caddy-container/</loc>
-         <lastmod>2025-06-12</lastmod>
+         <lastmod>2025-06-13</lastmod>
     </url>
     <url>
          <loc>https://dti-wiki.github.io/containers/docker/container-init/</loc>
-         <lastmod>2025-06-12</lastmod>
+         <lastmod>2025-06-13</lastmod>
     </url>
     <url>
          <loc>https://dti-wiki.github.io/containers/kubernetes/</loc>
-         <lastmod>2025-06-12</lastmod>
+         <lastmod>2025-06-13</lastmod>
     </url>
     <url>
          <loc>https://dti-wiki.github.io/containers/kubernetes/kubectl/cheatsheets/kubectl-basic-part-1/</loc>
-         <lastmod>2025-06-12</lastmod>
+         <lastmod>2025-06-13</lastmod>
     </url>
     <url>
          <loc>https://dti-wiki.github.io/containers/kubernetes/kubectl/cheatsheets/kubectl-basic-part-2/</loc>
-         <lastmod>2025-06-12</lastmod>
+         <lastmod>2025-06-13</lastmod>
     </url>
     <url>
          <loc>https://dti-wiki.github.io/snippets/cloud-cron-disable/</loc>
-         <lastmod>2025-06-12</lastmod>
+         <lastmod>2025-06-13</lastmod>
     </url>
     <url>
          <loc>https://dti-wiki.github.io/snippets/cloud-db-auth/</loc>
-         <lastmod>2025-06-12</lastmod>
+         <lastmod>2025-06-13</lastmod>
     </url>
     <url>
          <loc>https://dti-wiki.github.io/snippets/cloud-elasticsearch-management/</loc>
-         <lastmod>2025-06-12</lastmod>
+         <lastmod>2025-06-13</lastmod>
     </url>
     <url>
          <loc>https://dti-wiki.github.io/snippets/cloud-rabbitmq-management/</loc>
-         <lastmod>2025-06-12</lastmod>
+         <lastmod>2025-06-13</lastmod>
     </url>
     <url>
          <loc>https://dti-wiki.github.io/snippets/curl-stats/</loc>
-         <lastmod>2025-06-12</lastmod>
+         <lastmod>2025-06-13</lastmod>
     </url>
     <url>
          <loc>https://dti-wiki.github.io/snippets/custom-home-dir-ubuntu-firefox-err/</loc>
-         <lastmod>2025-06-12</lastmod>
+         <lastmod>2025-06-13</lastmod>
     </url>
     <url>
          <loc>https://dti-wiki.github.io/snippets/magento-indexing/</loc>
-         <lastmod>2025-06-12</lastmod>
+         <lastmod>2025-06-13</lastmod>
     </url>
     <url>
          <loc>https://dti-wiki.github.io/snippets/rsync-cloud-media/</loc>
-         <lastmod>2025-06-12</lastmod>
+         <lastmod>2025-06-13</lastmod>
     </url>
     <url>
          <loc>https://dti-wiki.github.io/snippets/suid-sandbox-helper-error-ubuntu/</loc>
-         <lastmod>2025-06-12</lastmod>
+         <lastmod>2025-06-13</lastmod>
     </url>
 </urlset>
