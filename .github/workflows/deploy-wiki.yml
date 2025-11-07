@@ -12,12 +12,16 @@ jobs:
   document:
     name: build document
     runs-on: ubuntu-latest
+
     steps:
-      - uses: actions/checkout@v2-beta
+      - name: Checkout Code
+        uses: actions/checkout@v5
+
       - name: Set up Python
-        uses: actions/setup-python@v1
+        uses: actions/setup-python@v6
         with:
           python-version: ${{ vars.PYTHON_VERSION }}
+
       - name: Install
         run: pip3 install mkdocs mkdocs-material fontawesome_markdown mdx_unimoji mkdocs-mermaid2-plugin pymdown-extensions plantuml-markdown python-markdown-math
 
@@ -31,7 +35,7 @@ jobs:
           name: site
           path: docs/site
 
-      - uses: peaceiris/actions-gh-pages@v3
+      - uses: peaceiris/actions-gh-pages@v4
         if: ${{ github.event_name != 'pull_request'}}
         with:
           github_token: ${{ secrets.OSSWIKI_TOKEN }}
