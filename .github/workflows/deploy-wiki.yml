@@ -22,20 +22,22 @@ jobs:
         with:
           python-version: ${{ vars.PYTHON_VERSION }}
 
-      - name: Install
+      - name: Install Dependencies
         run: pip3 install mkdocs mkdocs-material fontawesome_markdown mdx_unimoji mkdocs-mermaid2-plugin pymdown-extensions plantuml-markdown python-markdown-math
 
       - name: Generate documentation
         run: mkdocs build
         working-directory: docs
 
-      - uses: actions/upload-artifact@v4
+      - name: Upload Artifact
+        uses: actions/upload-artifact@v4
         if: ${{ github.event_name == 'pull_request'}}
         with:
           name: site
           path: docs/site
 
-      - uses: peaceiris/actions-gh-pages@v4
+      - name: Publish Github Pages
+        uses: peaceiris/actions-gh-pages@v4
         if: ${{ github.event_name != 'pull_request'}}
         with:
           github_token: ${{ secrets.OSSWIKI_TOKEN }}
